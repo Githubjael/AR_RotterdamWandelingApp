@@ -11,17 +11,19 @@ public class WeatherRequest : MonoBehaviour
 
     Text Places;
 
+    [System.Obsolete]
     public void GetWeather()
     {
         StartCoroutine(MakeWeatherRequest());
     }
 
+    [System.Obsolete]
     IEnumerator MakeWeatherRequest()
     {
         UnityWebRequest request = UnityWebRequest.Get(url);
         yield return request.SendWebRequest();
 
-        if(request.isNetworkError || request.isHttpError)
+        if(request.isNetworkError && !request.isHttpError)
         {
             Debug.LogError(request.error);
         }
