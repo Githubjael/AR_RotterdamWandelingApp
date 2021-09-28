@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class TestController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public async void TestGet()
     {
-        
-    }
+        var url = "";
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        using var www = UnityWebRequest.Get(url);
+
+        www.SetRequestHeader("Content-Type", "applicatio/json");
+
+        var operation = www.SendWebRequest();
+
+        while (!operation.isDone)
+        {
+            await Task.Yield();
+        }
     }
 }
