@@ -32,10 +32,12 @@ public class HappyHttpClient
         {
             var result = JsonConvert.DeserializeObject<User>(jsonResponse);
             Debug.Log($"Succes: {www.downloadHandler.text}");
+            return result;
         }
         catch (Exception ex)
         {
             Debug.LogError($"{this} Could not parse {jsonResponse} .{ex.Message}");
+            return null;
         }
     }
 }
