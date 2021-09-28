@@ -23,22 +23,21 @@ public class TestController : MonoBehaviour
 
         var jsonResponse = www.downloadHandler.text;
 
-        if(www.result == UnityWebRequest.Result.Success)
+        if(www.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log($"Succes: {www.downloadHandler.text}");
-        }
-        else
-        {
-            Debug.Log($"Failed: {www.error}");
+            Debug.LogError($"Failed: {www.error}");
+            
+
         }
 
         try
         {
 
+            Debug.Log($"Succes: {www.downloadHandler.text}");
         }
         catch(Exception ex)
         {
-
+            Debug.LogError($"{this} Could not parse {jsonResponse} .{ex.Message}");
         }
     }
 }
