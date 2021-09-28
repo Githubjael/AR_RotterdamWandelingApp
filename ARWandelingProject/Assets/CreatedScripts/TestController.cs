@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -7,7 +8,7 @@ public class TestController : MonoBehaviour
     [ContextMenu("Test Get")]
     public async void TestGet()
     {
-        var url = "";
+        var url = "https://jsonplaceholder.typicode.com/todos/1";
 
         using var www = UnityWebRequest.Get(url);
 
@@ -20,6 +21,8 @@ public class TestController : MonoBehaviour
             await Task.Yield();
         }
 
+        var jsonResponse = www.downloadHandler.text;
+
         if(www.result == UnityWebRequest.Result.Success)
         {
             Debug.Log($"Succes: {www.downloadHandler.text}");
@@ -27,6 +30,15 @@ public class TestController : MonoBehaviour
         else
         {
             Debug.Log($"Failed: {www.error}");
+        }
+
+        try
+        {
+
+        }
+        catch(Exception ex)
+        {
+
         }
     }
 }
