@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using Newtonsoft.Json;
+using System;
 using UnityEngine;
 
-public class JsonSerializationOption : MonoBehaviour
+public class JsonSerializationOption : ISerializationOption
 {
-    // Start is called before the first frame update
-    void Start()
+    public T Deserialize<T>(string text)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        try
+        {
+            var result = JsonConvert.DeserializeObject<T>(text);
+            Debug.Log($"Succes: {text}");
+            return result;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"{this} Could not parse {text} .{ex.Message}");
+            return default;
+        }
     }
 }
