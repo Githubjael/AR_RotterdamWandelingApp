@@ -11,7 +11,6 @@ public class WeatherRequest : MonoBehaviour
 
     Text Places;
 
-    [System.Obsolete]
     public void GetWeather()
     {
         StartCoroutine(MakeWeatherRequest());
