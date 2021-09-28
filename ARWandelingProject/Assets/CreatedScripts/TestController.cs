@@ -4,6 +4,7 @@ using UnityEngine.Networking;
 
 public class TestController : MonoBehaviour
 {
+    [ContextMenu("Test Get")]
     public async void TestGet()
     {
         var url = "";
@@ -17,6 +18,15 @@ public class TestController : MonoBehaviour
         while (!operation.isDone)
         {
             await Task.Yield();
+        }
+
+        if(www.result == UnityWebRequest.Result.Success)
+        {
+            Debug.Log($"Succes: {www.downloadHandler.text}");
+        }
+        else
+        {
+            Debug.Log($"Failed: {www.error}");
         }
     }
 }
