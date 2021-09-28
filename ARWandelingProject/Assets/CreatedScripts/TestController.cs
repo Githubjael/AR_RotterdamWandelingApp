@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -26,13 +27,11 @@ public class TestController : MonoBehaviour
         if(www.result != UnityWebRequest.Result.Success)
         {
             Debug.LogError($"Failed: {www.error}");
-            
-
         }
 
         try
         {
-
+            var result = JsonConvert.DeserializeObject<User>(jsonResponse);
             Debug.Log($"Succes: {www.downloadHandler.text}");
         }
         catch(Exception ex)
