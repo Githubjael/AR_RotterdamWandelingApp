@@ -31,7 +31,7 @@ public class WeatherRequest : MonoBehaviour
             var weather = JsonConvert.DeserializeObject<WeatherResponse>(request.downloadHandler.text);
 
             Places = GameObject.Find("places").GetComponent<Text>();
-            Places.text = weather.results.ToString();
+            Places.text = weather.results[0].business_status.ToString();
         }
     }
 }
