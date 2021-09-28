@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 
 public class HappyHttpClient
 { 
-    public async Task<User> Get(string url)
+    public async Task<TResultType> Get<TResultType>(string url)
     {
         using var www = UnityWebRequest.Get(url);
 
@@ -30,14 +30,14 @@ public class HappyHttpClient
 
         try
         {
-            var result = JsonConvert.DeserializeObject<User>(jsonResponse);
+            var result = JsonConvert.DeserializeObject<TResultType>(jsonResponse);
             Debug.Log($"Succes: {www.downloadHandler.text}");
             return result;
         }
         catch (Exception ex)
         {
             Debug.LogError($"{this} Could not parse {jsonResponse} .{ex.Message}");
-            return null;
+            return default;
         }
     }
 }
