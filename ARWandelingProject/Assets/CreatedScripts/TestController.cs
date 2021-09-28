@@ -1,8 +1,4 @@
-using Newtonsoft.Json;
-using System;
-using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Networking;
 
 public class TestController : MonoBehaviour
 {
@@ -11,7 +7,7 @@ public class TestController : MonoBehaviour
     {
         var url = "https://jsonplaceholder.typicode.com/todos/1";
 
-        var httpClient = new HappyHttpClient();
+        var httpClient = new HappyHttpClient(new JsonSerializationOption());
         var result = await httpClient.Get<User>(url);
     }
 }
