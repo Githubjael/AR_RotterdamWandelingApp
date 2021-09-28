@@ -14,7 +14,7 @@ public class JsonSerializationOption : ISerializationOption
         }
         catch (Exception ex)
         {
-            Debug.LogError($"{this} Could not parse {text} .{ex.Message}");
+            Debug.LogError($"Could not parse {text} .{ex.Message}");
             return default;
         }
     }
