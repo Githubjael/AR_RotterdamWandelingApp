@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ISerializationOption
 {
-
+    T Deserialize<T>(string text);
 }
