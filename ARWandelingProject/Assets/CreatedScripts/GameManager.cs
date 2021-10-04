@@ -16,31 +16,31 @@ public class GameManager : MonoBehaviour
 
     private void Exit()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Menu");
     }
 
     private void Location5()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("location5");
     }
 
     private void Location4()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("location4");
     }
 
     private void Location3()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("location3");
     }
 
     private void Location2()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("location2");
     }
 
     private void Location1()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("location1");
     }
 }
