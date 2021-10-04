@@ -14,32 +14,32 @@ public class GameManager : MonoBehaviour
     Exit();       
     }
 
-    private void Exit()
+    public void Exit()
     {
         SceneManager.LoadScene("Menu");
     }
 
-    private void Location5()
+    public void Location5()
     {
         SceneManager.LoadScene("location5");
     }
 
-    private void Location4()
+    public void Location4()
     {
         SceneManager.LoadScene("location4");
     }
 
-    private void Location3()
+    public void Location3()
     {
         SceneManager.LoadScene("location3");
     }
 
-    private void Location2()
+    public void Location2()
     {
         SceneManager.LoadScene("location2");
     }
 
-    private void Location1()
+    public void Location1()
     {
         SceneManager.LoadScene("location1");
     }
