@@ -4,15 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private void Start()
-    {
-    Location1();
-    Location2();
-    Location3();
-    Location4();
-    Location5();
-    Exit();       
-    }
 
     public void Exit()
     {
