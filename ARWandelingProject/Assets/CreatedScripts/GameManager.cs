@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    /*
     private void Start()
     {
     Location1();
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     Location5();
     Exit();       
     }
-
+    */
     private void Exit()
     {
         SceneManager.LoadScene("Menu");
