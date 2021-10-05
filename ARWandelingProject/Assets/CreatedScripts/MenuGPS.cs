@@ -20,11 +20,11 @@ public class MenuGPS : MonoBehaviour
     {
         if (!Input.location.isEnabledByUser)
         {
-            Permission.RequestUserPermission(Permission.CoarseLocation);
+            Permission.RequestUserPermission(Permission.FineLocation);
             //Save this foor apple build
             //Application.RequestUserAuthorization(UserAuthorization.WebCam);
 
-            if (!Permission.HasUserAuthorizedPermission(Permission.CoarseLocation))
+            if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
             {
                 GPS.text += "User has not Authorized permisson.";
             }
