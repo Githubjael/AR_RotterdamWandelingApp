@@ -2,7 +2,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Android;
-
 public class MenuGPS : MonoBehaviour
 {
     //get the TextMeshProUGUI's from the canvas in the Menu Scene
