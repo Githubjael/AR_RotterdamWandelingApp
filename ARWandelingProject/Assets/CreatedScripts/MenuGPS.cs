@@ -11,7 +11,7 @@ public class MenuGPS : MonoBehaviour
     public float Longitude;
     public float Latitude;
 
-    public void Awake()
+    public void Start()
     {
         StartCoroutine(LocationFunction());
     }
