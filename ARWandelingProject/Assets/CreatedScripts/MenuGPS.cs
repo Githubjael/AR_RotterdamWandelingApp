@@ -19,7 +19,8 @@ public class MenuGPS : MonoBehaviour
     {
         //1 inclusief dit
         /*Instance = this;*/
-        DontDestroyOnLoad(gameObject);
+        //dont need it
+        //DontDestroyOnLoad(gameObject);
         StartCoroutine(LocationFunction());
     }
 
