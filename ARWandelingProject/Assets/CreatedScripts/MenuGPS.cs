@@ -25,7 +25,8 @@ public class MenuGPS : MonoBehaviour
 
     private IEnumerator LocationFunction()
     {
-        if (!Input.location.isEnabledByUser)
+        Permission.RequestUserPermission(Permission.FineLocation);
+        if (!Input.location.isEnabledByUser || !Permission.HasUserAuthorizedPermission(Permission.FineLocation))
         {
             GPS.text += "Location service has not been enabled.";
             yield break;
