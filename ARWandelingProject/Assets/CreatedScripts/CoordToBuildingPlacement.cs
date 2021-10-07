@@ -8,8 +8,8 @@ public class CoordToBuildingPlacement : MonoBehaviour
     public float longitude;
     public float latitude;
 
-    public double AnchorpointA = 51.92442152092351;
-    public double AnchorpointA1 = 4.477735165226141;
+    public double AnchorpointA1 = 51.92442152092351;
+    public double AnchorpointA = 4.477735165226141;
 
     public List<GameObject> Buildings;
 
@@ -19,6 +19,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
     }
     public void GetGPSData()
     {
+        Input.location.Start();
         var currentGPSposition = Input.location.lastData;
         float z = latToZ(Input.location.lastData.latitude);
         float x = lonToX(Input.location.lastData.longitude);

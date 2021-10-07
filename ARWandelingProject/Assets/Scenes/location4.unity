@@ -648,8 +648,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   longitude: 0
   latitude: 0
-  AnchorpointA: 51.92442152092351
   AnchorpointA1: 4.477735165226141
+  AnchorpointA: 51.92442152092351
   Buildings:
   - {fileID: 8098616854926050351, guid: c1f5b7544004f3f4d988743134cf8df5, type: 3}
 --- !u!4 &870114385
