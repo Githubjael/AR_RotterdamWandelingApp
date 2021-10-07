@@ -7,5 +7,5 @@ public class CoordToBuildingPlacement : MonoBehaviour
     public float longitude;
     public float latitude;
     [SerializeField]
-    public List<GameObject> Buildings;
+    private List<GameObject> Buildings;
 }
