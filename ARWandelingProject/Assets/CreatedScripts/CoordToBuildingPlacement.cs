@@ -17,6 +17,12 @@ public class CoordToBuildingPlacement : MonoBehaviour
     {
         GetGPSData();
     }
+
+    public void Placement()
+    {
+        Buildings[0].transform.position = new Vector3 { , , }
+    }
+
     public void GetGPSData()
     {
         Input.location.Start();
@@ -30,17 +36,21 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
     float latToZ(double latitude)
     {
-        latitude = (latitude - AnchorpointA) / 0.00001 * 00.12179047095976932582726898256213;
+        /*latitude = (latitude - AnchorpointA) / 0.00001 * 00.12179047095976932582726898256213;
         double z = latitude;
 
-        return (float)z;
+        return (float)z;*/
+        double x = Math.Sin(latitude);
+        return (float) x;
     }
     float lonToX(double longitude)
     {
-        longitude = (longitude - AnchorpointA1) / 0.00001 * 00.00728553580298947812081345114627;
+        /*longitude = (longitude - AnchorpointA1) / 0.00001 * 00.00728553580298947812081345114627;
         double x = longitude;
 
-        return (float)x ;
+        return (float)x ;*/
+
+        double z = Math.S
     }
 
 }
