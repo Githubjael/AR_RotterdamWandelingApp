@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +21,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
     public void Placement()
     {
-        Buildings[0].transform.position = new Vector3 ( 0, 0, 0);
+        Instantiate(Buildings[0], new vector3(x, 0f, z), Quaternion.identity);
     }
 
     public void GetGPSData()
@@ -33,6 +32,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
         float x = lonToX(Input.location.lastData.longitude);
 
         this.transform.position = new Vector3(x, 0f, z);
+        Buildings[0].transform.position = new Vector3(x, 0, z);
 
     }
 
@@ -43,7 +43,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
         return (float)z;*/
         double z = Math.Sin(latitude);
-        return (float) z;
+        return (float)z;
     }
     float lonToX(double longitude)
     {
@@ -53,7 +53,8 @@ public class CoordToBuildingPlacement : MonoBehaviour
         return (float)x ;*/
 
         double x = R * Math.Cos(latitude) * Math.Cos(longitude);
-        return (float) x;
+
+        return (float)x;
     }
 
 }
