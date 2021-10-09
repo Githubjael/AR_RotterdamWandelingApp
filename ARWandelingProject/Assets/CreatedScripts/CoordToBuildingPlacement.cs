@@ -20,7 +20,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
     public void Placement()
     {
-        Buildings[0].transform.position = new Vector3 { , , }
+        Buildings[0].transform.position = new Vector3 ( 0, 0, 0);
     }
 
     public void GetGPSData()
@@ -50,7 +50,8 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
         return (float)x ;*/
 
-        double z = Math.S
+        double z = Math.Sin(longitude);
+        return (float) z;
     }
 
 }
