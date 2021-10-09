@@ -8,6 +8,8 @@ public class CoordToBuildingPlacement : MonoBehaviour
     public float longitude;
     public float latitude;
 
+    public double R = 637100;
+
     public double AnchorpointA1 = 51.92442152092351;
     public double AnchorpointA = 4.477735165226141;
 
@@ -40,8 +42,8 @@ public class CoordToBuildingPlacement : MonoBehaviour
         double z = latitude;
 
         return (float)z;*/
-        double x = Math.Sin(latitude);
-        return (float) x;
+        double z = Math.Sin(latitude);
+        return (float) z;
     }
     float lonToX(double longitude)
     {
@@ -50,8 +52,8 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
         return (float)x ;*/
 
-        double z = Math.Sin(longitude);
-        return (float) z;
+        double x = R * Math.Cos(latitude) * Math.Cos(longitude);
+        return (float) x;
     }
 
 }
