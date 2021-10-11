@@ -9,8 +9,8 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
     public double R = 637100;
 
-    public double AnchorpointA1 = 51.92442152092351;
-    public double AnchorpointA = 4.477735165226141;
+    public double AnchorpointA = 51.92442152092351;
+    public double AnchorpointA1 = 4.477735165226141;
 
     public List<GameObject> Buildings;
 #region Location1
@@ -42,25 +42,47 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
     float latToZ(double latitude)
     {
-        /*latitude = (latitude - AnchorpointA) / 0.00001 * 00.12179047095976932582726898256213;
+        latitude = (latitude - AnchorpointA) / 0.00001 * 00.12179047095976932582726898256213;
         double z = latitude;
 
+        return (float)z;/**/
+        /*double z = Math.Sin(latitude);
         return (float)z;*/
-        double z = Math.Sin(latitude);
-        return (float)z;
     }
     float lonToX(double longitude)
     {
-        /*longitude = (longitude - AnchorpointA1) / 0.00001 * 00.00728553580298947812081345114627;
+        /**/longitude = (longitude - AnchorpointA1) / 0.00001 * 00.00728553580298947812081345114627;
         double x = longitude;
 
-        return (float)x ;*/
+        return (float)x ;
 
-        double x = R * Math.Cos(latitude) * Math.Cos(longitude);
+        /*double x = R * Math.Cos(latitude) * Math.Cos(longitude);
+
+        return (float)x;*/
+    }
+    #region Location1ConvertAnchor
+    float lonToXLoc1Anchor(double longitude)
+    {
+        /**/
+        longitude = (longitude - AnchorpointA1) / 0.00001 * 00.00728553580298947812081345114627;
+        double x = longitude;
 
         return (float)x;
-    }
 
+        /*double x = R * Math.Cos(latitude) * Math.Cos(longitude);
+
+        return (float)x;*/
+    }
+    float latToZLoc1Anchor(double latitude)
+    {
+        latitude = (latitude - AnchorpointA) / 0.00001 * 00.12179047095976932582726898256213;
+        double z = latitude;
+
+        return (float)z;/**/
+        /*double z = Math.Sin(latitude);
+        return (float)z;*/
+    }
+    #endregion
     #region Location1Convert
     public void PlaceLocation1()
     {
