@@ -13,6 +13,10 @@ public class CoordToBuildingPlacement : MonoBehaviour
     public double AnchorpointA = 4.477735165226141;
 
     public List<GameObject> Buildings;
+#region Location1
+    public double latLoc1 = 51.92442152092351;
+    public double lonLoc1 = 4.477735165226141;
+    #endregion
 
     public void Start()
     {
@@ -32,8 +36,8 @@ public class CoordToBuildingPlacement : MonoBehaviour
         float x = lonToX(Input.location.lastData.longitude);
 
         this.transform.position = new Vector3(x, 0f, z);
-        Buildings[0].transform.position = new Vector3(x, 0, z);
         Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
+        PlaceLocation1();
     }
 
     float latToZ(double latitude)
@@ -57,4 +61,32 @@ public class CoordToBuildingPlacement : MonoBehaviour
         return (float)x;
     }
 
+    #region Location1Convert
+    public void PlaceLocation1()
+    {
+        float z = latToZLoc1(Input.location.lastData.latitude);
+        float x = lonToXLoc1(Input.location.lastData.longitude);
+        Instantiate(Buildings[0], new Vector3( x, 0f, z), Quaternion.identity);
+    }
+    float lonToXLoc1(double lonLoc1)
+    {
+        /*longitude = (longitude - AnchorpointA1) / 0.00001 * 00.00728553580298947812081345114627;
+        double x = longitude;
+
+        return (float)x ;*/
+
+        double x = R * Math.Cos(latLoc1) * Math.Cos(lonLoc1);
+
+        return (float)x;
+    }
+    float latToZLoc1(double latLoc1)
+    {
+        /*latitude = (latitude - AnchorpointA) / 0.00001 * 00.12179047095976932582726898256213;
+        double z = latitude;
+
+        return (float)z;*/
+        double z = Math.Sin(latLoc1);
+        return (float)z;
+    }
+    #endregion
 }
