@@ -21,7 +21,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
     public void Placement()
     {
-        Instantiate(Buildings[0], new vector3(x, 0f, z), Quaternion.identity);
+        //Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
     }
 
     public void GetGPSData()
@@ -33,7 +33,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
         this.transform.position = new Vector3(x, 0f, z);
         Buildings[0].transform.position = new Vector3(x, 0, z);
-
+        Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
     }
 
     float latToZ(double latitude)
