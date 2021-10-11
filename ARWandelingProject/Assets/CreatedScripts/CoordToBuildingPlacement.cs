@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CoordToBuildingPlacement : MonoBehaviour
 {
-    public float longitude;
-    public float latitude;
+    public double longitude = 51.92346;
+    public double latitude = 4.48116;
 
     public double R = 637100;
 
@@ -38,6 +38,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
         this.transform.position = new Vector3(x, 0f, z);
         Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
         PlaceLocation1();
+        PlacementAnchor();
     }
 
     float latToZ(double latitude)
@@ -61,6 +62,11 @@ public class CoordToBuildingPlacement : MonoBehaviour
         return (float)x;*/
     }
     #region Location1ConvertAnchor
+    public void PlacementAnchor()
+    {
+        float z = lonToXLoc1Anchor(Input.location.lastData.latitude);
+        float x = lonToXLoc1Anchor(Input.location.lastData.longitude);
+    }
     float lonToXLoc1Anchor(double longitude)
     {
         /**/
@@ -82,6 +88,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
         /*double z = Math.Sin(latitude);
         return (float)z;*/
     }
+
     #endregion
     #region Location1Convert
     public void PlaceLocation1()
