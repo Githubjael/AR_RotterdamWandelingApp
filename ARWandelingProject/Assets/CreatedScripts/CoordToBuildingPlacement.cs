@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CoordToBuildingPlacement : MonoBehaviour
 {
-    public double longitude = 51.92346;
-    public double latitude = 4.48116;
+    public double latitude = 51.92346;
+    public double longitude = 4.48116;
 
     public double R = 637100;
 
@@ -43,7 +43,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
     float latToZ(double latitude)
     {
-        latitude = (latitude - AnchorpointA) / 0.00001 * 00.12179047095976932582726898256213;
+        latitude = (latitude - AnchorpointA) / 0.00001 * 0.520009484738;
         double z = latitude;
 
         return (float)z;/**/
@@ -52,7 +52,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
     }
     float lonToX(double longitude)
     {
-        /**/longitude = (longitude - AnchorpointA1) / 0.00001 * 00.00728553580298947812081345114627;
+        /**/longitude = (longitude - AnchorpointA1) / 0.00001 * 0.145992444312;
         double x = longitude;
 
         return (float)x ;
@@ -64,13 +64,14 @@ public class CoordToBuildingPlacement : MonoBehaviour
     #region Location1ConvertAnchor
     public void PlacementAnchor()
     {
-        float z = lonToXLoc1Anchor(Input.location.lastData.latitude);
+        float z = latToZLoc1Anchor(Input.location.lastData.latitude);
         float x = lonToXLoc1Anchor(Input.location.lastData.longitude);
+        Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
     }
     float lonToXLoc1Anchor(double longitude)
     {
         /**/
-        longitude = (longitude - AnchorpointA1) / 0.00001 * 00.00728553580298947812081345114627;
+        longitude = (longitude - AnchorpointA1) / 0.00001 * 0.145992444312;
         double x = longitude;
 
         return (float)x;
@@ -81,7 +82,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
     }
     float latToZLoc1Anchor(double latitude)
     {
-        latitude = (latitude - AnchorpointA) / 0.00001 * 00.12179047095976932582726898256213;
+        latitude = (latitude - AnchorpointA) / 0.00001 * 0.520009484738;
         double z = latitude;
 
         return (float)z;/**/
