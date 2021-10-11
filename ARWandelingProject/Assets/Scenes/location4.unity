@@ -646,12 +646,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a1f63d1007adc4eaab70e89e77d105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  longitude: 51.92346
-  latitude: 4.48116
-  AnchorpointA1: 4.477735165226141
+  latitude: 4.4811601638793945
+  longitude: 51.923458099365234
+  R: 637100
   AnchorpointA: 51.92442152092351
+  AnchorpointA1: 4.477735165226141
   Buildings:
   - {fileID: 8098616854926050351, guid: c1f5b7544004f3f4d988743134cf8df5, type: 3}
+  latLoc1: 0
+  lonLoc1: 0
 --- !u!4 &870114385
 Transform:
   m_ObjectHideFlags: 0
@@ -1011,7 +1014,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1041488238}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
