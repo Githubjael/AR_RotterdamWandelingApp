@@ -23,18 +23,13 @@ public class CoordToBuildingPlacement : MonoBehaviour
         GetGPSData();
     }
 
-    public void Placement()
-    {
-        //Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
-    }
-
     public void GetGPSData()
     {
         Input.location.Start();
         var currentGPSposition = Input.location.lastData;
         float z = latToZ(Input.location.lastData.latitude);
         float x = lonToX(Input.location.lastData.longitude);
-
+        Debug.Log(currentGPSposition);
         this.transform.position = new Vector3(x, 0f, z);
         Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
         PlaceLocation1();
