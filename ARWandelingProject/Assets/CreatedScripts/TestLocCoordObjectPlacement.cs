@@ -24,7 +24,6 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
         float z = LatToZ(Input.location.lastData.latitude);
         float x = LonToX(Input.location.lastData.longitude);
 
-        this.transform.position = new Vector3( x, 0f, z);
     }
     #region Converting1Anchor
     //This region is for converting Longitude and Latitude to unity's X and Y using 1 Anchorpoint.
@@ -41,6 +40,9 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
         double z = lat1;
         return (float)z;
     }
-#endregion
+    #endregion
+    #region Converting2Anchors
+
+    #endregion
 }
 
