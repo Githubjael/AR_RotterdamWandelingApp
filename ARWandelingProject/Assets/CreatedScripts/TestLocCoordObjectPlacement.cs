@@ -53,14 +53,14 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
     private float LatsToZ(double latitude1, double latitude2)
     {
         latitude1 = (latitude1 - Anchorpoint1lat) / 0.00001 * 0.12179047095976932582726898256213;
-        latitude2 = (latitude1 - Anchorpoint1lat) / 0.00001 * 0.12179047095976932582726898256213;
+        latitude2 = (latitude1 - Anchorpoint2lat) / 0.00001 * 0.12179047095976932582726898256213;
         double z = latitude1 / latitude2;
         return (float)z;
     }
     private float LonsToX(double longitude1, double longitude2)
     {
         longitude1 = (longitude1 - Anchorpoint1lon) / 0.000001 * 0.00728553580298947812081345114627;
-        longitude2 = (longitude2 - Anchorpoint1lon) / 0.000001 * 0.00728553580298947812081345114627;
+        longitude2 = (longitude2 - Anchorpoint2lon) / 0.000001 * 0.00728553580298947812081345114627;
         double x = longitude1 / longitude2;
         return (float)x;
     }
