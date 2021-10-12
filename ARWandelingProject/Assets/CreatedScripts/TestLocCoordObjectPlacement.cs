@@ -53,7 +53,7 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
     private float LatsToZ(double latitude1, double latitude2)
     {
         latitude1 = (latitude1 - Anchorpoint1lat) / 0.00001 * 0.12179047095976932582726898256213;
-        latitude2 = (latitude1 - Anchorpoint2lat) / 0.00001 * 0.12179047095976932582726898256213;
+        latitude2 = (latitude2 - Anchorpoint2lat) / 0.00001 * 0.12179047095976932582726898256213;
         double z = latitude1 / latitude2;
         return (float)z;
     }
