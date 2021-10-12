@@ -15,22 +15,24 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
     {
         Input.location.Start();
         var gpsdata = Input.location.lastData;
-        float z = LatsToZ(Input.location.lastData.latitude);
-        float x = LonsToX(Input.location.lastData.longitude);
+        float z = LatsToZ(Input.location.lastData.latitude, Input.location.lastData.latitude);
+        float x = LonsToX(Input.location.lastData.longitude, Input.location.lastData.longitude);
 
         this.transform.position = new Vector3( x, 0f, z);
     }
 
-    private float LonsToX(double lon1)
+    private float LonsToX(double lon1, double lon2)
     {
         lon1 = (lon1 - Anchorpoint1lon) / 0.000001 * 0.00728553580298947812081345114627;
+        lon2 = (lon2 - Anchorpoint2lon) / 0.000001 * 0.00728553580298947812081345114627;
         double x = lon1;
         return (float)x;
     }
 
-    private float LatsToZ(double lat1)
+    private float LatsToZ(double lat1, double lat2)
     {
         lat1 = (lat1 - Anchorpoint1lat) / 0.00001 * 0.12179047095976932582726898256213;
+        lat2 = (lat1 - Anchorpoint2lat) / 0.00001 * 0.12179047095976932582726898256213;
         double z = lat1;
         return (float)z;
     }
