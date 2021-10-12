@@ -60,11 +60,11 @@ public class CoordToBuildingPlacement : MonoBehaviour
     #region Location1ConvertAnchor
     public void PlacementAnchor()
     {
-        float z = latToZLoc1Anchor(Input.location.lastData.latitude);
-        float x = lonToXLoc1Anchor(Input.location.lastData.longitude);
+        float z = latToZLoc1Anchora(Input.location.lastData.latitude);
+        float x = lonToXLoc1Anchora1(Input.location.lastData.longitude);
         Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
     }
-    float lonToXLoc1Anchor(double longitude)
+    float lonToXLoc1Anchora1(double longitude)
     {
         /**/
         longitude = (longitude - AnchorpointA1) / 0.00001 * 0.145992444312;
@@ -76,7 +76,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
 
         return (float)x;*/
     }
-    float latToZLoc1Anchor(double latitude)
+    float latToZLoc1Anchora(double latitude)
     {
         latitude = (latitude - AnchorpointA) / 0.00001 * 0.520009484738;
         double z = latitude;
