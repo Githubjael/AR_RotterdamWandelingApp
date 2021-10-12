@@ -7,16 +7,23 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
 {
 
     #region Anchorpoints
+    //the Longitude and Latitude of 2 Anchorpoints.
     public double Anchorpoint1lat = 51.92796883177615;
     public double Anchorpoint1lon = 4.4807745134267645;
     public double Anchorpoint2lat = 51.92705582077611;
     public double Anchorpoint2lon = 4.47990547771943;
     #endregion
     #region gameobjects
+    //a list of building gameobjects to place in the scene.
     [Tooltip("The list of building gameobjects to place in the scene")]
     public List<GameObject> Buildings;
     #endregion
-
+    #region Offset
+    //this list is supposed to contain values that offset the placement of the building gameobjects.
+    [Tooltip("The list of offset doubles for placing building gameobjects")]
+    public List<float> Offset;
+    #endregion
+    #region GPSData
     public void GPSData()
     {
         Input.location.Start();
@@ -26,9 +33,9 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
         Instantiate(Buildings[0] , new Vector3(x , 0f ,z), Quaternion.identity);
         z = LatsToZ(Input.location.lastData.latitude, Input.location.lastData.latitude);
         x = LonsToX(Input.location.lastData.latitude, Input.location.lastData.longitude);
-        Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
+        Instantiate(Buildings[0], new Vector3(x - Offset[0], 0f, z), Quaternion.identity);
     }
-
+    #endregion
     private void Start()
     {
         GPSData();
@@ -65,5 +72,5 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
         return (float)x;
     }
     #endregion
-}
 
+}

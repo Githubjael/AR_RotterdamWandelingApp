@@ -941,6 +941,8 @@ MonoBehaviour:
   Anchorpoint2lon: 4.47990547771943
   Buildings:
   - {fileID: 919132149155446097, guid: 90f4c1d9104c3b54f8d1f0d6d68ccc8e, type: 3}
+  Offset:
+  - 1
 --- !u!4 &1675398203
 Transform:
   m_ObjectHideFlags: 0
