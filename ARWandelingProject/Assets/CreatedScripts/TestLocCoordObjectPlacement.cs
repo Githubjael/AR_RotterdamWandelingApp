@@ -13,6 +13,8 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
     #endregion
     public void GPSData()
     {
+        Input.location.Start();
+        var gpsdata = Input.location.lastData;
         float z = LatsToZ(Input.location.lastData.latitude);
         float x = LonsToX(Input.location.lastData.longitude);
 
