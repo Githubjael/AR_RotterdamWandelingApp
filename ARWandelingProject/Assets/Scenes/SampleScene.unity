@@ -940,7 +940,7 @@ MonoBehaviour:
   Anchorpoint2lat: 51.92705582077611
   Anchorpoint2lon: 4.47990547771943
   Buildings:
-  - {fileID: 8098616854926050351, guid: c1f5b7544004f3f4d988743134cf8df5, type: 3}
+  - {fileID: 919132149155446097, guid: 90f4c1d9104c3b54f8d1f0d6d68ccc8e, type: 3}
 --- !u!4 &1675398203
 Transform:
   m_ObjectHideFlags: 0
