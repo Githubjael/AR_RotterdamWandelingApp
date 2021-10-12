@@ -8,7 +8,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
     public double latitude = 51.92346;
     public double longitude = 4.48116;
     #endregion
-    public double R = 637100;
+    public double R = 6371000;
     #region Anchorpoint
     public double AnchorpointA = 51.92442152092351;
     public double AnchorpointA1 = 4.477735165226141;
