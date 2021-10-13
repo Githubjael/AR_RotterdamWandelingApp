@@ -33,7 +33,7 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
         Instantiate(Buildings[0] , new Vector3(x , 0f ,z), Quaternion.identity);
         z = LatsToZ(Input.location.lastData.latitude, Input.location.lastData.latitude);
         x = LonsToX(Input.location.lastData.latitude, Input.location.lastData.longitude);
-        Instantiate(Buildings[0], new Vector3(x - Offset[0], 0f, z), Quaternion.identity);
+        Instantiate(Buildings[0], new Vector3(x , 0f, z), Quaternion.identity);
     }
     #endregion
     private void Start()
