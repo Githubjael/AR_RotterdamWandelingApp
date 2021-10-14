@@ -75,6 +75,7 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
         return (float)x;
     }
     #endregion
+
     #region method2
     public class Lanlon
     {
@@ -131,4 +132,5 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
 
     } 
     #endregion
+
 }
