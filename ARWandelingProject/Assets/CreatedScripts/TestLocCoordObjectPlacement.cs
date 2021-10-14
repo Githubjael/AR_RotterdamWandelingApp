@@ -26,15 +26,17 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
     #region GPSData
     public void GPSData()
     {
+
         Input.location.Start();
         var gpsdata = Input.location.lastData;
         float z = LatToZ(Input.location.lastData.latitude);
         float x = LonToX(Input.location.lastData.longitude);
-        Instantiate(Buildings[0] , new Vector3(x , 0f ,z), Quaternion.identity);
+        Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
         z = LatsToZ(Input.location.lastData.latitude, Input.location.lastData.latitude);
         x = LonsToX(Input.location.lastData.latitude, Input.location.lastData.longitude);
-        Instantiate(Buildings[0], new Vector3(x , 0f-1, z+Offset[0]), Quaternion.identity);
-        Instantiate(Buildings[0], new Vector3(x+Offset[0] , 0f-1, z+Offset[0]), Quaternion.identity);
+        Instantiate(Buildings[0], new Vector3(x, 0f - 1, z + Offset[0]), Quaternion.identity);
+        Instantiate(Buildings[0], new Vector3(x + Offset[0], 0f - 1, z + Offset[0]), Quaternion.identity);
+
     }
     #endregion
     private void Start()
@@ -73,5 +75,60 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
         return (float)x;
     }
     #endregion
+    #region method2
+    public class Lanlon
+    {
+        private static float convertCoordinates(float oldvalue, float oldMin, float oldMax, float newMin, float newMax)
+        {
+            float oldRange = oldMax - oldMax;
+            float newRange = newMax - newMin;
+            float returnValue = (((oldvalue - oldMin) * newRange) / oldRange) + newMin;
+            return returnValue;
+        }
 
+        public static Vector3 GetUnityPosition(Vector2 latlonPosition, Vector2 northwestlatlon, Vector2 southeastlatlon, Vector3 northwestUnity, Vector3 southeastUnity)
+        {
+            if (southeastlatlon.y < northwestlatlon.y)
+            {
+                southeastlatlon = new Vector2(southeastlatlon.x, southeastlatlon.y + 360f);
+
+                if (latlonPosition.y < 0f)
+                {
+                    latlonPosition = new Vector2(latlonPosition.x, latlonPosition.y + 360f);
+                }
+            }
+
+            float newUnityLat = convertCoordinates(latlonPosition.x, southeastlatlon.x, northwestlatlon.x, southeastUnity.z, northwestUnity.z);
+            float newUnityLon = convertCoordinates(latlonPosition.y, southeastlatlon.y, northwestlatlon.y, southeastUnity.x, northwestUnity.x);
+            Vector3 UnityWorldposition = new Vector3(newUnityLon, 200f, newUnityLat);
+            return UnityWorldposition;
+        }
+
+        public static Vector2 GetLatLonPosition(Vector3 unityPosition, Vector2 northWestLatLon, Vector2 southEastLatLon, Vector3 northWestUnity, Vector3 southEastUnity)
+        {
+            bool antimeridian = false;
+
+            if (southEastLatLon.y < northWestLatLon.y)
+            {
+                antimeridian = true;
+                southEastLatLon = new Vector2(southEastLatLon.x, southEastLatLon.y + 360f);
+            }
+
+            float newLat = convertCoordinates(unityPosition.z, southEastUnity.z, northWestUnity.z, southEastLatLon.x, northWestLatLon.x);
+            float newLon = convertCoordinates(unityPosition.x, southEastUnity.z, northWestUnity.x, southEastLatLon.y, northWestLatLon.y);
+
+            if (antimeridian)
+            {
+                if (newLon > 180f)
+                {
+                    newLon = newLon - 360f;
+                }
+            }
+
+            Vector2 latLonPosition = new Vector2(newLat, newLon);
+            return latLonPosition;
+        }
+
+    } 
+    #endregion
 }
