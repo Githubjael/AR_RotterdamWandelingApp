@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,7 +38,7 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
 
     }
     #endregion
-    private void Start()
+    public void Start()
     {
         GPSData();
     }
@@ -77,7 +76,7 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
     #endregion
 
     #region method2
-    public class Lanlon
+    public class LatLon
     {
         private static float convertCoordinates(float oldvalue, float oldMin, float oldMax, float newMin, float newMax)
         {

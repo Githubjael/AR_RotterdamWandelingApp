@@ -39,23 +39,23 @@ public class CoordToBuildingPlacement : MonoBehaviour
     #endregion
     float latToZ(double latitude)
     {
-        latitude = (latitude - AnchorpointA) / 0.00001 * 0.520009484738;
+        /*latitude = (latitude - AnchorpointA) / 0.00001 * 0.520009484738;
         double z = latitude;
 
-        return (float)z;/**/
-        /*double z = Math.Sin(latitude);
         return (float)z;*/
+        /**/double z = Math.Cos(latitude);
+        return (float)z;
     }
     float lonToX(double longitude)
     {
-        /**/longitude = (longitude - AnchorpointA1) / 0.00001 * 0.145992444312;
+        /*longitude = (longitude - AnchorpointA1) / 0.00001 * 0.145992444312;
         double x = longitude;
 
-        return (float)x ;
+        return (float)x ;*/
 
-        /*double x = R * Math.Cos(latitude) * Math.Cos(longitude);
+        /**/double x = R * Math.Sin(latitude) * Math.Cos(longitude);
 
-        return (float)x;*/
+        return (float)x;
     }
     #region Location1ConvertAnchor
     public void PlacementAnchor()
