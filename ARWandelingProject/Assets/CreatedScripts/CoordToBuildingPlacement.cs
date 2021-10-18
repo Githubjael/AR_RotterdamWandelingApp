@@ -8,7 +8,8 @@ public class CoordToBuildingPlacement : MonoBehaviour
     public double latitude = 51.92346;
     public double longitude = 4.48116;
     #endregion
-    public double R = 6371000;
+    public float R = 6371000;
+    public float scale = 10000;
     #region Anchorpoint
     public double AnchorpointA = 51.92442152092351;
     public double AnchorpointA1 = 4.477735165226141;
@@ -31,7 +32,6 @@ public class CoordToBuildingPlacement : MonoBehaviour
         float z = latToZ(Input.location.lastData.latitude);
         float x = lonToX(Input.location.lastData.longitude);
         Debug.Log(currentGPSposition);
-        this.transform.position = new Vector3(x, 0f, z);
         Instantiate(Buildings[0], new Vector3(x, 0f, z), Quaternion.identity);
         PlaceLocation1();
         PlacementAnchor();
@@ -68,7 +68,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
     {
         /**/
         longitude = (longitude - AnchorpointA1) / 0.00001 * 0.145992444312;
-        double x = longitude;
+        double x = longitude / scale;
 
         return (float)x;
 
@@ -79,7 +79,7 @@ public class CoordToBuildingPlacement : MonoBehaviour
     float latToZLoc1Anchora(double latitude)
     {
         latitude = (latitude - AnchorpointA) / 0.00001 * 0.520009484738;
-        double z = latitude;
+        double z = latitude / scale;
 
         return (float)z;/**/
         /*double z = Math.Sin(latitude);
