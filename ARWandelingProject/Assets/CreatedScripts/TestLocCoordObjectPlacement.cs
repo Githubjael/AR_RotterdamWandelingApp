@@ -20,7 +20,7 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
     #endregion
     #region Offset
     //this list is supposed to contain values that offset the placement of the building gameobjects.
-    [Tooltip("The list of offset doubles for placing building gameobjects")]
+    [Tooltip("The list of offset floats for placing building gameobjects")]
     public List<float> Offset;
     #endregion
     #region GPSData
@@ -84,6 +84,7 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
             float oldRange = oldMax - oldMax;
             float newRange = newMax - newMin;
             float returnValue = (((oldvalue - oldMin) * newRange) / oldRange) + newMin;
+            Debug.Log(returnValue);
             return returnValue;
         }
 
@@ -102,7 +103,9 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
             float newUnityLat = convertCoordinates(latlonPosition.x, southeastlatlon.x, northwestlatlon.x, southeastUnity.z, northwestUnity.z);
             float newUnityLon = convertCoordinates(latlonPosition.y, southeastlatlon.y, northwestlatlon.y, southeastUnity.x, northwestUnity.x);
             Vector3 UnityWorldposition = new Vector3(newUnityLon, 200f, newUnityLat);
+            Debug.Log(UnityWorldposition);
             return UnityWorldposition;
+            
         }
 
         public static Vector2 GetLatLonPosition(Vector3 unityPosition, Vector2 northWestLatLon, Vector2 southEastLatLon, Vector3 northWestUnity, Vector3 southEastUnity)
@@ -127,6 +130,7 @@ public class TestLocCoordObjectPlacement : MonoBehaviour
             }
 
             Vector2 latLonPosition = new Vector2(newLat, newLon);
+            Debug.Log(latLonPosition);
             return latLonPosition;
         }
 
