@@ -45,7 +45,7 @@ public class TestEncoderUse : MonoBehaviour
         }
 
         //if location service doesn't initialize n 20 secs
-        if(maxWait > 1)
+        if(maxWait > 0)
         {
             Status.text += "Timed Out!";
             yield break;
