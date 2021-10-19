@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6584a789403be854eb6f08cdcbf32d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsUpdating: 0
+  IsUpdating: 1
   Status: {fileID: 1872523774}
 --- !u!1 &2053315954
 GameObject:
