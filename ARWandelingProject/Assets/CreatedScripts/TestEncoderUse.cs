@@ -21,7 +21,7 @@ public class TestEncoderUse : MonoBehaviour
     private IEnumerator GetGPS()
     {
 
-        int maxWait = 5;
+        int maxWait = 10;
         if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation) || !Permission.HasUserAuthorizedPermission(Permission.CoarseLocation))
         {
             Permission.RequestUserPermission(Permission.FineLocation);
@@ -55,6 +55,7 @@ public class TestEncoderUse : MonoBehaviour
         if(Input.location.status == LocationServiceStatus.Failed)
         {
             Status.text = "Unable to determine device location.";
+            yield break;
         }
         else
         {
