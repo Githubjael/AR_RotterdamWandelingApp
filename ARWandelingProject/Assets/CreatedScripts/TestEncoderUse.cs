@@ -22,7 +22,7 @@ public class TestEncoderUse : MonoBehaviour
     {
 
         int maxWait = 5;
-        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation)|| !Permission.HasUserAuthorizedPermission(Permission.CoarseLocation))
+        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation) || !Permission.HasUserAuthorizedPermission(Permission.CoarseLocation))
         {
             Permission.RequestUserPermission(Permission.FineLocation);
             Permission.RequestUserPermission(Permission.CoarseLocation);
