@@ -39,7 +39,7 @@ public class TestEncoderUse : MonoBehaviour
 
         while(Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
         {
-            Status.text = "Initializing...";
+            //Status.text = "Initializing...";
             yield return new WaitForSeconds(1);
             maxWait--;
         }
