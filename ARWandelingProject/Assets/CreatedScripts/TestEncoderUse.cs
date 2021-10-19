@@ -14,10 +14,15 @@ public class TestEncoderUse : MonoBehaviour
 
     public void Update()
     {
-        StartCoroutine(GetGPS());
-        IsUpdating = !IsUpdating;
+        if (!IsUpdating)
+        {
+            StartCoroutine(GetGPS());
+            IsUpdating = !IsUpdating;
+        }
+
     }
 
+    #region IEnumerator GetGPS()
     private IEnumerator GetGPS()
     {
 
@@ -61,8 +66,13 @@ public class TestEncoderUse : MonoBehaviour
         {
             Status.text = $"Latitude: {Input.location.lastData.latitude}" + " " + $"Longitude: {Input.location.lastData.longitude}";
         }
+
         IsUpdating = !IsUpdating;
         Input.location.Stop();
 
     }
+    #endregion
+
+
+
 }
