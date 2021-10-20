@@ -4,13 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
 using TMPro;
-
 public class TestEncoderUse : MonoBehaviour
 {
 
-    public static GPSEncoder GPSEncoder;
+    public static TestEncoderUse instance;
     public bool IsUpdating;
     public TextMeshProUGUI Status;
+    public TextMeshProUGUI Coords;
+
+    public void Awake()
+    {
+        instance = this; 
+    }
+
+    public void Start()
+    {
+        GetGPSEncoder();
+
+    }
 
     public void Update()
     {
@@ -19,7 +30,16 @@ public class TestEncoderUse : MonoBehaviour
             StartCoroutine(GetGPS());
             IsUpdating = !IsUpdating;
         }
+    }
 
+    public void GetGPSEncoder()
+    {
+        double latitude = 51.923460;
+        double longitude = 4.481160;
+        float lat = Convert.ToSingle(latitude);
+        float lon = Convert.ToSingle(longitude);
+
+        GPSEncoder.GPSToUCS(new Vector2(lat, lon));
     }
 
     #region IEnumerator GetGPS()
@@ -42,7 +62,7 @@ public class TestEncoderUse : MonoBehaviour
         //start location service before querying
         Input.location.Start();
 
-        while(Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+        while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
         {
             //Status.text = "Initializing...";
             yield return new WaitForSeconds(1);
@@ -50,14 +70,14 @@ public class TestEncoderUse : MonoBehaviour
         }
 
         //if location service doesn't initialize n 20 secs
-        if(maxWait > 0)
+        if (maxWait > 0)
         {
             Status.text = "Timed Out!";
             yield break;
         }
 
         //Connection failed
-        if(Input.location.status == LocationServiceStatus.Failed)
+        if (Input.location.status == LocationServiceStatus.Failed)
         {
             Status.text = "Unable to determine device location.";
             yield break;
@@ -73,6 +93,6 @@ public class TestEncoderUse : MonoBehaviour
     }
     #endregion
 
-
-
 }
+
+

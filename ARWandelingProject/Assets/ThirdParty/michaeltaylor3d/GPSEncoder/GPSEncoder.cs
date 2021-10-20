@@ -3,12 +3,12 @@
 
 using UnityEngine;
 
-public sealed class GPSEncoder {
+public class GPSEncoder {
 
 	/////////////////////////////////////////////////
 	//////-------------Public API--------------//////
 	/////////////////////////////////////////////////
-	
+
 	/// <summary>
 	/// Convert UCS (X,Y,Z) coordinates to GPS (Lat, Lon) coordinates
 	/// </summary>
