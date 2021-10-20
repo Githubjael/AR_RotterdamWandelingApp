@@ -86,10 +86,12 @@ public class TestEncoderUse : MonoBehaviour
         {
             double irlLatitude = Input.location.lastData.latitude;
             double irlLongitude = Input.location.lastData.longitude;
-            CurrentCoordsIRL.text = GPSEncoder.GPSToUCS( (float)irlLatitude, (float)irlLongitude).ToString();
-            CurrentCoordsIRL.text += GPSEncoder.GPSToUCS((float)irlLatitude, (float) irlLongitude).ToString();
+            Vector2 irlcoords = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
+            CurrentCoordsIRL.text = GPSEncoder.GPSToUCS(irlcoords).ToString();
+            CurrentCoordsIRL.text += GPSEncoder.USCToGPS(new Vector3( 0, 0, 0)).ToString();
         }
 
+        Vector3 irlCoords = new Vector3(Input.location.lastData.latitude, 0, Input.location.lastData.longitude);
         Vector3 currentcoordposition = GPSEncoder.USCToGPS(CurrentARCameraCoordPosition.transform.position);
         
         Vector3 coordinates = GPSEncoder.GPSToUCS(new Vector2(lat, lon));
@@ -101,6 +103,7 @@ public class TestEncoderUse : MonoBehaviour
         var i = 0;
         while (i < 4)
         {
+            Instantiate(BuildingsToPlace[0], irlCoords, Quaternion.identity);
             Instantiate(BuildingsToPlace[0], coordinates + new Vector3(Mathf.Round(UnityEngine.Random.Range(1, 5)) , 0, Mathf.Round(UnityEngine.Random.Range(1, 5))), Quaternion.identity);
             i++;
         }
