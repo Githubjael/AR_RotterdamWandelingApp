@@ -87,9 +87,11 @@ public class TestEncoderUse : MonoBehaviour
             double irlLatitude = Input.location.lastData.latitude;
             double irlLongitude = Input.location.lastData.longitude;
             CurrentCoordsIRL.text = GPSEncoder.GPSToUCS( (float)irlLatitude, (float)irlLongitude).ToString();
+            CurrentCoordsIRL.text += GPSEncoder.GPSToUCS((float)irlLatitude, (float) irlLongitude).ToString();
         }
 
         Vector3 currentcoordposition = GPSEncoder.USCToGPS(CurrentARCameraCoordPosition.transform.position);
+        
         Vector3 coordinates = GPSEncoder.GPSToUCS(new Vector2(lat, lon));
 
         CurrentCoordingame.text = $"{currentcoordposition}";
