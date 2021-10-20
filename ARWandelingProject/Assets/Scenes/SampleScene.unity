@@ -1446,11 +1446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6584a789403be854eb6f08cdcbf32d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrenCoordtPosition: {fileID: 0}
+  CurrentCoordPosition: {fileID: 0}
   IsUpdating: 0
   Status: {fileID: 1872523774}
   Coords: {fileID: 128920372}
-  CurrentCoord: {fileID: 0}
+  CurrentCoord: {fileID: 685341921}
   BuildingsToPlace:
   - {fileID: 0}
 --- !u!1 &2053315954

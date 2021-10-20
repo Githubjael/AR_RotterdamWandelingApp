@@ -8,7 +8,7 @@ public class TestEncoderUse : MonoBehaviour
 {
 
     public static TestEncoderUse instance;
-    public Transform CurrenCoordtPosition;
+    public Transform CurrentCoordPosition;
     public bool IsUpdating;
     public TextMeshProUGUI Status;
     public TextMeshProUGUI Coords;
@@ -41,8 +41,11 @@ public class TestEncoderUse : MonoBehaviour
         float lat = Convert.ToSingle(latitude);
         float lon = Convert.ToSingle(longitude);
 
+        Vector3 currentcoords = GPSEncoder.USCToGPS(CurrentCoordPosition.position);
         Vector3 coordinates = GPSEncoder.GPSToUCS(new Vector2(lat, lon));
+
         Coords.text = coordinates.ToString();
+        CurrentCoord.text += currentcoords.ToString();
 
         var i = 0;
         while (i < 4)
@@ -51,9 +54,10 @@ public class TestEncoderUse : MonoBehaviour
             i++;
         }
 
-        string latcoord = Input.location.lastData.latitude.ToString();
+        //Doesn't work
+        /*string latcoord = Input.location.lastData.latitude.ToString();
         string loncoord = Input.location.lastData.longitude.ToString();
-        CurrentCoord.text = $"{CurrenCoordtPosition}" + $"{latcoord}" + $"{loncoord}";
+        CurrentCoord.text = $"{CurrenCoordtPosition}" + $"{latcoord}" + $"{loncoord}";*/
     }
 
     #region IEnumerator GetGPS()
@@ -99,6 +103,7 @@ public class TestEncoderUse : MonoBehaviour
         else
         {
             Status.text = $"Latitude: {Input.location.lastData.latitude}" + " " + $"Longitude: {Input.location.lastData.longitude}";
+            //CurrentCoord.text = $"Latitude: {Input.location.lastData.latitude}" + " " + $"Longitude: {Input.location.lastData.longitude}";
         }
 
         IsUpdating = !IsUpdating;
