@@ -8,7 +8,7 @@ public class TestEncoderUse : MonoBehaviour
 {
 
     public static TestEncoderUse instance;
-    public Transform CurrentCoordPosition;
+    public GameObject CurrentARCameraCoordPosition;
     public bool IsUpdating;
     public TextMeshProUGUI Status;
     public TextMeshProUGUI Coords;
@@ -22,18 +22,20 @@ public class TestEncoderUse : MonoBehaviour
 
     public void Start()
     {
-        GetGPSEncoder();
+        
     }
 
     public void Update()
     {
         if (!IsUpdating)
         {
+            GetGPSEncoder();
             StartCoroutine(GetGPS());
             IsUpdating = !IsUpdating;
         }
     }
 
+    #region GetGPSEncoder
     public void GetGPSEncoder()
     {
         double latitude = 51.923460;
@@ -41,11 +43,12 @@ public class TestEncoderUse : MonoBehaviour
         float lat = Convert.ToSingle(latitude);
         float lon = Convert.ToSingle(longitude);
 
-        Vector3 currentcoords = GPSEncoder.USCToGPS(CurrentCoordPosition.position);
+        Vector3 currentcoordposition = GPSEncoder.USCToGPS(CurrentARCameraCoordPosition.transform.position);
         Vector3 coordinates = GPSEncoder.GPSToUCS(new Vector2(lat, lon));
 
+        CurrentCoord.text = $"{currentcoordposition}";
+
         Coords.text = coordinates.ToString();
-        CurrentCoord.text += currentcoords.ToString();
 
         var i = 0;
         while (i < 4)
@@ -59,6 +62,7 @@ public class TestEncoderUse : MonoBehaviour
         string loncoord = Input.location.lastData.longitude.ToString();
         CurrentCoord.text = $"{CurrenCoordtPosition}" + $"{latcoord}" + $"{loncoord}";*/
     }
+    #endregion
 
     #region IEnumerator GetGPS()
     private IEnumerator GetGPS()
