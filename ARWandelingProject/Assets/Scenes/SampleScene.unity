@@ -1452,7 +1452,7 @@ MonoBehaviour:
   Coords: {fileID: 128920372}
   CurrentCoord: {fileID: 685341921}
   BuildingsToPlace:
-  - {fileID: 0}
+  - {fileID: 4051166072946086153, guid: 881b738622b160844a4ce59e70e3e3c4, type: 3}
 --- !u!1 &2053315954
 GameObject:
   m_ObjectHideFlags: 0
