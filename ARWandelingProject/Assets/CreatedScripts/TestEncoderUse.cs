@@ -8,10 +8,13 @@ public class TestEncoderUse : MonoBehaviour
 {
 
     public static TestEncoderUse instance;
+    public Transform CurrenCoordtPosition;
     public bool IsUpdating;
     public TextMeshProUGUI Status;
     public TextMeshProUGUI Coords;
-
+    public TextMeshProUGUI CurrentCoord;
+    public List<GameObject> BuildingsToPlace;
+    
     public void Awake()
     {
         instance = this; 
@@ -20,7 +23,6 @@ public class TestEncoderUse : MonoBehaviour
     public void Start()
     {
         GetGPSEncoder();
-
     }
 
     public void Update()
@@ -39,7 +41,19 @@ public class TestEncoderUse : MonoBehaviour
         float lat = Convert.ToSingle(latitude);
         float lon = Convert.ToSingle(longitude);
 
-        GPSEncoder.GPSToUCS(new Vector2(lat, lon));
+        Vector3 coordinates = GPSEncoder.GPSToUCS(new Vector2(lat, lon));
+        Coords.text = coordinates.ToString();
+
+        var i = 0;
+        while (i < 4)
+        {
+            Instantiate(BuildingsToPlace[0], coordinates + new Vector3(Mathf.Round(UnityEngine.Random.Range(1, 5)) , 0, Mathf.Round(UnityEngine.Random.Range(1, 5))), Quaternion.identity);
+            i++;
+        }
+
+        string latcoord = Input.location.lastData.latitude.ToString();
+        string loncoord = Input.location.lastData.longitude.ToString();
+        CurrentCoord.text = $"{CurrenCoordtPosition}" + $"{latcoord}" + $"{loncoord}";
     }
 
     #region IEnumerator GetGPS()
@@ -70,7 +84,7 @@ public class TestEncoderUse : MonoBehaviour
         }
 
         //if location service doesn't initialize n 20 secs
-        if (maxWait > 0)
+        if (maxWait < 0)
         {
             Status.text = "Timed Out!";
             yield break;
