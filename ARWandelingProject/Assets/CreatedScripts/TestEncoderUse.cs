@@ -86,7 +86,7 @@ public class TestEncoderUse : MonoBehaviour
             CurrentCoordsIRL.text = "Unable to determine device location";
             yield break;
         }
-        else
+        if(Input.location.status == LocationServiceStatus.Running)
         {
             //pointless
             /*double irlLatitude = Input.location.lastData.latitude;
@@ -95,10 +95,10 @@ public class TestEncoderUse : MonoBehaviour
             Vector2 irlcoords = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
             //turn it into a vector3
             Vector3 placementcoords = GPSEncoder.GPSToUCS(irlcoords);
-            //Instantiate a placeholder at current location to test; this one failed
+            //Instantiate a placeholder at current location to test; this one failed; i am now using a different method
             Instantiate(BuildingsToPlace[0], placementcoords, Quaternion.identity);
 
-            //Put the placholder prfab already in the scene at the determined coordinates
+            //Put the placholder prefab that is already in the scene at the determined coordinates
             Placeholder.transform.position = GPSEncoder.GPSToUCS(irlcoords);
 
             //Display results on screen
