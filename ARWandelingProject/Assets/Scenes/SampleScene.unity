@@ -243,6 +243,11 @@ Transform:
   m_Father: {fileID: 1563662579}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &40919614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4051166072946086153, guid: 881b738622b160844a4ce59e70e3e3c4, type: 3}
+  m_PrefabInstance: {fileID: 2095460017}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &128920370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsUpdating: 0
-  Placeholder: {fileID: 0}
+  Placeholder: {fileID: 40919614}
   Status: {fileID: 1872523774}
   Coords: {fileID: 128920372}
   CurrentCoordsIRL: {fileID: 685341921}
