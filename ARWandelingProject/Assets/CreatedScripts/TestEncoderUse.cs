@@ -23,7 +23,8 @@ public class TestEncoderUse : MonoBehaviour
 
     public void Start()
     {
-        
+        //Set LocalOrigin to lat: 51.9254786, lon: 4.4786903,17
+        GPSEncoder.SetLocalOrigin(new Vector2((float)51.9254786, (float)4.478690317));
     }
 
     public void Update()
