@@ -93,9 +93,10 @@ public class TestEncoderUse : MonoBehaviour
             double irlLongitude = Input.location.lastData.longitude;*/
 
             Vector2 irlcoords = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
-
+            //turn it into a vector3
+            Vector3 placementcoords = GPSEncoder.GPSToUCS(irlcoords);
             //Instantiate a placeholder at current location to test; this one failed
-            Instantiate(BuildingsToPlace[0], GPSEncoder.GPSToUCS(irlcoords), Quaternion.identity);
+            Instantiate(BuildingsToPlace[0], placementcoords, Quaternion.identity);
 
             //Put the placholder prfab already in the scene at the determined coordinates
             Placeholder.transform.position = GPSEncoder.GPSToUCS(irlcoords);
