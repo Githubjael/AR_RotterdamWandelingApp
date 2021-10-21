@@ -123,7 +123,7 @@ public class TestEncoderUse : MonoBehaviour
         CurrentCoord.text = $"{CurrenCoordtPosition}" + $"{latcoord}" + $"{loncoord}";*/
         
         IsUpdating = !IsUpdating;
-        Input.location.Stop();
+        //Input.location.Stop();
 
     }
     #endregion
