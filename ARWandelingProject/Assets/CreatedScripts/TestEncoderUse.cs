@@ -59,7 +59,7 @@ public class TestEncoderUse : MonoBehaviour
 
         if (Input.location.isEnabledByUser)
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSecondsRealtime(5);
         }
         else
         {
@@ -93,27 +93,35 @@ public class TestEncoderUse : MonoBehaviour
             /*double irlLatitude = Input.location.lastData.latitude;
             double irlLongitude = Input.location.lastData.longitude;*/
 
-            Vector2 irlcoords = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
+            //get latitude and longitude and put it in to a vector2
+            Vector2 irlCoords = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
             //turn it into a vector3
-            Vector3 placementcoords = GPSEncoder.GPSToUCS(irlcoords);
-            //Instantiate a placeholder at current location to test; this one failed; i am now using a different method
-            Instantiate(BuildingsToPlace[0], placementcoords, Quaternion.identity);
+            Vector3 Placementcoords = GPSEncoder.GPSToUCS(irlCoords);
+
+            //Instantiate a placeholder at current location to test; this one failed; i am now using a different method 'placementcoords'; that one failde too
+            Instantiate(BuildingsToPlace[0], Placementcoords, Quaternion.identity);
 
             //Put the placholder prefab that is already in the scene at the determined coordinates
-            Placeholder.transform.position = GPSEncoder.GPSToUCS(irlcoords);
+            Placeholder.transform.position = GPSEncoder.GPSToUCS(irlCoords);
 
             //Display results on screen
-            CurrentCoordsIRL.text = $"{GPSEncoder.GPSToUCS(irlcoords)}";
+            CurrentCoordsIRL.text = $"{GPSEncoder.GPSToUCS(irlCoords)}";
         }
         
         Vector3 coordinates = GPSEncoder.GPSToUCS(new Vector2(lat, lon));
 
         Coords.text = $"{coordinates}";
 
+        //get latitude and longitude and put it in to a vector2
+        Vector2 irlcoords = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
+        //turn it into a vector3
+        Vector3 placementcoords = GPSEncoder.GPSToUCS(irlcoords);
+
         var i = 0;
         while (i < 4)
         {
             Instantiate(BuildingsToPlace[0], coordinates, Quaternion.identity);
+            Instantiate(BuildingsToPlace[0], placementcoords, Quaternion.identity);
             i++;
         }
 
@@ -122,8 +130,8 @@ public class TestEncoderUse : MonoBehaviour
         string loncoord = Input.location.lastData.longitude.ToString();
         CurrentCoord.text = $"{CurrenCoordtPosition}" + $"{latcoord}" + $"{loncoord}";*/
         
-        //IsUpdating = !IsUpdating;
-        //Input.location.Stop();
+        IsUpdating = !IsUpdating;
+        Input.location.Stop();
 
     }
     #endregion
@@ -174,8 +182,8 @@ public class TestEncoderUse : MonoBehaviour
             //CurrentCoord.text = $"Latitude: {Input.location.lastData.latitude}" + " " + $"Longitude: {Input.location.lastData.longitude}";
         }
 
-        //IsUpdating = !IsUpdating;
-        //Input.location.Stop();
+        IsUpdating = !IsUpdating;
+        Input.location.Stop();
 
     }
     #endregion
