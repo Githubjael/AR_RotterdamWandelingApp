@@ -89,6 +89,10 @@ public class TestEncoderUse : MonoBehaviour
             /*double irlLatitude = Input.location.lastData.latitude;
             double irlLongitude = Input.location.lastData.longitude;*/
             Vector2 irlcoords = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
+
+            //Instantiate a placeholder at current location to test
+            Instantiate(BuildingsToPlace[0], GPSEncoder.GPSToUCS(irlcoords), Quaternion.identity);
+
             //Display results on screen
             CurrentCoordsIRL.text = GPSEncoder.GPSToUCS(irlcoords).ToString();
         }
