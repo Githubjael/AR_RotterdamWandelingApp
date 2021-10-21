@@ -10,6 +10,8 @@ public class TestEncoderUse : MonoBehaviour
     public static TestEncoderUse instance;
     public bool IsUpdating;
 
+    public GameObject Placeholder;
+
     public TextMeshProUGUI Status;
     public TextMeshProUGUI Coords;
     public TextMeshProUGUI CurrentCoordsIRL;
@@ -81,7 +83,7 @@ public class TestEncoderUse : MonoBehaviour
 
         if(Input.location.status == LocationServiceStatus.Failed)
         {
-            CurrentCoordsIRL.text = "Unable to determin device location";
+            CurrentCoordsIRL.text = "Unable to determine device location";
             yield break;
         }
         else
@@ -89,13 +91,17 @@ public class TestEncoderUse : MonoBehaviour
             //pointless
             /*double irlLatitude = Input.location.lastData.latitude;
             double irlLongitude = Input.location.lastData.longitude;*/
+
             Vector2 irlcoords = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
 
-            //Instantiate a placeholder at current location to test
+            //Instantiate a placeholder at current location to test; this one failed
             Instantiate(BuildingsToPlace[0], GPSEncoder.GPSToUCS(irlcoords), Quaternion.identity);
 
+            //Put the placholder prfab already in the scene at the determined coordinates
+            Placeholder.transform.position = GPSEncoder.GPSToUCS(irlcoords);
+
             //Display results on screen
-            CurrentCoordsIRL.text = GPSEncoder.GPSToUCS(irlcoords).ToString();
+            CurrentCoordsIRL.text = $"{GPSEncoder.GPSToUCS(irlcoords)}";
         }
         
         Vector3 coordinates = GPSEncoder.GPSToUCS(new Vector2(lat, lon));
