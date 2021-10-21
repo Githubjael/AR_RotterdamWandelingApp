@@ -8,12 +8,12 @@ public class TestEncoderUse : MonoBehaviour
 {
 
     public static TestEncoderUse instance;
-    public GameObject CurrentARCameraCoordPosition;
     public bool IsUpdating;
+
     public TextMeshProUGUI Status;
     public TextMeshProUGUI Coords;
-    public TextMeshProUGUI CurrentCoordingame;
     public TextMeshProUGUI CurrentCoordsIRL;
+
     public List<GameObject> BuildingsToPlace;
     
     public void Awake()
@@ -40,12 +40,13 @@ public class TestEncoderUse : MonoBehaviour
     public IEnumerator GetGPSEncoder()
     {
         int Maxwait = 10;
-
+        #region Lat&Lon Location1
         double latitude = 51.92766449684264;
         double longitude = 4.480420461816436;
-
+        
         float lat = Convert.ToSingle(latitude);
         float lon = Convert.ToSingle(longitude);
+        #endregion
 
         if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation) || !Permission.HasUserAuthorizedPermission(Permission.CoarseLocation))
         {
@@ -65,7 +66,7 @@ public class TestEncoderUse : MonoBehaviour
 
         Input.location.Start();
 
-        while(Input.location.status == LocationServiceStatus.Initializing && Maxwait >= 0)
+        while(Input.location.status == LocationServiceStatus.Initializing && Maxwait > 0)
         {
             yield return new WaitForSeconds(1);
             Maxwait--;
@@ -84,26 +85,21 @@ public class TestEncoderUse : MonoBehaviour
         }
         else
         {
-            double irlLatitude = Input.location.lastData.latitude;
-            double irlLongitude = Input.location.lastData.longitude;
+            //pointless
+            /*double irlLatitude = Input.location.lastData.latitude;
+            double irlLongitude = Input.location.lastData.longitude;*/
             Vector2 irlcoords = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
+            //Display results on screen
             CurrentCoordsIRL.text = GPSEncoder.GPSToUCS(irlcoords).ToString();
-            CurrentCoordsIRL.text += GPSEncoder.USCToGPS(new Vector3( 0, 0, 0)).ToString();
         }
-
-        Vector3 irlCoords = new Vector3(Input.location.lastData.latitude, 0, Input.location.lastData.longitude);
-        Vector3 currentcoordposition = GPSEncoder.USCToGPS(CurrentARCameraCoordPosition.transform.position);
         
         Vector3 coordinates = GPSEncoder.GPSToUCS(new Vector2(lat, lon));
 
-        CurrentCoordingame.text = $"{currentcoordposition}";
-
-        Coords.text = coordinates.ToString();
+        Coords.text = $"{coordinates}";
 
         var i = 0;
         while (i < 4)
         {
-            Instantiate(BuildingsToPlace[0], irlCoords + new Vector3(Mathf.Round(UnityEngine.Random.Range(1, 5)), 0, Mathf.Round(UnityEngine.Random.Range(1, 5))), Quaternion.identity);
             Instantiate(BuildingsToPlace[0], coordinates + new Vector3(Mathf.Round(UnityEngine.Random.Range(1, 5)) , 0, Mathf.Round(UnityEngine.Random.Range(1, 5))), Quaternion.identity);
             i++;
         }
@@ -112,8 +108,9 @@ public class TestEncoderUse : MonoBehaviour
         /*string latcoord = Input.location.lastData.latitude.ToString();
         string loncoord = Input.location.lastData.longitude.ToString();
         CurrentCoord.text = $"{CurrenCoordtPosition}" + $"{latcoord}" + $"{loncoord}";*/
-        Input.location.Stop();
+        
         IsUpdating = !IsUpdating;
+        Input.location.Stop();
 
     }
     #endregion
