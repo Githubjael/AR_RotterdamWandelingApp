@@ -33,8 +33,8 @@ public class TestEncoderUse : MonoBehaviour
     {
         if (!IsUpdating)
         {
-            StartCoroutine(GetGPSEncoder());
             StartCoroutine(GetGPS());
+            StartCoroutine(GetGPSEncoder());
             IsUpdating = !IsUpdating;
         }
     }
@@ -163,7 +163,7 @@ public class TestEncoderUse : MonoBehaviour
             maxWait--;
         }
 
-        //if location service doesn't initialize n 20 secs
+        //if location service doesn't initialize in 7 secs
         if (maxWait < 0)
         {
             Status.text = "Timed Out!";
