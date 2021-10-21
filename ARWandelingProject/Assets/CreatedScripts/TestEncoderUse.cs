@@ -86,6 +86,7 @@ public class TestEncoderUse : MonoBehaviour
             CurrentCoordsIRL.text = "Unable to determine device location";
             yield break;
         }
+
         if(Input.location.status == LocationServiceStatus.Running)
         {
             //pointless
