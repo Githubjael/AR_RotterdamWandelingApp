@@ -122,7 +122,7 @@ public class TestEncoderUse : MonoBehaviour
         string loncoord = Input.location.lastData.longitude.ToString();
         CurrentCoord.text = $"{CurrenCoordtPosition}" + $"{latcoord}" + $"{loncoord}";*/
         
-        IsUpdating = !IsUpdating;
+        //IsUpdating = !IsUpdating;
         //Input.location.Stop();
 
     }
@@ -174,8 +174,8 @@ public class TestEncoderUse : MonoBehaviour
             //CurrentCoord.text = $"Latitude: {Input.location.lastData.latitude}" + " " + $"Longitude: {Input.location.lastData.longitude}";
         }
 
-        IsUpdating = !IsUpdating;
-        Input.location.Stop();
+        //IsUpdating = !IsUpdating;
+        //Input.location.Stop();
 
     }
     #endregion
