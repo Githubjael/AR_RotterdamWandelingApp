@@ -42,7 +42,7 @@ public class TestEncoderUse : MonoBehaviour
     #region GetGPSEncoder
     public IEnumerator GetGPSEncoder()
     {
-        int Maxwait = 10;
+        int Maxwait = 7;
         #region Lat&Lon Location1
         double latitude = 51.92766449684264;
         double longitude = 4.480420461816436;
