@@ -104,7 +104,7 @@ public class TestEncoderUse : MonoBehaviour
         var i = 0;
         while (i < 4)
         {
-            Instantiate(BuildingsToPlace[0], coordinates + new Vector3(Mathf.Round(UnityEngine.Random.Range(1, 5)) , 0, Mathf.Round(UnityEngine.Random.Range(1, 5))), Quaternion.identity);
+            Instantiate(BuildingsToPlace[0], coordinates, Quaternion.identity);
             i++;
         }
 
