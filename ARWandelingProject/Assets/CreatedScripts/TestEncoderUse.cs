@@ -26,15 +26,15 @@ public class TestEncoderUse : MonoBehaviour
     public void Start()
     {
         //Set LocalOrigin to lat: 51.9254786, lon: 4.4786903,17
-        GPSEncoder.SetLocalOrigin(new Vector2((float)51.9254786, (float)4.478690317));
+        
     }
 
     public void Update()
     {
         if (!IsUpdating)
         {
-            StartCoroutine(GetGPS());
             StartCoroutine(GetGPSEncoder());
+            StopCoroutine(GetGPSEncoder());
             IsUpdating = !IsUpdating;
         }
     }
@@ -89,6 +89,7 @@ public class TestEncoderUse : MonoBehaviour
 
         if(Input.location.status == LocationServiceStatus.Running)
         {
+            GPSEncoder.SetLocalOrigin(new Vector2((float)51.9254786, (float)4.478690317));
             //pointless
             /*double irlLatitude = Input.location.lastData.latitude;
             double irlLongitude = Input.location.lastData.longitude;*/
@@ -106,6 +107,7 @@ public class TestEncoderUse : MonoBehaviour
 
             //Display results on screen
             CurrentCoordsIRL.text = $"{GPSEncoder.GPSToUCS(irlCoords)}";
+            Status.text = $"Latitude: {Input.location.lastData.latitude}" + " " + $"Longitude: {Input.location.lastData.longitude}";
         }
         
         Vector3 coordinates = GPSEncoder.GPSToUCS(new Vector2(lat, lon));
@@ -135,59 +137,6 @@ public class TestEncoderUse : MonoBehaviour
 
     }
     #endregion
-
-    #region IEnumerator GetGPS()
-    private IEnumerator GetGPS()
-    {
-
-        int maxWait = 10;
-        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation) || !Permission.HasUserAuthorizedPermission(Permission.CoarseLocation))
-        {
-            Permission.RequestUserPermission(Permission.FineLocation);
-            Permission.RequestUserPermission(Permission.CoarseLocation);
-        }
-
-        //Check if location services is on
-        if (Input.location.isEnabledByUser)
-        {
-            yield return new WaitForSeconds(5);
-        }
-
-        //start location service before querying
-        Input.location.Start();
-
-        while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
-        {
-            //Status.text = "Initializing...";
-            yield return new WaitForSeconds(1);
-            maxWait--;
-        }
-
-        //if location service doesn't initialize in 7 secs
-        if (maxWait < 0)
-        {
-            Status.text = "Timed Out!";
-            yield break;
-        }
-
-        //Connection failed
-        if (Input.location.status == LocationServiceStatus.Failed)
-        {
-            Status.text = "Unable to determine device location.";
-            yield break;
-        }
-        else
-        {
-            Status.text = $"Latitude: {Input.location.lastData.latitude}" + " " + $"Longitude: {Input.location.lastData.longitude}";
-            //CurrentCoord.text = $"Latitude: {Input.location.lastData.latitude}" + " " + $"Longitude: {Input.location.lastData.longitude}";
-        }
-
-        IsUpdating = !IsUpdating;
-        Input.location.Stop();
-
-    }
-    #endregion
-
 }
 
 
