@@ -20,6 +20,8 @@ public class NewTestCoords : MonoBehaviour
 
     public bool isUpdating;
 
+    private IEnumerator CurrentCoroutine;
+
     public TextMeshProUGUI Loc1Text;
     public TextMeshProUGUI CurrentCoordText;
     public TextMeshProUGUI IRLcoords;
@@ -35,11 +37,12 @@ public class NewTestCoords : MonoBehaviour
         GPSEncoder.SetLocalOrigin(new Vector2((float)originlat,(float)originlon));
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if (!isUpdating)
+        CurrentCoroutine = ARGPSFunction();
+        if (CurrentCoroutine != null)
         {
-            StartCoroutine(ARGPSFunction());
+            StopCoroutine(CurrentCoroutine);
         }
     }
     
@@ -76,6 +79,7 @@ public class NewTestCoords : MonoBehaviour
             #region TestCubePlacement
             double testlat = 51.92713599182974;
             double testlon = 4.480262115040381;
+
             Vector2 Testcoords = new Vector2((float)testlat, (float)testlon);
             Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
             Vector3 Currentloc = GPSEncoder.GPSToUCS((float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude);
@@ -83,18 +87,17 @@ public class NewTestCoords : MonoBehaviour
             #region location1Calc
             double latLoc1 = 51.923460;
             double lonLoc1 = 4.481160;
+
             Vector2 Loc1Coords = new Vector2((float)latLoc1, (float)lonLoc1);
-            string textCoordsLoc1 = GPSEncoder.GPSToUCS(Loc1Coords).ToString();
+
+            string textCoordsLoc1 = $"{GPSEncoder.GPSToUCS(Loc1Coords)}";
             Loc1Text.text = "Loc1 (in game): " + textCoordsLoc1;
             #endregion
             CurrentCoordText.text = $"In game: {GPSEncoder.GPSToUCS((float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude)}";
             IRLcoords.text = $"Latitude: {Input.location.lastData.latitude} Longitude: {Input.location.lastData.longitude}";
 
-            Instantiate(objectPlacement[0], Coordplacement, Quaternion.identity);
-            Instantiate(Objectplacement[0], Currentloc, Quaternion.identity);
-
             Input.location.Stop();
-            isUpdating = !isUpdating;
+            yield return null;
         }
 
     }
