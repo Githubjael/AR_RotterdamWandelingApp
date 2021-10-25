@@ -79,8 +79,6 @@ public class NewTestCoords : MonoBehaviour
             Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
             Vector2 currentLoc = new Vector2( (float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude);
             Vector3 Currentloc = GPSEncoder.GPSToUCS(currentLoc);
-            Instantiate( ObjectPlacement[0], Coordplacement, Quaternion.identity);
-            Instantiate( objectPlacement[0], Currentloc, Quaternion.identity);
             #endregion
             #region location1Calc
             double latLoc1 = 51.923460;
@@ -91,6 +89,8 @@ public class NewTestCoords : MonoBehaviour
             #endregion
             CurrentCoordText.text = GPSEncoder.GPSToUCS((float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude).ToString();
             CurrentCoordText.text += $"Latitude: {Input.location.lastData.latitude} Altitude: {Input.location.lastData.altitude} Longitude: {Input.location.lastData.longitude}";
+            //Instantiate(ObjectPlacement[0], Coordplacement, Quaternion.identity);
+            //Instantiate(objectPlacement[0], Currentloc, Quaternion.identity);
             Input.location.Stop();
             isUpdating = !isUpdating;
         }
