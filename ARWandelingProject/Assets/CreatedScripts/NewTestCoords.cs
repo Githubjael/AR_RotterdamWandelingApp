@@ -9,10 +9,14 @@ public class NewTestCoords : MonoBehaviour
 {
     #region PlaceholderTitle
     public List<GameObject> ObjectPlacement;
+
     [SerializeReference]
-    public GameObject[] objectPlacement ;
+    public GameObject[] objectPlacement;
+
     [SerializeReference]
-    private Vector2 LocalOrigin = new Vector2((float)51.92440614616623, (float)4.477705312843138);
+    private double originlat = 51.924442317391886;
+    [SerializeReference]
+    private double originlon = 4.477769927599614;
 
     public bool isUpdating;
 
@@ -22,13 +26,12 @@ public class NewTestCoords : MonoBehaviour
 
     private void Awake()
     {
-        //GPSEncoder.SetLocalOrigin(LocalOrigin);
         objectPlacement = new GameObject[2];
     }
 
     void Start()
     {
-        //GPSEncoder.SetLocalOrigin(LocalOrigin);
+        GPSEncoder.SetLocalOrigin(new Vector2((float)originlat,(float)originlon));
     }
 
     void FixedUpdate()
