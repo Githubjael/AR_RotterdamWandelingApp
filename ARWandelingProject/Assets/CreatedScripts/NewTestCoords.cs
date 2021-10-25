@@ -79,13 +79,8 @@ public class NewTestCoords : MonoBehaviour
             Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
             Vector2 currentLoc = new Vector2( (float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude);
             Vector3 Currentloc = GPSEncoder.GPSToUCS(currentLoc);
-            var i = 0;
-            while(i < 1)
-            {
-                Instantiate( ObjectPlacement[0], Coordplacement, Quaternion.identity);
-                Instantiate( objectPlacement[0], Currentloc, Quaternion.identity);
-                i++;
-            }
+            Instantiate( ObjectPlacement[0], Coordplacement, Quaternion.identity);
+            Instantiate( objectPlacement[0], Currentloc, Quaternion.identity);
             #endregion
             #region location1Calc
             double latLoc1 = 51.923460;
