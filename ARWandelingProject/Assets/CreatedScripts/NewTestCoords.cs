@@ -25,7 +25,7 @@ public class NewTestCoords : MonoBehaviour
 
     void Start()
     {
-
+        GPSEncoder.SetLocalOrigin(LocalOrigin);
     }
 
     void FixedUpdate()
@@ -61,11 +61,18 @@ public class NewTestCoords : MonoBehaviour
 
         if(Input.location.status == LocationServiceStatus.Failed)
         {
-            Loc1Text.text = "Cannot determine device Location";
+            Loc1Text.text = "I cannot determine device Location!";
             yield break;
         }
         else
         {
+            #region TestCubePlacement
+            double testlat = 51.92713599182974;
+            double testlon = 4.480262115040381;
+            Vector2 Testcoords = new Vector2((float)testlat, (float)testlon);
+            Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
+            Instantiate( ObjectPlacement[0], Coordplacement, Quaternion.identity);
+            #endregion
             #region location1Calc
             double latLoc1 = 51.923460;
             double lonLoc1 = 4.481160;
