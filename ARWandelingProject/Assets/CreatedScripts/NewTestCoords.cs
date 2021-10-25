@@ -25,17 +25,13 @@ public class NewTestCoords : MonoBehaviour
 
     void Start()
     {
-        if (isUpdating)
-        {
-            StartCoroutine(ARGPSFunction());
-        }
 
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        //if (isUpdating){}
+        StartCoroutine(ARGPSFunction());
     }
     
     private IEnumerator ARGPSFunction()
@@ -77,7 +73,7 @@ public class NewTestCoords : MonoBehaviour
             #endregion
             CurrentCoordText.text = $"Latitude: {Input.location.lastData.latitude} Longitude: {Input.location.lastData.longitude}";
             Input.location.Stop();
-            isUpdating = !isUpdating;
+            //isUpdating = !isUpdating;
         }
 
     }
