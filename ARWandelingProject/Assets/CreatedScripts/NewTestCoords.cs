@@ -22,7 +22,7 @@ public class NewTestCoords : MonoBehaviour
 
     private void Awake()
     {
-        GPSEncoder.SetLocalOrigin(LocalOrigin);
+        //GPSEncoder.SetLocalOrigin(LocalOrigin);
         objectPlacement = new GameObject[2];
     }
 
@@ -70,12 +70,12 @@ public class NewTestCoords : MonoBehaviour
         else
         {
             #region TestCubePlacement
-            double testlat = 51.92713599182974;
-            double testlon = 4.480262115040381;
-            Vector2 Testcoords = new Vector2((float)testlat, (float)testlon);
-            Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
-            Vector2 currentLoc = new Vector2( (float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude);
-            Vector3 Currentloc = GPSEncoder.GPSToUCS(currentLoc);
+            //double testlat = 51.92713599182974;
+            //double testlon = 4.480262115040381;
+            //Vector2 Testcoords = new Vector2((float)testlat, (float)testlon);
+            //Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
+            //Vector2 currentLoc = new Vector2( (float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude);
+            //Vector3 Currentloc = GPSEncoder.GPSToUCS(currentLoc);
             /*var i = 0;
             while(i < 1)
             {
