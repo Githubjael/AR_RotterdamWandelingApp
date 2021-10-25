@@ -491,6 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectPlacement: []
   LocalOrigin: {x: 0, y: 0}
+  isUpdating: 0
   Loc1Text: {fileID: 1872523774}
   CurrentCoordText: {fileID: 128920372}
 --- !u!4 &384187382
@@ -567,7 +568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &685341920
 RectTransform:
   m_ObjectHideFlags: 0

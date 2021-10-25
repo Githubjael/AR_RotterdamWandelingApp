@@ -12,6 +12,8 @@ public class NewTestCoords : MonoBehaviour
     [SerializeReference]
     private Vector2 LocalOrigin = new Vector2((float)51.92440614616623, (float)4.477705312843138);
 
+    public bool isUpdating;
+
     public TextMeshProUGUI Loc1Text;
     public TextMeshProUGUI CurrentCoordText;
     #endregion
@@ -23,7 +25,11 @@ public class NewTestCoords : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(ARGPSFunction());
+        if (isUpdating)
+        {
+            StartCoroutine(ARGPSFunction());
+        }
+
     }
 
     // Update is called once per frame
@@ -71,6 +77,7 @@ public class NewTestCoords : MonoBehaviour
             #endregion
             CurrentCoordText.text = $"Latitude: {Input.location.lastData.latitude} Longitude: {Input.location.lastData.longitude}";
             Input.location.Stop();
+            isUpdating = !isUpdating;
         }
 
     }
