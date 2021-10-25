@@ -10,6 +10,8 @@ public class NewTestCoords : MonoBehaviour
     #region PlaceholderTitle
     public List<GameObject> ObjectPlacement;
     [SerializeReference]
+    public GameObject[] objectPlacement ;
+    [SerializeReference]
     private Vector2 LocalOrigin = new Vector2((float)51.92440614616623, (float)4.477705312843138);
 
     public bool isUpdating;
@@ -21,6 +23,7 @@ public class NewTestCoords : MonoBehaviour
     private void Awake()
     {
         GPSEncoder.SetLocalOrigin(LocalOrigin);
+        objectPlacement = new GameObject[2];
     }
 
     void Start()
@@ -71,7 +74,13 @@ public class NewTestCoords : MonoBehaviour
             double testlon = 4.480262115040381;
             Vector2 Testcoords = new Vector2((float)testlat, (float)testlon);
             Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
-            Instantiate( ObjectPlacement[0], Coordplacement, Quaternion.identity);
+            var i = 1;
+            while(i < 0)
+            {
+                Instantiate( ObjectPlacement[0], new Vector3(Coordplacement.x, Input.location.lastData.altitude, Coordplacement.z), Quaternion.identity);
+                Instantiate( objectPlacement[0], new Vector3(Coordplacement.x, Input.location.lastData.altitude, Coordplacement.z), Quaternion.identity);
+                i++;
+            }
             #endregion
             #region location1Calc
             double latLoc1 = 51.923460;
@@ -80,7 +89,7 @@ public class NewTestCoords : MonoBehaviour
             string textCoordsLoc1 = GPSEncoder.GPSToUCS(Loc1Coords).ToString();
             Loc1Text.text = textCoordsLoc1;
             #endregion
-            CurrentCoordText.text = $"Latitude: {Input.location.lastData.latitude} Longitude: {Input.location.lastData.longitude}";
+            CurrentCoordText.text = $"Latitude: {Input.location.lastData.latitude} Altitude: {Input.location.lastData.altitude} Longitude: {Input.location.lastData.longitude}";
             Input.location.Stop();
             isUpdating = !isUpdating;
         }
