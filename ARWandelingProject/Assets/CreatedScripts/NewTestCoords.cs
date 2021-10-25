@@ -30,8 +30,10 @@ public class NewTestCoords : MonoBehaviour
 
     void FixedUpdate()
     {
-        //if (isUpdating){}
-        StartCoroutine(ARGPSFunction());
+        if (!isUpdating)
+        {
+            StartCoroutine(ARGPSFunction());
+        }
     }
     
     private IEnumerator ARGPSFunction()
@@ -47,7 +49,7 @@ public class NewTestCoords : MonoBehaviour
 
         if(Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSecondsRealtime(1);
             Mathf.Round(maxWait--);
         }
 
@@ -73,7 +75,7 @@ public class NewTestCoords : MonoBehaviour
             #endregion
             CurrentCoordText.text = $"Latitude: {Input.location.lastData.latitude} Longitude: {Input.location.lastData.longitude}";
             Input.location.Stop();
-            //isUpdating = !isUpdating;
+            isUpdating = !isUpdating;
         }
 
     }
