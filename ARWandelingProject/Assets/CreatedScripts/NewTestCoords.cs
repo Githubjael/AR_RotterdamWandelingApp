@@ -89,14 +89,20 @@ public class NewTestCoords : MonoBehaviour
             Vector2 Testcoords = new Vector2((float)testlat, (float)testlon);
             Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
             Vector3 Currentloc = GPSEncoder.GPSToUCS((float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude);
+
+            for (var i = 0; i < 8; i++)
+            {
+                for(var j = 0; j < 8; j++)
+                {
+                    Instantiate(objectPlacement[i], Coordplacement + new Vector3(i, 0, j), Quaternion.identity);
+                    yield return new WaitForEndOfFrame();
+                }
+            }
             #endregion
             #region location1Calc
             double latLoc1 = 51.923460;
             double lonLoc1 = 4.481160;
-            for (var i = 0; i < 8; i++)
-            {
-                Instantiate(objectPlacement[i], Coordplacement + new Vector3(i, 0, i), Quaternion.identity);
-            }
+
             Vector2 Loc1Coords = new Vector2((float)latLoc1, (float)lonLoc1);
 
             string textCoordsLoc1 = $"{GPSEncoder.GPSToUCS(Loc1Coords)}";
