@@ -87,7 +87,7 @@ public class NewTestCoords : MonoBehaviour
             string textCoordsLoc1 = GPSEncoder.GPSToUCS(Loc1Coords).ToString();
             Loc1Text.text = textCoordsLoc1;
             #endregion
-            CurrentCoordText.text = GPSEncoder.GPSToUCS((float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude).ToString();
+            CurrentCoordText.text = $"In game: {GPSEncoder.GPSToUCS((float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude)}";
             CurrentCoordText.text += $"Latitude: {Input.location.lastData.latitude} Altitude: {Input.location.lastData.altitude} Longitude: {Input.location.lastData.longitude}";
             //Instantiate(ObjectPlacement[0], Coordplacement, Quaternion.identity);
             //Instantiate(objectPlacement[0], Currentloc, Quaternion.identity);

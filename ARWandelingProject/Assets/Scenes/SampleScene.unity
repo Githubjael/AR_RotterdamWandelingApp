@@ -345,7 +345,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 4
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -490,7 +490,8 @@ MonoBehaviour:
   objectPlacement:
   - {fileID: 3855228677887930456, guid: 7509628786045a8408e8431cffd683b1, type: 3}
   - {fileID: 4051166072946086153, guid: 881b738622b160844a4ce59e70e3e3c4, type: 3}
-  LocalOrigin: {x: 0, y: 0}
+  originlat: 51.924442317391886
+  originlon: 4.477769927599614
   isUpdating: 0
   Loc1Text: {fileID: 1872523774}
   CurrentCoordText: {fileID: 128920372}
