@@ -74,11 +74,13 @@ public class NewTestCoords : MonoBehaviour
             double testlon = 4.480262115040381;
             Vector2 Testcoords = new Vector2((float)testlat, (float)testlon);
             Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
+            Vector2 currentLoc = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
+            Vector3 Currentloc = GPSEncoder.GPSToUCS(currentLoc);
             var i = 0;
-            while(i < 2)
+            while(i < 1)
             {
-                Instantiate( ObjectPlacement[0], new Vector3(Coordplacement.x, Input.location.lastData.altitude, Coordplacement.z), Quaternion.identity);
-                Instantiate( objectPlacement[0], new Vector3(Coordplacement.x, Input.location.lastData.altitude, Coordplacement.z), Quaternion.identity);
+                Instantiate( ObjectPlacement[0], Coordplacement, Quaternion.identity);
+                Instantiate( objectPlacement[0], Currentloc, Quaternion.identity);
                 i++;
             }
             #endregion
