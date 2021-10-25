@@ -9,8 +9,8 @@ public class NewTestCoords : MonoBehaviour
 {
     #region PlaceholderTitle
     public List<GameObject> ObjectPlacement;
-
-    public Vector2 LocalOrigin = new Vector2((float)51.92440614616623, (float)4.477705312843138);
+    [SerializeReference]
+    private Vector2 LocalOrigin = new Vector2((float)51.92440614616623, (float)4.477705312843138);
 
     public TextMeshProUGUI Loc1Text;
     public TextMeshProUGUI CurrentCoordText;

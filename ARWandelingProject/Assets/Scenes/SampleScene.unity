@@ -491,8 +491,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectPlacement: []
   LocalOrigin: {x: 0, y: 0}
-  Loc1Text: {fileID: 0}
-  CurrentCoordText: {fileID: 0}
+  Loc1Text: {fileID: 1872523774}
+  CurrentCoordText: {fileID: 128920372}
 --- !u!4 &384187382
 Transform:
   m_ObjectHideFlags: 0
