@@ -74,7 +74,7 @@ public class NewTestCoords : MonoBehaviour
             double testlon = 4.480262115040381;
             Vector2 Testcoords = new Vector2((float)testlat, (float)testlon);
             Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
-            Vector2 currentLoc = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
+            Vector2 currentLoc = new Vector2( (float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude);
             Vector3 Currentloc = GPSEncoder.GPSToUCS(currentLoc);
             var i = 0;
             while(i < 1)
