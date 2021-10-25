@@ -484,12 +484,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f17772fcb330249b46a88c50149555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectPlacement:
-  - {fileID: 4051166072946086153, guid: 881b738622b160844a4ce59e70e3e3c4, type: 3}
+  Objectplacement:
   - {fileID: 3855228677887930456, guid: 7509628786045a8408e8431cffd683b1, type: 3}
   objectPlacement:
-  - {fileID: 3855228677887930456, guid: 7509628786045a8408e8431cffd683b1, type: 3}
   - {fileID: 4051166072946086153, guid: 881b738622b160844a4ce59e70e3e3c4, type: 3}
+  - {fileID: 3855228677887930456, guid: 7509628786045a8408e8431cffd683b1, type: 3}
   originlat: 51.924442317391886
   originlon: 4.477769927599614
   isUpdating: 0

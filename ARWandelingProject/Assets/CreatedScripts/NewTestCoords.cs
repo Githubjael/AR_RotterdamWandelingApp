@@ -8,19 +8,21 @@ using TMPro;
 public class NewTestCoords : MonoBehaviour
 {
     #region PlaceholderTitle
+    [Tooltip("This list contains Gameobjects (currently filled with placeholders)")]
     public List<GameObject> Objectplacement;
 
+    [Tooltip("This list contains Gameobjects (currently filled with placeholders)")]
     [SerializeReference]
     public GameObject[] objectPlacement;
-
+    //coords for the local origin for the GPSEncoder
     [SerializeReference]
     private double originlat = 51.924442317391886;
     [SerializeReference]
     private double originlon = 4.477769927599614;
+    //not necesary anymore
+    //public bool isUpdating;
 
-    public bool isUpdating;
-
-    private IEnumerator CurrentCoroutine;
+    private Coroutine CurrentCoroutine;
 
     public TextMeshProUGUI Loc1Text;
     public TextMeshProUGUI CurrentCoordText;
@@ -35,15 +37,17 @@ public class NewTestCoords : MonoBehaviour
     void Start()
     {
         GPSEncoder.SetLocalOrigin(new Vector2((float)originlat,(float)originlon));
-    }
-
-    void Update()
-    {
-        CurrentCoroutine = ARGPSFunction();
+        
+        CurrentCoroutine = StartCoroutine(ARGPSFunction());
         if (CurrentCoroutine != null)
         {
             StopCoroutine(CurrentCoroutine);
         }
+    }
+
+    void Update()
+    {
+
     }
     
     private IEnumerator ARGPSFunction()
