@@ -28,7 +28,7 @@ public class NewTestCoords : MonoBehaviour
 
     void Start()
     {
-        GPSEncoder.SetLocalOrigin(LocalOrigin);
+        //GPSEncoder.SetLocalOrigin(LocalOrigin);
     }
 
     void FixedUpdate()
