@@ -11,9 +11,6 @@ public class NewTestCoords : MonoBehaviour
     [Tooltip("This list contains Gameobjects (currently filled with placeholders)")]
     public List<GameObject> Objectplacement;
 
-    [Tooltip("This list contains Gameobjects (currently filled with placeholders)")]
-    [SerializeReference]
-    public GameObject[] objectPlacement;
     //coords for the local origin for the GPSEncoder
     [SerializeReference]
     private double originlat = 51.924442317391886;
@@ -31,19 +28,18 @@ public class NewTestCoords : MonoBehaviour
 
     private void Awake()
     {
-        objectPlacement = new GameObject[2];
+
     }
 
     void Start()
     {
-        GPSEncoder.SetLocalOrigin(new Vector2((float)originlat,(float)originlon));
-        
         CurrentCoroutine = ARGPSFunction();
-        if (CurrentCoroutine != null)
-        {
+        GPSEncoder.SetLocalOrigin(new Vector2((float)originlat,(float)originlon));
+
+        if(CurrentCoroutine != null)
+            StartCoroutine(CurrentCoroutine);
+        else
             StopCoroutine(CurrentCoroutine);
-        }
-        StartCoroutine(CurrentCoroutine);
     }
 
     void Update()
@@ -126,14 +122,15 @@ public class NewTestCoords : MonoBehaviour
 
         do
         {
-            for (var i = 0; i < 2; i++)
+            for (var i = 0; i < 3; i++)
             {
-                Instantiate(objectPlacement[i], objectPlacement[i].transform.position = testcurrentTranslation, Quaternion.identity);
-                Instantiate(Objectplacement[i], Objectplacement[i].transform.position = testTranslation, Quaternion.identity);
+                Instantiate(Objectplacement[i] as GameObject, testTranslation, Quaternion.identity);
+                Instantiate(Objectplacement[i] as GameObject, testcurrentTranslation, Quaternion.identity);
+                Debug.Log("Objects have been spawned.");
             }
         }
         while (SpawnObjects() == null);
 
-        yield return null;
+        yield return new WaitForEndOfFrame();
     }
 }
