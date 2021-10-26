@@ -31,7 +31,7 @@ public class NewTestCoords : MonoBehaviour
 
     private void Awake()
     {
-        objectPlacement = new GameObject[8];
+        objectPlacement = new GameObject[2];
     }
 
     void Start()
@@ -83,21 +83,12 @@ public class NewTestCoords : MonoBehaviour
         {
 
             #region TestCubePlacement
-            double testlat = 51.92713599182974;
-            double testlon = 4.480262115040381;
+            //double testlat = 51.92713599182974;
+            //double testlon = 4.480262115040381;
 
-            Vector2 Testcoords = new Vector2((float)testlat, (float)testlon);
-            Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
-            Vector3 Currentloc = GPSEncoder.GPSToUCS((float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude);
-
-            for (var i = 0; i < 8; i++)
-            {
-                for(var j = 0; j < 8; j++)
-                {
-                    Instantiate(objectPlacement[i], Coordplacement + new Vector3(i, 0, j), Quaternion.identity);
-                    yield return new WaitForEndOfFrame();
-                }
-            }
+            //Vector2 Testcoords = new Vector2((float)testlat, (float)testlon);
+            //Vector3 Coordplacement = GPSEncoder.GPSToUCS(Testcoords);
+            //Vector3 Currentloc = GPSEncoder.GPSToUCS((float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude);
             #endregion
             #region location1Calc
             double latLoc1 = 51.923460;
@@ -113,9 +104,36 @@ public class NewTestCoords : MonoBehaviour
             IRLcoords.text = $"Latitude: {Input.location.lastData.latitude} Longitude: {Input.location.lastData.longitude}";
 
             Input.location.Stop();
-            yield return null;
+            StartCoroutine(SpawnObjects());
+            //yield return null;
         }
 
     }
 
+    private IEnumerator SpawnObjects()
+    {
+        float testlat = (float)51.9271839435353;
+        float testlon = (float)4.4802625771657665;
+
+        float currentlat = Input.location.lastData.latitude;
+        float currentlon = Input.location.lastData.longitude;
+
+        Vector2 testcurrentcoord = new Vector2( currentlat, currentlon);
+        Vector2 testCoords = new Vector2( testlat, testlon);
+
+        Vector3 testcurrentTranslation = GPSEncoder.GPSToUCS(testcurrentcoord);
+        Vector3 testTranslation = GPSEncoder.GPSToUCS(testCoords);
+
+        do
+        {
+            for (var i = 0; i < 2; i++)
+            {
+                Instantiate(objectPlacement[i], objectPlacement[i].transform.position = testcurrentTranslation, Quaternion.identity);
+                Instantiate(Objectplacement[i], Objectplacement[i].transform.position = testTranslation, Quaternion.identity);
+            }
+        }
+        while (SpawnObjects() == null);
+
+        yield return null;
+    }
 }
