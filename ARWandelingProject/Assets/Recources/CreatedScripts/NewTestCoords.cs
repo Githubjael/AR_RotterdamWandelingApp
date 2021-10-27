@@ -99,8 +99,9 @@ public class NewTestCoords : MonoBehaviour
             CurrentCoordText.text = $"In game: {GPSEncoder.GPSToUCS((float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude)}";
             IRLcoords.text = $"Latitude: {Input.location.lastData.latitude} Longitude: {Input.location.lastData.longitude}";
 
-            Input.location.Stop();
             StartCoroutine(SpawnObjects());
+
+            Input.location.Stop();
             //yield return null;
         }
 
