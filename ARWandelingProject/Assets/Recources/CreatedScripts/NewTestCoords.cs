@@ -127,7 +127,7 @@ public class NewTestCoords : MonoBehaviour
             {
                 Instantiate(Objectplacement[i] as GameObject, testTranslation, Quaternion.identity);
                 Instantiate(Objectplacement[i] as GameObject, testcurrentTranslation, Quaternion.identity);
-                Instantiate(Resources.Load("CreatedPrefabs/Placeholder") as GameObject, testTranslation, Quaternion.identity);
+                //Instantiate(Resources.Load("CreatedPrefabs/Placeholder") as GameObject, testTranslation, Quaternion.identity);
                 Debug.Log("Objects have been spawned.");
             }
         }
