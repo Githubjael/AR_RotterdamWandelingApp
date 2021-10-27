@@ -12,6 +12,7 @@ public class My_Class : MonoBehaviour
     AssetBundle placholders_bundle;
     public bool asset_bundles_loaded = false;
 
+    [Obsolete]
     private void Start()
     {
         //Start the coroutinethat will load all needed asset bundles
@@ -31,6 +32,7 @@ public class My_Class : MonoBehaviour
         }
     }
 
+    [Obsolete]
     private IEnumerator load_asset_bundles()
     {
         //Reuse this line to load different asset bundles of different names
@@ -46,6 +48,7 @@ public class My_Class : MonoBehaviour
         yield return true;
     }
 
+    [Obsolete]
     IEnumerator load_asset_bundle(string bundle_name)
     {
         //this coroutine loads in 1 asset bundle at a time
