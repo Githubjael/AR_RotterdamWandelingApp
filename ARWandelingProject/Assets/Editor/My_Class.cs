@@ -26,7 +26,7 @@ public class My_Class : MonoBehaviour
         {
             //once loaded use the assets in the asset bundles
             //to get the data in the bundle, you must do your bundle.LoadAsset<type_of_your_asset>("name_of_the_asset_case_sensitive");
-            GameObject asset_loaded_prefab = (GameObject) placholders_bundle.LoadAsset<GameObject>("Placeholder");
+            GameObject asset_loaded_prefab = (GameObject) placholders_bundle.LoadAsset<GameObject>("placeholder");
 
             GameObject instance = (GameObject)GameObject.Instantiate(asset_loaded_prefab);
         }
