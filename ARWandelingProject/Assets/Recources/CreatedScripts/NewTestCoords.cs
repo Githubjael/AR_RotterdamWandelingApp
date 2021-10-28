@@ -99,8 +99,9 @@ public class NewTestCoords : MonoBehaviour
             CurrentCoordText.text = $"In game: {GPSEncoder.GPSToUCS((float)Input.location.lastData.latitude, (float)Input.location.lastData.longitude)}";
             IRLcoords.text = $"Latitude: {Input.location.lastData.latitude} Longitude: {Input.location.lastData.longitude}";
 
-            Input.location.Stop();
             StartCoroutine(SpawnObjects());
+
+            Input.location.Stop();
             //yield return null;
         }
 
@@ -124,8 +125,9 @@ public class NewTestCoords : MonoBehaviour
         {
             for (var i = 0; i < 3; i++)
             {
-                Instantiate(Objectplacement[i] as GameObject, testTranslation, Quaternion.identity);
+                Instantiate(Objectplacement[i] as GameObject, Objectplacement[i].transform.position = testTranslation, Quaternion.identity);
                 Instantiate(Objectplacement[i] as GameObject, testcurrentTranslation, Quaternion.identity);
+                //Instantiate(Resources.Load("CreatedPrefabs/Placeholder") as GameObject, testTranslation, Quaternion.identity);
                 Debug.Log("Objects have been spawned.");
             }
         }
