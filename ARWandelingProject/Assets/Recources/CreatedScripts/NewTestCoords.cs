@@ -26,6 +26,18 @@ public class NewTestCoords : MonoBehaviour
     public TextMeshProUGUI IRLcoords;
     #endregion
 
+
+    /*
+     *     private float LatToZ(float originlat)
+     *     {
+     *     z = GPSEncoder.GPSToUCS(originlat,originlon).z;
+     *     return (float) z;
+     *     }
+     *     private float LontoX(float originlon)
+     *     {
+     *     return (float) x;
+     *     }
+    */
     void Start()
     {
         CurrentCoroutine = ARGPSFunction();
