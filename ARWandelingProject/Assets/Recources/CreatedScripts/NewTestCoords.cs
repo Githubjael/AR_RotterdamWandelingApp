@@ -112,8 +112,8 @@ public class NewTestCoords : MonoBehaviour
         float testlat = (float)51.9271839435353;
         float testlon = (float)4.4802625771657665;
 
-        float currentlat = Input.location.lastData.latitude;
-        float currentlon = Input.location.lastData.longitude;
+        float currentlat = (float)51.927796816633716;
+        float currentlon = (float)4.4804311906327285;
 
         Vector2 testcurrentcoord = new Vector2( currentlat, currentlon);
         Vector2 testCoords = new Vector2( testlat, testlon);
