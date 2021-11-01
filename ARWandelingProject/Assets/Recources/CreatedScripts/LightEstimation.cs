@@ -36,6 +36,8 @@ public class LightEstimation : MonoBehaviour
 
     private void FrameUpdated(ARCameraFrameEventArgs args)
     {
+        Debug.Log($"{gameObject.transform.position}");
+
         if (args.lightEstimation.averageBrightness.HasValue)
         {
             brightnessValue.text = $"Brightness: {args.lightEstimation.averageBrightness.Value}";
