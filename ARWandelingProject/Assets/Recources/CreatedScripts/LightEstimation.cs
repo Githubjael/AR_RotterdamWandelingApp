@@ -22,12 +22,12 @@ public class LightEstimation : MonoBehaviour
     void Awake()
     {
         currentLight.GetComponent<Light>();
+        Invoke("MethodActive", 0.1f);
     }
 
     private void OnEnable()
     {
         Debug.Log("Enblabled");
-        Invoke("MethodActive", 0.1f);
         arCameraManager.frameReceived += FrameUpdated;
     }
 

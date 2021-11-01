@@ -126,7 +126,7 @@ public class NewTestCoords : MonoBehaviour
             for (var i = 0; i < 3; i++)
             {
                 Instantiate(Objectplacement[i] as GameObject);
-                Objectplacement[i].transform.position = testcurrentTranslation;
+                Objectplacement[i].transform.position = testcurrentTranslation +new Vector3(i, 0, i);
                 Instantiate(Objectplacement[i] as GameObject);
                 Objectplacement[i].transform.position = testTranslation;
 
