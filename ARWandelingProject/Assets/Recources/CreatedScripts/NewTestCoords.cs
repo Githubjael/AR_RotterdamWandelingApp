@@ -13,9 +13,9 @@ public class NewTestCoords : MonoBehaviour
 
     //coords for the local origin for the GPSEncoder
     [SerializeReference]
-    private double originlat = 51.924442317391886;
+    private double originlat = 51.927796816633716;
     [SerializeReference]
-    private double originlon = 4.477769927599614;
+    private double originlon = 4.4804311906327285;
     //not necesary anymore
     //public bool isUpdating;
 
@@ -25,11 +25,6 @@ public class NewTestCoords : MonoBehaviour
     public TextMeshProUGUI CurrentCoordText;
     public TextMeshProUGUI IRLcoords;
     #endregion
-
-    private void Awake()
-    {
-
-    }
 
     void Start()
     {
