@@ -24,7 +24,7 @@ public class LightEstimation : MonoBehaviour
         currentLight.GetComponent<Light>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         Debug.Log("Enblabled");
         Invoke("MethodActive", 0.1f);

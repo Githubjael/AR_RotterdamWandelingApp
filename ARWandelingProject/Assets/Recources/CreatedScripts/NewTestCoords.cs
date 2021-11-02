@@ -28,19 +28,25 @@ public class NewTestCoords : MonoBehaviour
 
 
     /*
-     *     private float LatToZ(float originlat)
+     *     private float LatToZ(float originlat, float originlon)
      *     {
-     *     z = GPSEncoder.GPSToUCS(originlat,originlon).z;
+     *     z = GPSEncoder.GPSToUCS(originlat, originlon).z;
      *     return (float) z;
      *     }
-     *     private float LontoX(float originlon)
+     *     private float LontoX(float originlon, float originlat)
      *     {
+     *     x = GPSEncoder.GPSToUCS(originlat, originlon);
      *     return (float) x;
      *     }
-    */
+     */
     void Start()
     {
         CurrentCoroutine = ARGPSFunction();
+        /*
+         * double LatToZ = Input.location.lastData.Latitude;
+         * double LonToX = Input.location.lastData.Longitude;
+         * GPSEncoder.SetLocalOrigin(new Vector2((float)LatToZ,(float)LonToX));
+         */
         GPSEncoder.SetLocalOrigin(new Vector2((float)originlat,(float)originlon));
 
         if(CurrentCoroutine != null)
