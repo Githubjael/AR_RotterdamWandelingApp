@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 19666970}
   - component: {fileID: 19666967}
   - component: {fileID: 19666966}
+  - component: {fileID: 19666971}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -262,6 +263,21 @@ MonoBehaviour:
   m_TrackingType: 0
   m_UpdateType: 0
   m_UseRelativeTransform: 1
+--- !u!114 &19666971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19666964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e69052bbd4efb4548bb5da0d819101d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arCameraManager: {fileID: 19666967}
+  currentLat: 0
+  currentLon: 0
 --- !u!1 &128920370
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,8 +657,8 @@ MonoBehaviour:
   - {fileID: 3855228677887930456, guid: 7509628786045a8408e8431cffd683b1, type: 3}
   - {fileID: 4051166072946086153, guid: 881b738622b160844a4ce59e70e3e3c4, type: 3}
   - {fileID: 3855228677887930456, guid: 7509628786045a8408e8431cffd683b1, type: 3}
-  originlat: 51.924442317391886
-  originlon: 4.477769927599614
+  originPointLat: 51.927208
+  originPointLon: 4.4802685
   Loc1Text: {fileID: 1872523774}
   CurrentCoordText: {fileID: 128920372}
   IRLcoords: {fileID: 685341921}
@@ -947,6 +963,7 @@ MonoBehaviour:
   brightnessValue: {fileID: 1230824761}
   tempValue: {fileID: 252921152}
   colorCorrectionValue: {fileID: 1831574745}
+  currentLight: {fileID: 705507994}
 --- !u!1 &1033669165
 GameObject:
   m_ObjectHideFlags: 0

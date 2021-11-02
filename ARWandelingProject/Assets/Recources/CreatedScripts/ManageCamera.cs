@@ -21,7 +21,11 @@ public class ManageCamera : MonoBehaviour
     private void Start()
     {
         calcAdjustment = Adjustment();
-        ManageCameraTransform();
+        if(calcAdjustment == null)
+        {
+            StartCoroutine(Adjustment());
+        }
+        //ManageCameraTransform();
     }
 
     private IEnumerator Adjustment()
@@ -52,13 +56,19 @@ public class ManageCamera : MonoBehaviour
         }
         else
         {
-
+            currentLat = Input.location.lastData.latitude;
+            currentLon = Input.location.lastData.longitude;
+            Vector2 coords = new Vector2( currentLat, currentLon);
+            Vector3 translationCoords =  GPSEncoder.GPSToUCS(coords);
+            arCameraManager.transform.position = translationCoords;
+            //yield return translationCoords;
         }
 
+        Input.location.Stop();
     }
 
-    private void ManageCameraTransform()
-    {
-        arCameraManager.transform.position = ;
-    }
+    /*
+     * void ManageCameraTransform() { }
+     */
+
 }
