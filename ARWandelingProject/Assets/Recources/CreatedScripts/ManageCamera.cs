@@ -52,25 +52,12 @@ public class ManageCamera : MonoBehaviour
         }
         else
         {
-            float LatToZ = Input.location.lastData.latitude;
-            float LonToX = Input.location.lastData.longitude;
-            arCameraManager.transform = new Vector3( , , );
+
         }
 
     }
 
     private void ManageCameraTransform()
-    {
-
-    }
-
-    [SerializeField]
-    private float LatToZ()
-    {
-
-    }
-    [SerializeField]
-    private float LonToX()
     {
 
     }
