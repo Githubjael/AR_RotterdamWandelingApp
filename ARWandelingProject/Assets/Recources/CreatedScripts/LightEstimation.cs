@@ -49,6 +49,7 @@ public class LightEstimation : MonoBehaviour
 
         if (args.lightEstimation.averageColorTemperature.HasValue)
         {
+            currentLight.useColorTemperature = true;
             tempValue.text = $"Temp Color: {args.lightEstimation.averageColorTemperature.Value}";
             currentLight.colorTemperature = args.lightEstimation.averageColorTemperature.Value;
         }
