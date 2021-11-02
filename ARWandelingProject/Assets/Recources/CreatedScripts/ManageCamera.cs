@@ -59,6 +59,6 @@ public class ManageCamera : MonoBehaviour
 
     private void ManageCameraTransform()
     {
-
+        arCameraManager.transform.position = ;
     }
 }
