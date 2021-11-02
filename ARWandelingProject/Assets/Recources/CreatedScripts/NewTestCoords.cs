@@ -12,12 +12,10 @@ public class NewTestCoords : MonoBehaviour
     public List<GameObject> Objectplacement;
 
     //coords for the local origin for the GPSEncoder
-    [SerializeReference]
-    private double originlat = 51.927796816633716;
-    [SerializeReference]
-    private double originlon = 4.4804311906327285;
-    //not necesary anymore
-    //public bool isUpdating;
+    [SerializeField]
+    private float originPointLat = (float)51.92720804188213;
+    [SerializeField]
+    private float originPointLon = (float)4.480268620814825;
 
     private IEnumerator CurrentCoroutine;
 
@@ -25,8 +23,21 @@ public class NewTestCoords : MonoBehaviour
     public TextMeshProUGUI CurrentCoordText;
     public TextMeshProUGUI IRLcoords;
     #endregion
+    private void Start()
+    {
+        SetOrigin();
 
-
+        CurrentCoroutine = ARGPSFunction();
+        if(CurrentCoroutine != null)
+            StartCoroutine(CurrentCoroutine);
+        else
+            StopCoroutine(CurrentCoroutine);
+    }
+    private void SetOrigin()
+    {
+        Vector2 coords = new Vector2(originPointLat, originPointLon);
+        GPSEncoder.SetLocalOrigin(coords);
+    }
     /*
      *     private float LatToZ(float originlat, float originlon)
      *     {
@@ -39,21 +50,15 @@ public class NewTestCoords : MonoBehaviour
      *     return (float) x;
      *     }
      */
-    void Start()
-    {
-        CurrentCoroutine = ARGPSFunction();
-        /*
-         * double LatToZ = Input.location.lastData.Latitude;
-         * double LonToX = Input.location.lastData.Longitude;
-         * GPSEncoder.SetLocalOrigin(new Vector2((float)LatToZ,(float)LonToX));
-         */
-        GPSEncoder.SetLocalOrigin(new Vector2((float)originlat,(float)originlon));
 
-        if(CurrentCoroutine != null)
-            StartCoroutine(CurrentCoroutine);
-        else
-            StopCoroutine(CurrentCoroutine);
-    }
+    /*
+        * double LatToZ = Input.location.lastData.Latitude;
+        * double LonToX = Input.location.lastData.Longitude;
+        * GPSEncoder.SetLocalOrigin(new Vector2((float)LatToZ,(float)LonToX));
+        */
+    //GPSEncoder.SetLocalOrigin(new Vector2((float)originlat,(float)originlon));
+    //Debug.Log($"lat:{originlat} lon: {originlon}");
+
 
     void Update()
     {

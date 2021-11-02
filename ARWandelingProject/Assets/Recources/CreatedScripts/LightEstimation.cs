@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using TMPro;
+using System;
 
 public class LightEstimation : MonoBehaviour
 {
@@ -16,24 +17,18 @@ public class LightEstimation : MonoBehaviour
     private TextMeshProUGUI tempValue;
     [SerializeField]
     private TextMeshProUGUI colorCorrectionValue;
-
+    [SerializeField]
     private Light currentLight;
-
+    
     void Awake()
     {
         currentLight.GetComponent<Light>();
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         Debug.Log("Enblabled");
-        Invoke("MethodActive", 0.1f);
         arCameraManager.frameReceived += FrameUpdated;
-    }
-
-    void MethodActive()
-    {
-        gameObject.SetActive(true);
     }
 
     private void OnDisable()
