@@ -54,6 +54,7 @@ public class ManageCamera : MonoBehaviour
         {
             float LatToZ = Input.location.lastData.latitude;
             float LonToX = Input.location.lastData.longitude;
+            arCameraManager.transform = new Vector3( , , );
         }
 
     }
