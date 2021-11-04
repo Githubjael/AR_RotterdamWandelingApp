@@ -46,10 +46,10 @@ public class LightEstimation : MonoBehaviour
             brightnessValue.text = $"Brightness: {args.lightEstimation.averageBrightness.Value}";
             currentLight.intensity = args.lightEstimation.averageBrightness.Value;
         }
-
+        currentLight.useColorTemperature = true;
         if (args.lightEstimation.averageColorTemperature.HasValue)
         {
-            currentLight.useColorTemperature = true;
+
             tempValue.text = $"Temp Color: {args.lightEstimation.averageColorTemperature.Value}";
             currentLight.colorTemperature = args.lightEstimation.averageColorTemperature.Value;
         }
