@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RF8MC12HAVR",
         "name": "com.DefaultCompany.ARWandelingProjectJael",
-        "processId": 19765,
+        "processId": 21148,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,97 +11,61 @@
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 25473,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 27065,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 32316,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 30386,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 23274,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 25795,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 29063,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 30808,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 17052,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 1874,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 2632,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 4385,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 11303,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
             "processId": 13638,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.DefaultCompany.ARWandelingProjectJael",
             "processId": 7295,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.DefaultCompany.ARWandelingProjectJael",
             "processId": 19765,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 24720,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 15517,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.sec.android.app.launcher",
+            "processId": 1839,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 17051,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 19462,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 20307,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 21148,
             "exited": false
         }
     ],
