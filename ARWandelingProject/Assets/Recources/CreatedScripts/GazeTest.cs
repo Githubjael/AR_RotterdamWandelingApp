@@ -27,7 +27,7 @@ public class GazeTest : MonoBehaviour, InformationInterface
     }
     public void Gaze()
     {
-        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0 && TouchPhase.Began == 0)
+        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
             infoPrompt.SetActive(true);
         }
