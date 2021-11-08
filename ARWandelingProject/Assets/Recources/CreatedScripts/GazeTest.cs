@@ -14,7 +14,7 @@ public class GazeTest : MonoBehaviour, InformationInterface
     //the user/player/observer/ person who is holding the phone currently
     [SerializeField]
     private GameObject Observer;
-    //this is an gameobject that will hold 
+    //this is an gameobject that will hold strings depending on the tag of the observed object
     [SerializeField]
     private GameObject infoPrompt;
     //this is the string that will change depending on the tag
@@ -23,14 +23,15 @@ public class GazeTest : MonoBehaviour, InformationInterface
 
     public void Start()
     {
-        Gaze();
+        if(Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && TouchPhase.Began > 0))
+        {
+            Gaze();
+        }
     }
     public void Gaze()
     {
-        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
-        {
-            infoPrompt.SetActive(true);
-        }
+        infoPrompt.SetActive(true);
+        FillInText("Die on this hill.");
     }
 
     public void FillInText(string infoText)
