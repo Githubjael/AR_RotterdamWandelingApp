@@ -5,9 +5,5 @@ using UnityEngine;
 
 public interface InformationInterface
 {
-    TextMeshProUGUI InfoText { get; set; }
-    public TextMeshProUGUI InformationText(TextMeshProUGUI infoText)
-    {
-
-    }
+    void FillInText(string infoText);
 }

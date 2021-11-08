@@ -40,16 +40,15 @@ public class LightEstimation : MonoBehaviour
     private void FrameUpdated(ARCameraFrameEventArgs args)
     {
         Debug.Log($"{gameObject.transform.position}");
+        currentLight.useColorTemperature = true;
 
         if (args.lightEstimation.averageBrightness.HasValue)
         {
             brightnessValue.text = $"Brightness: {args.lightEstimation.averageBrightness.Value}";
             currentLight.intensity = args.lightEstimation.averageBrightness.Value;
         }
-        currentLight.useColorTemperature = true;
         if (args.lightEstimation.averageColorTemperature.HasValue)
         {
-
             tempValue.text = $"Temp Color: {args.lightEstimation.averageColorTemperature.Value}";
             currentLight.colorTemperature = args.lightEstimation.averageColorTemperature.Value;
         }
