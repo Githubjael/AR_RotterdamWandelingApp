@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 [ExecuteInEditMode]
-public class GazeTest : MonoBehaviour
+public class GazeTest : MonoBehaviour, InformationInterface
 {
     [SerializeField]
     private GameObject Cursor;
@@ -37,7 +37,6 @@ public class GazeTest : MonoBehaviour
         {
             Debug.Log("Hello!");
             infoPrompt.SetActive(true);
-
         }
     }
 }
