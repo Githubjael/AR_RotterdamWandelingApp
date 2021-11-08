@@ -23,15 +23,16 @@ public class GazeTest : MonoBehaviour, InformationInterface
 
     public void Start()
     {
-        if(Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && TouchPhase.Began > 0))
-        {
-            Gaze();
-        }
+        Gaze();
     }
     public void Gaze()
     {
-        infoPrompt.SetActive(true);
-        FillInText("Die on this hill.");
+        if (Input.GetMouseButtonDown(0))
+        {
+            infoPrompt.SetActive(true);
+            FillInText("Die on this hill.");
+        }
+
     }
 
     public void FillInText(string infoText)
