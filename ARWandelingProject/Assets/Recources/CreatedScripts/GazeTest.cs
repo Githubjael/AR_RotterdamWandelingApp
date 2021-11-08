@@ -27,12 +27,15 @@ public class GazeTest : MonoBehaviour, InformationInterface
     }
     public void Gaze()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             infoPrompt.SetActive(true);
             FillInText("Die on this hill.");
         }
-
+        else
+        {
+            infoPrompt.SetActive(false);
+        }
     }
 
     public void FillInText(string infoText)
