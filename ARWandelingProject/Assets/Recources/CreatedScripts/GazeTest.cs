@@ -13,19 +13,18 @@ public class GazeTest : MonoBehaviour
     private GameObject Observer;
 
     [SerializeField]
+    private GameObject infoPrompt;
+
+    [SerializeField]
     private TextMeshProUGUI information;
 
-    private void Awake()
-    {
-        Observer = gameObject;
-    }
 
     public void Gaze()
     {
         Ray ray = new Ray(Observer.transform.position, Observer.transform.forward);
         RaycastHit hitInfo;
 
-        if(Physics.Raycast(ray, out hitInfo, 100))
+        if (Physics.Raycast(ray, out hitInfo, 100))
         {
             Debug.DrawLine(ray.origin, hitInfo.point, Color.green);
         }
@@ -37,11 +36,8 @@ public class GazeTest : MonoBehaviour
         if (hitInfo.collider.tag == "TestTag1")
         {
             Debug.Log("Hello!");
-        }
-    }
+            infoPrompt.SetActive(true);
 
-    private void FixedUpdate()
-    {
-        Gaze();
+        }
     }
 }
