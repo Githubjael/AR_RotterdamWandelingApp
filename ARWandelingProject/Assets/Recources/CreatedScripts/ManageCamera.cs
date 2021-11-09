@@ -8,8 +8,7 @@ using UnityEngine.XR.ARFoundation;
 public class ManageCamera : MonoBehaviour
 {
     [SerializeField]
-    private ARCameraManager arCameraManager;
-
+    private Camera arCamera;
     [SerializeField]
     private float currentLat;
     [SerializeField]
@@ -60,7 +59,7 @@ public class ManageCamera : MonoBehaviour
             currentLon = Input.location.lastData.longitude;
             Vector2 coords = new Vector2( currentLat, currentLon);
             Vector3 translationCoords =  GPSEncoder.GPSToUCS(coords);
-            arCameraManager.transform.position = translationCoords;
+            arCamera.transform.position = translationCoords;
             //yield return translationCoords;
         }
 
