@@ -1560,6 +1560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1418604647}
+  - component: {fileID: 1418604646}
   m_Layer: 0
   m_Name: Observer
   m_TagString: Untagged
@@ -1567,6 +1568,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1418604646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418604645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 767fb3194d57ae543b354b16f1ffaa00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Infopanel: {fileID: 1775732531}
+  arCamera: {fileID: 19666965}
+  arRaycastManager: {fileID: 1563662582}
+  dynamicText: {fileID: 2059599905}
 --- !u!4 &1418604647
 Transform:
   m_ObjectHideFlags: 0

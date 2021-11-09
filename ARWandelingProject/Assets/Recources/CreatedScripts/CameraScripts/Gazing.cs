@@ -7,6 +7,8 @@ using TMPro;
 public class Gazing : MonoBehaviour
 {
     [SerializeField]
+    private GameObject Infopanel;
+    [SerializeField]
     private Camera arCamera;
     [SerializeField]
     private ARRaycastManager arRaycastManager;
@@ -26,5 +28,16 @@ public class Gazing : MonoBehaviour
     public void Gaze()
     {
 
+
+        foreach (Touch touch in Input.touches)
+        {
+            if(Input.touchCount > 0 && touch.phase == TouchPhase.Began)
+            {
+                if ()
+                {
+
+                }
+            }
+        }
     }
 }
