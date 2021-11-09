@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RF8MC12HAVR",
         "name": "com.DefaultCompany.ARWandelingProjectJael",
-        "processId": 19765,
+        "processId": 4122,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -102,6 +102,18 @@
             "deviceId": "RF8MC12HAVR",
             "name": "com.DefaultCompany.ARWandelingProjectJael",
             "processId": 19765,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 22323,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 4122,
             "exited": false
         }
     ],
