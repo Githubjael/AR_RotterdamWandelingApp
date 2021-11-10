@@ -27,13 +27,15 @@ public class Gazing : MonoBehaviour
 
     public void Gaze()
     {
-
+        Ray ray = Camera.main.ScreenPointToRay(new Vector2(0.5f,0.5f));
+        RaycastHit hits;
 
         foreach (Touch touch in Input.touches)
         {
             if(Input.touchCount > 0 && touch.phase == TouchPhase.Began)
             {
-                if ()
+                Physics.Raycast(ray.origin, ray.direction, out hits);
+                if (hits.collider.tag == "testTag1")
                 {
 
                 }
