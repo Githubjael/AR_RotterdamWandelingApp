@@ -17,7 +17,7 @@ public class Gazing : MonoBehaviour
 
     public void Start()
     {
-        
+        Gaze();
     }
 
     public void Update()
@@ -27,20 +27,34 @@ public class Gazing : MonoBehaviour
 
     public void Gaze()
     {
-        Ray ray = Camera.main.ScreenPointToRay(new Vector2(0.5f,0.5f));
-        RaycastHit hits;
-
-        foreach (Touch touch in Input.touches)
-        {
-            if(Input.touchCount > 0 && touch.phase == TouchPhase.Began)
+        /*
+         * foreach (Touch touch in Input.touches)
             {
-                Physics.Raycast( ray, out hits, 100f);
-                Debug.DrawLine(ray.origin, hits.point, Color.green);
-                if (hits.collider.tag == "testTag1")
+                if(Input.touchCount > 0 && touch.phase == TouchPhase.Began || Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
                 {
-                    Infopanel.SetActive(true);
+                    if(Physics.Raycast(ray, out hitsInfo))
+                    {
+                        Debug.Log($"{hitsInfo.collider.tag}");
+                        Debug.DrawLine(ray.origin, hitsInfo.point, Color.red);
+                        if(hitsInfo.collider.tag == "testTag1")
+                        {
+                            Infopanel.SetActive(true);
+                        }
+                        else
+                        {
+                            Debug.Log("You fuckin up!");
+                        }
+                    }
+                    else
+                    {
+                        Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100f, Color.green);
+                    }
                 }
             }
-        }
+        */
+        Ray ray = Camera.main.ScreenPointToRay(new Vector2(0.5f,0.5f));
+        RaycastHit hitsInfo;
+
+        
     }
 }
