@@ -34,7 +34,8 @@ public class Gazing : MonoBehaviour
         {
             if(Input.touchCount > 0 && touch.phase == TouchPhase.Began)
             {
-                Physics.Raycast(ray.origin, ray.direction, out hits);
+                Physics.Raycast( ray, out hits, 100f);
+                Debug.DrawLine(ray.origin, hits.point, Color.green);
                 if (hits.collider.tag == "testTag1")
                 {
                     Infopanel.SetActive(true);
