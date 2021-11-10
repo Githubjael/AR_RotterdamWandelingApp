@@ -37,7 +37,7 @@ public class Gazing : MonoBehaviour
                 Physics.Raycast(ray.origin, ray.direction, out hits);
                 if (hits.collider.tag == "testTag1")
                 {
-
+                    Infopanel.SetActive(true);
                 }
             }
         }
