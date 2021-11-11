@@ -1657,9 +1657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd2b5fbfdf392642b937f23862447d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCoordslat: 0
-  currentCoordslon: 0
-  Observer: {fileID: 0}
+  arSessionOrigin: {fileID: 0}
 --- !u!114 &1563662581
 MonoBehaviour:
   m_ObjectHideFlags: 0

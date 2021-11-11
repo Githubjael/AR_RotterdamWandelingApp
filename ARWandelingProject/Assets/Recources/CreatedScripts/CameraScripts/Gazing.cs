@@ -26,7 +26,7 @@ public class Gazing : MonoBehaviour
 
         if (Physics.Raycast(ray , out hitsInfo))
         {
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) || Input.touchCount > 0)
             {
                 Debug.DrawLine(ray.origin, hitsInfo.point, Color.green);
                 infoPanel.SetActive(true);
