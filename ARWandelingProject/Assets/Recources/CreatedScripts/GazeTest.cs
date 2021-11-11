@@ -27,19 +27,20 @@ public class GazeTest : MonoBehaviour, InformationInterface
     }
     public void Gaze()
     {
-        Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
+        Ray ray = new Ray(Observer.transform.position, Observer.transform.forward);
         RaycastHit hitsInfo;
         if (Physics.Raycast(ray, out hitsInfo))
         {
             if (hitsInfo.collider.tag == "testTag1")
             {
+                Debug.DrawLine(ray.origin, hitsInfo.point, Color.green);
                 infoPrompt.SetActive(true);
                 FillInText("Die on this hill.");
             }
-        }
+        } 
         else
         {
-            infoPrompt.SetActive(false);
+            Debug.DrawLine(ray.origin, ray.origin + ray.origin + ray.direction * 100, Color.red);
         }
     }
 
