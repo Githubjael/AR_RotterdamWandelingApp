@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Gazing : MonoBehaviour
@@ -10,7 +11,14 @@ public class Gazing : MonoBehaviour
     [SerializeField]
     private GameObject Observer;
 
-    // Update is called once per frame
+    [SerializeField]
+    private GameObject infoPanel;
+
+    private void Start()
+    {
+        arCamera.transform.parent = Observer.transform;
+    }
+
     void Update()
     {
         Ray ray = new Ray(arCamera.transform.position, arCamera.transform.forward);
@@ -18,11 +26,13 @@ public class Gazing : MonoBehaviour
 
         if (Physics.Raycast(ray , out hitsInfo))
         {
-            Debug.DrawLine(ray.origin, hitsInfo.point);
+            Debug.DrawLine(ray.origin, hitsInfo.point, Color.green);
+            infoPanel.SetActive(true);
         }
         else
         {
             Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100f, Color.white);
+            infoPanel.SetActive(false);
         }
     }
 }
