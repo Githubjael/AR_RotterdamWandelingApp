@@ -414,6 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arCamera: {fileID: 19666965}
   Observer: {fileID: 207923372}
+  infoPanel: {fileID: 1775732531}
 --- !u!4 &207923374
 Transform:
   m_ObjectHideFlags: 0
