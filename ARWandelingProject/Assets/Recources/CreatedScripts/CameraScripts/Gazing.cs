@@ -24,14 +24,14 @@ public class Gazing : MonoBehaviour
         Ray ray = new Ray(arCamera.transform.position, arCamera.transform.forward);
         RaycastHit hitsInfo;
 
-        if (Physics.Raycast(ray , out hitsInfo))
+        if (Input.GetMouseButtonUp(0) || Input.touchCount > 0)
         {
-            if (Input.GetMouseButtonUp(0) || Input.touchCount > 0)
+            Physics.Raycast(ray, out hitsInfo);
+            if (hitsInfo.collider.tag == "testTag1")
             {
                 Debug.DrawLine(ray.origin, hitsInfo.point, Color.green);
                 infoPanel.SetActive(true);
             }
-            
         }
         else
         {

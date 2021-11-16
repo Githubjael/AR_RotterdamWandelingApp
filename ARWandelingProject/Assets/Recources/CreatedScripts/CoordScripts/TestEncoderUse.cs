@@ -89,7 +89,7 @@ public class TestEncoderUse : MonoBehaviour
 
         if(Input.location.status == LocationServiceStatus.Running)
         {
-            GPSEncoder.SetLocalOrigin(new Vector2((float)51.9254786, (float)4.478690317));
+            //GPSEncoder.SetLocalOrigin(new Vector2((float)51.9254786, (float)4.478690317));
             //pointless
             /*double irlLatitude = Input.location.lastData.latitude;
             double irlLongitude = Input.location.lastData.longitude;*/
