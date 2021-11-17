@@ -721,7 +721,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   latitude: 0
   longitude: 0
-  Placeholders: []
+  Placeholders:
+  - {fileID: 3855228677887930456, guid: 7509628786045a8408e8431cffd683b1, type: 3}
+  - {fileID: 2341993181714160608, guid: 881b738622b160844a4ce59e70e3e3c4, type: 3}
 --- !u!1 &518850386
 GameObject:
   m_ObjectHideFlags: 0
