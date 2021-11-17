@@ -17,6 +17,8 @@ public class CoordsTest : MonoBehaviour
         Vector3 unityLocal = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
 
         var local = GPSEncoder.USCToGPS(unityLocal);
+        string localCoords = local.ToString();
+        Debug.Log(localCoords);
         Debug.Log($"{local}");
     }
 }
