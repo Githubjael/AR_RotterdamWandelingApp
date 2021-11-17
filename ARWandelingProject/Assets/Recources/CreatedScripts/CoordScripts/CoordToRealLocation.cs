@@ -17,10 +17,6 @@ public class CoordToRealLocation : MonoBehaviour, CoordInterface<float>
         longitude = lon;
         Vector2 CoordsToTranslate = new Vector2(latitude, longitude);
         Vector3 result = GPSEncoder.GPSToUCS(CoordsToTranslate);
-        for(var i = 0; i < 3; i++)
-        {
-
-        }
     }
     /*  
     public void Coords(float lat, float lon)
