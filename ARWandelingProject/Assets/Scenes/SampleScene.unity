@@ -668,7 +668,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384187380}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dd2b5fbfdf392642b937f23862447d7, type: 3}
   m_Name: 
@@ -697,17 +697,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384187380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8f17772fcb330249b46a88c50149555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Objectplacement: []
+  Objectplacement:
+  - {fileID: 2341993181714160608, guid: 881b738622b160844a4ce59e70e3e3c4, type: 3}
+  - {fileID: 3855228677887930456, guid: 7509628786045a8408e8431cffd683b1, type: 3}
   originPointLat: 51.927208
   originPointLon: 4.4802685
-  Loc1Text: {fileID: 0}
-  CurrentCoordText: {fileID: 0}
-  IRLcoords: {fileID: 0}
+  Loc1Text: {fileID: 1872523774}
+  CurrentCoordText: {fileID: 128920372}
+  IRLcoords: {fileID: 685341921}
 --- !u!114 &384187384
 MonoBehaviour:
   m_ObjectHideFlags: 0
