@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 384187383}
   - component: {fileID: 384187381}
   m_Layer: 0
-  m_Name: CoordsCoordsCoords
+  m_Name: CoordsCoordsCoordsCoords
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
