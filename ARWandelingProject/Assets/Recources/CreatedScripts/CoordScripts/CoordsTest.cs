@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class CoordsTest : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float lat;
+    [SerializeField] private float lon;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        var local = new Vector2(lat, lon);
+        GPSEncoder.SetLocalOrigin(local);
+    }
+    private void Update()
+    {
+        Vector3 unityLocal = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+
+        var local = GPSEncoder.USCToGPS(unityLocal);
+        Debug.Log($"{local}");
     }
 }
