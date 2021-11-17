@@ -19,7 +19,7 @@ public class CoordToRealLocation : MonoBehaviour, CoordInterface<float>
         Vector3 result = GPSEncoder.GPSToUCS(CoordsToTranslate);
         for(var i = 0; i < 3; i++)
         {
-            Instantiate(Placeholders[i], Placeholders[i].transform.position = new Vector3(result.x, result.y, result.z));
+
         }
     }
     /*  
