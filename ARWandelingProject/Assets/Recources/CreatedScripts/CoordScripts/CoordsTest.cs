@@ -7,6 +7,8 @@ public class CoordsTest : MonoBehaviour
     [SerializeField] private float lat;
     [SerializeField] private float lon;
 
+    [SerializeField] public List<GameObject> Placeholders = new List<GameObject>();
+
     private void Start()
     {
         var local = new Vector2(lat, lon);

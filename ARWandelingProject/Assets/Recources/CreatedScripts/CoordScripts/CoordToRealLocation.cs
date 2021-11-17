@@ -9,15 +9,20 @@ public class CoordToRealLocation : MonoBehaviour, CoordInterface<float>
     [SerializeField]
     public float longitude;
 
-    [SerializeField]
-    public List<GameObject> Placeholders = new List<GameObject>();
+    [SerializeField]public List<GameObject> Placeholders = new List<GameObject>();
     void CoordInterface<float>.Coords(float lat, float lon)
     {
         latitude = lat;
         longitude = lon;
         Vector2 CoordsToTranslate = new Vector2(latitude, longitude);
         Vector3 result = GPSEncoder.GPSToUCS(CoordsToTranslate);
+        Debug.Log(result);
+        for (var i = 0; i < 3; i++)
+        {
+            Instantiate<GameObject>(Placeholders[i]);
+        }
     }
+
     /*  
     public void Coords(float lat, float lon)
     {
