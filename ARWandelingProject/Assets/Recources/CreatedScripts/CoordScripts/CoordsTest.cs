@@ -44,8 +44,9 @@ public class CoordsTest : MonoBehaviour
             {
                 lat = Input.location.lastData.latitude;
                 lon = Input.location.lastData.longitude;
-                Vector3 translatedCoords = GPSEncoder.GPSToUCS(lat, lon);
-                Observer.transform.position = translatedCoords;
+                Observer.transform.position = GPSEncoder.GPSToUCS(lat, lon);
+                //Vector3 translatedCoords = GPSEncoder.GPSToUCS(lat, lon);
+                //Observer.transform.position = (translatedCoords);
             }
         }
     }

@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "RF8MC12HAVR",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "RF8MC12HAVR",
+        "name": "com.DefaultCompany.ARWandelingProjectJael",
+        "processId": 9973,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,18 @@
             "deviceId": "RF8MC12HAVR",
             "name": "com.sec.android.app.launcher",
             "processId": 1735,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 8303,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 9973,
             "exited": false
         }
     ],
