@@ -18,9 +18,9 @@ public class CoordToRealLocation : MonoBehaviour, CoordInterface<float>
         Vector3 result = GPSEncoder.GPSToUCS(CoordsToTranslate);
         Debug.Log(result);
     }*/
-    private void Update()
+    private void Start()
     {
-        
+        Coords((float)51.92782328054513, (float)4.480463377141008);
     }
 
     public void Coords(float lat, float lon)
