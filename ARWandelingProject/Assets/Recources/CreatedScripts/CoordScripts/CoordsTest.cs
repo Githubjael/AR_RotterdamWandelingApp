@@ -20,7 +20,7 @@ public class CoordsTest : MonoBehaviour
 
         var local = GPSEncoder.USCToGPS(unityLocal);
         string localCoords = local.ToString();
-        Debug.Log(localCoords);
-        Debug.Log($"{local}");
+        //Debug.Log(localCoords);
+        //Debug.Log($"{local}");
     }
 }

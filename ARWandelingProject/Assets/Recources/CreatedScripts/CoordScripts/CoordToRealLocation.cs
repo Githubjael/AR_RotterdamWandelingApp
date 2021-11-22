@@ -29,7 +29,7 @@ public class CoordToRealLocation : MonoBehaviour, CoordInterface<float>
         longitude = lon;
         Vector2 CoordsToTranslate = new Vector2(latitude, longitude);
         Vector3 result = GPSEncoder.GPSToUCS(CoordsToTranslate);
-        for (var  i = 0; i < 3; i++)
+        for (var  i = 0; i < 2; i++)
         {
             Instantiate<GameObject>(Placeholders[i]);
             Placeholders[i].transform.Translate(result);

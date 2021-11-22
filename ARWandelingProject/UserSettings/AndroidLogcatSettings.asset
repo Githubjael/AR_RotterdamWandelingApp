@@ -1,31 +1,13 @@
 {
     "m_SelectedDeviceId": "RF8MC12HAVR",
     "m_SelectedPackage": {
-        "deviceId": "RF8MC12HAVR",
-        "name": "com.DefaultCompany.ARWandelingProjectJael",
-        "processId": 11230,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 29491,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 29591,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.DefaultCompany.ARWandelingProjectJael",
-            "processId": 4732,
-            "exited": true
-        },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.DefaultCompany.ARWandelingProjectJael",
@@ -42,12 +24,24 @@
             "deviceId": "RF8MC12HAVR",
             "name": "com.google.android.youtube",
             "processId": 22256,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.DefaultCompany.ARWandelingProjectJael",
             "processId": 11230,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.DefaultCompany.ARWandelingProjectJael",
+            "processId": 11698,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.sec.android.app.launcher",
+            "processId": 1735,
             "exited": false
         }
     ],

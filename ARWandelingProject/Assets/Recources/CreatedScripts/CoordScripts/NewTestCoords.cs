@@ -25,13 +25,7 @@ public class NewTestCoords : MonoBehaviour
     #endregion
     private void Start()
     {
-        SetOrigin();
-
-        CurrentCoroutine = ARGPSFunction();
-        if(CurrentCoroutine != null)
-            StartCoroutine(CurrentCoroutine);
-        else
-            StopCoroutine(CurrentCoroutine);
+        //SetOrigin();
     }
     private void SetOrigin()
     {
@@ -62,7 +56,11 @@ public class NewTestCoords : MonoBehaviour
 
     void Update()
     {
-
+        CurrentCoroutine = ARGPSFunction();
+        if (CurrentCoroutine != null)
+            StartCoroutine(CurrentCoroutine);
+        else
+            StopCoroutine(CurrentCoroutine);
     }
     
     private IEnumerator ARGPSFunction()
