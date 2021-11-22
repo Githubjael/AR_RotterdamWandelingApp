@@ -734,16 +734,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384187380}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dc3a352ab071364aa83e34eba92a998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Observer: {fileID: 0}
   lat: 51.92346
   lon: 4.48116
-  Placeholders:
-  - {fileID: 2341993181714160608, guid: 881b738622b160844a4ce59e70e3e3c4, type: 3}
-  - {fileID: 3855228677887930456, guid: 7509628786045a8408e8431cffd683b1, type: 3}
 --- !u!1 &518850386
 GameObject:
   m_ObjectHideFlags: 0

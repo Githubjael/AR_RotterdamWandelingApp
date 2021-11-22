@@ -1,26 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class CoordsTest : MonoBehaviour
 {
+    [SerializeField] GameObject Observer;
     [SerializeField] private float lat;
     [SerializeField] private float lon;
+    public IEnumerator getCoords;
 
-    [SerializeField] public List<GameObject> Placeholders = new List<GameObject>();
-
-    private void Start()
+    public IEnumerator currentCoords()
     {
-        var local = new Vector2(lat, lon);
-        GPSEncoder.SetLocalOrigin(local);
+        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+        {
+            Permission.RequestUserPermission(Permission.FineLocation);
+            Input.location.Start();
+            if (!Input.location.isEnabledByUser)
+            {
+                Debug.Log("Location is not Enabled.");
+                yield break;
+            }
+
+            int maxWait = 10;
+
+            while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+            {
+                yield return new WaitForSeconds(1);
+                maxWait--;
+            }
+            if (maxWait < 1)
+            {
+                print("Timed out.");
+                yield break;
+            }
+
+            if (Input.location.status == LocationServiceStatus.Failed)
+            {
+                print("Unable to determine location.");
+                yield break;
+            }
+            else
+            {
+                lat = Input.location.lastData.latitude;
+                lon = Input.location.lastData.longitude;
+                Vector3 translatedCoords = GPSEncoder.GPSToUCS(lat, lon);
+                Observer.transform.position = translatedCoords;
+            }
+        }
     }
+
     private void Update()
     {
-        Vector3 unityLocal = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-
-        var local = GPSEncoder.USCToGPS(unityLocal);
-        string localCoords = local.ToString();
-        //Debug.Log(localCoords);
-        //Debug.Log($"{local}");
+        getCoords = currentCoords();
+        if (getCoords == null)
+        {
+            StartCoroutine(getCoords);
+        }
+        else
+        {
+            StopCoroutine(getCoords);
+        }
     }
 }
