@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GeodeticnaarECEF : MonoBehaviour
 {
+    /// <summary>
+    /// deze script moet geodectic coords naar ECEF coords converteren
+    /// </summary>
     private float N = 6399594;
     private float scale = 10000;
     [SerializeField] private float altitude;
