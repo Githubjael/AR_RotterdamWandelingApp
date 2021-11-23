@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3975142362051682446}
   m_Layer: 0
   m_Name: PlaceHolder
-  m_TagString: testTag1
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
