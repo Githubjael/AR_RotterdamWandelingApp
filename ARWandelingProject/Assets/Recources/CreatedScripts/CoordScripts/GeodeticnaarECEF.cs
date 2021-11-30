@@ -5,7 +5,7 @@ using UnityEngine;
 public class GeodeticnaarECEF : MonoBehaviour
 {
     /// <summary>
-    /// deze script moet geodectic coords naar ECEF coords converteren
+    /// deze script moet geodectic coords naar ECEF(x,y,z) coords converteren.
     /// </summary>
     private float N = 6399594;
     private float scale = 38000;

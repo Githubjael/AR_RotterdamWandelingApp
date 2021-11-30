@@ -8,7 +8,7 @@ public class SetToCurrentCoords : MonoBehaviour
 {
     [SerializeField]
     private ARSessionOrigin arSessionOrigin;
-
+    //De coördinaten van locatie 1.
     [SerializeField]
     private float latitude = (float)51.924035;
 

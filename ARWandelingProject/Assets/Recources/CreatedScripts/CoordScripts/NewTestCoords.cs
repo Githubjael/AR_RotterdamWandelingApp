@@ -7,6 +7,11 @@ using TMPro;
 
 public class NewTestCoords : MonoBehaviour
 {
+    /// <summary>
+    /// ik ben begonnen met deze script om coroutines te oefenen en om de coordinaten
+    /// te behandelen. ik denk dat deze script ook niet gebruikt wordt. gaat later
+    /// verwijdert worden als ik geen gebruik ervoor kan vinden.
+    /// </summary>
     #region PlaceholderTitle
     [Tooltip("This list contains Gameobjects (currently filled with placeholders)")]
     public List<GameObject> Objectplacement;
