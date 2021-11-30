@@ -442,12 +442,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc3a352ab071364aa83e34eba92a998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Observer: {fileID: 0}
+  Observer: {fileID: 207923372}
   lat: 0
   lon: 0
-  status: {fileID: 0}
+  status: {fileID: 1872523774}
   currentGeoCoords: {fileID: 685341921}
-  "ucsCo\xF6rds": {fileID: 0}
+  "ucsCo\xF6rds": {fileID: 128920372}
 --- !u!1 &223974226
 GameObject:
   m_ObjectHideFlags: 0

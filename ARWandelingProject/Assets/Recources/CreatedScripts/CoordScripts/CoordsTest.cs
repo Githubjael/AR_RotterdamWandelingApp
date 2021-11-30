@@ -58,6 +58,7 @@ public class CoordsTest : MonoBehaviour
             lat = Input.location.lastData.latitude;
             lon = Input.location.lastData.longitude;
             currentGeoCoords.text = $"Lat:{lat},Lon:{lon}";
+
             //ik hou deze dingen om te zien als er later een gebruik ervoor is.
             //Vector2 UCScoords = new Vector2(lat, lon);
             //Vector2 ucsCoords = new Vector2(Observer.transform.position.x, Observer.transform.position.y, Observer.transform);
