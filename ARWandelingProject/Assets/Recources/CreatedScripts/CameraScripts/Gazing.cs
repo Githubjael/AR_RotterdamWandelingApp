@@ -29,7 +29,7 @@ public class Gazing : MonoBehaviour
             if(Physics.Raycast(ray, out hitsInfo))
             {
                 Debug.DrawLine(ray.origin, hitsInfo.point, Color.green);
-                if (hitsInfo.collider.tag == "testTag1")
+                if (hitsInfo.collider.tag == "Selectable")
                 {
                     infoPanel.SetActive(true);
                 }
