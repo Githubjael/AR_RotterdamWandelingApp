@@ -19,7 +19,22 @@ public class CoordsTest : MonoBehaviour
     public TextMeshProUGUI status;
     public TextMeshProUGUI currentGeoCoords;
     public TextMeshProUGUI ucsCoörds;
-
+    public void Start()
+    {
+        Observer = gameObject;
+    }
+    public void Update()
+    {
+        getCoords = currentCoords();
+        if (getCoords != null)
+        {
+            StartCoroutine(getCoords);
+        }
+        else
+        {
+            StopCoroutine(getCoords);
+        }
+    }
     public IEnumerator currentCoords()
     {
         if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
@@ -66,23 +81,6 @@ public class CoordsTest : MonoBehaviour
             //Observer.transform.position = GPSEncoder.GPSToUCS(lat, lon);
             //Vector3 translatedCoords = GPSEncoder.GPSToUCS(lat, lon);
             //Observer.transform.position = (translatedCoords);
-        }
-    }
-
-    public void Start()
-    {
-        Observer = gameObject;
-    }
-    private void Update()
-    {
-        getCoords = currentCoords();
-        if (getCoords != null)
-        {
-            StartCoroutine(getCoords);
-        }
-        else
-        {
-            StopCoroutine(getCoords);
         }
     }
 }
