@@ -73,7 +73,7 @@ public class CoordsTest : MonoBehaviour
         {
             lat = Input.location.lastData.latitude;
             lon = Input.location.lastData.longitude;
-            currentGeoCoords.text = $"Lat:{lat},Lon:{lon}";
+            currentGeoCoords.text = $"Lat:{lat}, Lon:{lon}";
             ucsCoörds.text = $"{arSessionOrigin.transform.position}";
             arSessionOrigin.transform.position = GPSEncoder.GPSToUCS(lat, lon);
             //ik hou deze dingen om te zien als er later een gebruik ervoor is.
@@ -83,6 +83,7 @@ public class CoordsTest : MonoBehaviour
             //Observer.transform.position = GPSEncoder.GPSToUCS(lat, lon);
             //Vector3 translatedCoords = GPSEncoder.GPSToUCS(lat, lon);
             //Observer.transform.position = (translatedCoords);
+
         }
     }
 }

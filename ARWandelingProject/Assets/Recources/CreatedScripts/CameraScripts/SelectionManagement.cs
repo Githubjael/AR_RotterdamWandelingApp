@@ -18,7 +18,7 @@ public class SelectionManagement : MonoBehaviour
             selectionRenderer.material = defaultMaterial;
             _selection = null;
         }
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        var ray = Camera.main.ScreenPointToRay(new Vector2(0.5f, 0.5f));
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit))
         {
