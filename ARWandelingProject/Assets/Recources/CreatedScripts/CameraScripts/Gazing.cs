@@ -37,7 +37,7 @@ public class Gazing : MonoBehaviour
         }
         else
         {
-            Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100f, Color.white);
+            Debug.DrawLine(ray.origin, ray.origin + ray.direction * 25f, Color.black);
             infoPanel.SetActive(false);
         }
     }
