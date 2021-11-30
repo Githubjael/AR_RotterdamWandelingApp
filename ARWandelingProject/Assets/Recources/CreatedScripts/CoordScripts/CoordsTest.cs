@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.XR.ARFoundation;
 
 public class CoordsTest : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class CoordsTest : MonoBehaviour
     /// Ik ben van plan om met deze script om de coords van echte locaties te converteren naar ucs.
     /// en de gebouwen op die ucs coords te plaatsen.
     /// </summary>
-    [SerializeField] GameObject Observer;
+    [SerializeField] ARSessionOrigin arSessionOrigin;
     [SerializeField] private float lat;
     [SerializeField] private float lon;
 
@@ -21,7 +22,7 @@ public class CoordsTest : MonoBehaviour
     public TextMeshProUGUI ucsCoörds;
     public void Start()
     {
-        Observer = gameObject;
+
     }
     public void Update()
     {
@@ -73,7 +74,8 @@ public class CoordsTest : MonoBehaviour
             lat = Input.location.lastData.latitude;
             lon = Input.location.lastData.longitude;
             currentGeoCoords.text = $"Lat:{lat},Lon:{lon}";
-
+            ucsCoörds.text = $"{arSessionOrigin.transform.position}";
+            arSessionOrigin.transform.position = GPSEncoder.GPSToUCS(lat, lon);
             //ik hou deze dingen om te zien als er later een gebruik ervoor is.
             //Vector2 UCScoords = new Vector2(lat, lon);
             //Vector2 ucsCoords = new Vector2(Observer.transform.position.x, Observer.transform.position.y, Observer.transform);

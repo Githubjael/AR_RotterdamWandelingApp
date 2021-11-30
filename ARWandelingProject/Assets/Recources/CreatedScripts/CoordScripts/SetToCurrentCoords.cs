@@ -21,6 +21,5 @@ public class SetToCurrentCoords : MonoBehaviour
     private void Start()
     {
         GPSEncoder.SetLocalOrigin(new Vector2((float)51.9240374848728, (float)4.480468332950854));
-        arSessionOrigin.transform.position = GPSEncoder.GPSToUCS(latitude, longitude);
     }
 }

@@ -2037,10 +2037,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1563662579}
   - component: {fileID: 1563662578}
-  - component: {fileID: 1563662580}
   - component: {fileID: 1563662581}
   - component: {fileID: 1563662582}
   - component: {fileID: 1563662583}
+  - component: {fileID: 1563662580}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged

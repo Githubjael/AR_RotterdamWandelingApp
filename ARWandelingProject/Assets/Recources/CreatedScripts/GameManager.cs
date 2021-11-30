@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 
     public void SampleScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Loc1");
     }
 
     public void Menu()
