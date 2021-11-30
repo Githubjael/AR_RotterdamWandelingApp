@@ -6,6 +6,9 @@ using UnityEngine.XR.ARFoundation;
 
 public class SetToCurrentCoords : MonoBehaviour
 {
+    /// <summary>
+    /// dit was ook een oefenscript maar ik gebruik het nu voor local origin.
+    /// </summary>
     [SerializeField]
     private ARSessionOrigin arSessionOrigin;
     //De coördinaten van locatie 1.

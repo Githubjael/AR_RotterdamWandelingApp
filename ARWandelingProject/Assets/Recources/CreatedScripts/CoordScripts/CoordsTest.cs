@@ -6,6 +6,10 @@ using UnityEngine.Android;
 
 public class CoordsTest : MonoBehaviour
 {
+    /// <summary>
+    /// Ik ben van plan om met deze script om de coords van echte locaties te converteren naar ucs.
+    /// en de gebouwen op die ucs coords te plaatsen.
+    /// </summary>
     [SerializeField] GameObject Observer;
     [SerializeField] private float lat;
     [SerializeField] private float lon;
