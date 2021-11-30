@@ -13,7 +13,7 @@ public class GeodeticnaarECEF : MonoBehaviour
     [SerializeField] private float latitude;
     [SerializeField] private float longitude;
     [SerializeField] private GameObject Placeholder;
-    public void Converter()
+    public void Convert()
     {
         var X = (N + altitude) * Mathf.Cos(latitude) * Mathf.Cos(longitude);
         Debug.Log(X);
@@ -26,6 +26,6 @@ public class GeodeticnaarECEF : MonoBehaviour
     }
     public void Start()
     {
-        Converter();
+        Convert();
     }
 }
