@@ -16,8 +16,9 @@ public class CoordsTest : MonoBehaviour
 
     public IEnumerator getCoords;
 
+    public TextMeshProUGUI status;
     public TextMeshProUGUI currentGeoCoords;
-    public TextMeshProUGUI ucsCoords;
+    public TextMeshProUGUI ucsCoörds;
 
     public IEnumerator currentCoords()
     {
