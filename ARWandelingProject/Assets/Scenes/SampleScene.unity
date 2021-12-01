@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6905280e050b804ebfa137ea23ec299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LATLON: {fileID: 0}
+  LATLON: {fileID: 1073471321}
 --- !u!4 &539543373
 Transform:
   m_ObjectHideFlags: 0
