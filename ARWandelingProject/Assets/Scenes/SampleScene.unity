@@ -637,10 +637,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128606a3661dfda4a8f7d5bb9e01b52f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tLon: 4.521889
-  lon: 4.521889
-  tLat: 51.854305
-  lat: 51.854305
+  tLon: 0
+  lon: 0
+  tLat: 0
+  lat: 0
   receivertext: {fileID: 599107637}
 --- !u!1 &599107636
 GameObject:

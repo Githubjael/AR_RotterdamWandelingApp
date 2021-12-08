@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class distFunction : MonoBehaviour
 {
-    [SerializeField] float tLon;
-    [SerializeField] float lon;
-    [SerializeField] float tLat;
-    [SerializeField] float lat;
+    [SerializeField] float tLon = (float)4.522115284114317;
+    [SerializeField] float lon = (float)4.522812375416302;
+    [SerializeField] float tLat = (float)51.85420688272829;
+    [SerializeField] float lat = (float)51.85428582024129;
 
     [SerializeField] Text receivertext;
 
