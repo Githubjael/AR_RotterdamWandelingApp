@@ -1,18 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class distFunction : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float tLon;
+    [SerializeField] float lon;
+    [SerializeField] float tLat;
+    [SerializeField] float lat;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] Text receivertext;
+
+    private void Update()
     {
-        
+        function();
+    }
+    public void function()
+    {
+        float xx = dist(0, tLon, 0, lon), zz = dist(tLat, 0, lat, 0);
+        Vector3 position = new Vector3(xx, 0, zz);
+        float beta = Mathf.Acos(position.z) * Mathf.Rad2Deg;
+        position = Quaternion.Euler(0, beta - Input.compass.trueHeading, 0) * position;
+        transform.position = position;
+        receivertext.text = transform.position.ToString();
+    }
+    //geo measurement voor algemeene gebruik
+    public float dist(float lat1, float lon1, float lat2, float lon2)
+    {
+        var R = 6378.137;
+        var dLat = (lat2 - lat1) * Mathf.PI / 180;
+        var dLon = (lon2 - lon1) * Mathf.PI / 180;
+        var a = Mathf.Sin(dLat / 2) * Mathf.Sin(dLat / 2) + Mathf.Cos(lat1 * Mathf.PI / 180) * Mathf.Cos(lat2 * Mathf.PI / 180) *
+                Mathf.Sin(dLon / 2) * Mathf.Sin(dLon / 2);
+        var c = 2 * Mathf.Atan2(Mathf.Sqrt(a), Mathf.Sqrt(1 - a));
+        var d = R * c;
+        return (float)(d * 1000);//meters
     }
 }
