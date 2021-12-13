@@ -21,6 +21,7 @@ public class distFunction : MonoBehaviour
         float xx = dist(0, tLon, 0, lon), zz = dist(tLat, 0, lat, 0);
         Vector3 position = new Vector3(xx, 0, zz);
         position.Normalize();
+        position = Quaternion.AngleAxis(Input.compass.trueHeading, Vector3.up) * position;
         float beta = Mathf.Acos(position.z) * Mathf.Rad2Deg;
         position = Quaternion.Euler(0, beta - Input.compass.trueHeading, 0) * position;
         transform.position = position;
