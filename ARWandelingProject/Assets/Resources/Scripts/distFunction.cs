@@ -12,20 +12,41 @@ public class distFunction : MonoBehaviour
 
     [SerializeField] Text receivertext;
 
+    public IEnumerator coroutine;
     private void Update()
     {
         function();
     }
-    public void function()
+    public IEnumerator function()
     {
-        float xx = dist(0, tLon, 0, lon), zz = dist(tLat, 0, lat, 0);
-        Vector3 position = new Vector3(xx, 0, zz);
-        position.Normalize();
-        position = Quaternion.AngleAxis(Input.compass.trueHeading, Vector3.up) * position;
-        float beta = Mathf.Acos(position.z) * Mathf.Rad2Deg;
-        position = Quaternion.Euler(0, beta - Input.compass.trueHeading, 0) * position;
-        transform.position = position;
-        receivertext.text = transform.position.ToString();
+        Input.location.Start();
+        int maxWait = 5;
+        if(Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+        {
+            yield return new WaitForSeconds(1);
+            maxWait--;
+        }
+        if (maxWait < 0)
+        {
+            receivertext.text = "maxWait has failed.";
+            yield break;
+        }
+        if (Input.location.status == LocationServiceStatus.Failed)
+        {
+            receivertext.text = $"{LocationServiceStatus.Failed.ToString()}";
+        }
+        else
+        {
+            float xx = dist(0, tLon, 0, lon), zz = dist(tLat, 0, lat, 0);
+            Vector3 position = new Vector3(xx, 0, zz);
+            position.Normalize();
+            position = Quaternion.AngleAxis(Input.compass.trueHeading, Vector3.up) * position;
+            float beta = Mathf.Acos(position.z) * Mathf.Rad2Deg;
+            position = Quaternion.Euler(0, beta - Input.compass.trueHeading, 0) * position;
+            transform.position = position;
+            receivertext.text = transform.position.ToString();
+        }
+
     }
     //geo measurement voor algemeene gebruik
     public float dist(float lat1, float lon1, float lat2, float lon2)
