@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 419843153}
   - component: {fileID: 419843152}
   - component: {fileID: 419843151}
+  - component: {fileID: 419843154}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -579,6 +580,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419843149}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &419843154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419843149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128606a3661dfda4a8f7d5bb9e01b52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tLon: 4.522115
+  lon: 4.5228124
+  tLat: 51.854206
+  lat: 51.854286
+  receivertext: {fileID: 599107637}
 --- !u!1 &539543371
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +607,6 @@ GameObject:
   m_Component:
   - component: {fileID: 539543373}
   - component: {fileID: 539543372}
-  - component: {fileID: 539543374}
   m_Layer: 0
   m_Name: ReceiverObject
   m_TagString: Untagged
@@ -625,23 +642,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &539543374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539543371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 128606a3661dfda4a8f7d5bb9e01b52f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tLon: 4.480558
-  lon: 4.480366
-  tLat: 51.923927
-  lat: 51.927223
-  receivertext: {fileID: 599107637}
 --- !u!1 &599107636
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,11 @@ public class distFunction : MonoBehaviour
     public IEnumerator coroutine;
     private void Update()
     {
-        function();
+        coroutine = function();
+        if(coroutine != null)
+        {
+            StartCoroutine(function());
+        }
     }
     public IEnumerator function()
     {
