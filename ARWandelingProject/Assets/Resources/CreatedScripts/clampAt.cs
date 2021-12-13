@@ -15,5 +15,6 @@ public class clampAt : MonoBehaviour
     {
         var position = gameObject.transform.position;
         Mathf.Clamp(position.y, minValue, maxValue);
+        gameObject.transform.position = position;
     }
 }
