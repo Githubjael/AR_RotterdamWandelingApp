@@ -592,10 +592,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128606a3661dfda4a8f7d5bb9e01b52f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tLon: 4.522115
-  lon: 4.5228124
-  tLat: 51.854206
-  lat: 51.854286
+  tLon: 4.480636
+  lon: 4.480613
+  tLat: 51.9239
+  lat: 51.923904
   receivertext: {fileID: 599107637}
 --- !u!1 &539543371
 GameObject:
@@ -1070,7 +1070,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1513474076}
   - component: {fileID: 1513474075}
-  - component: {fileID: 1513474078}
   - component: {fileID: 1513474077}
   m_Layer: 0
   m_Name: AR Session Origin
@@ -1120,20 +1119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PointCloudPrefab: {fileID: 657686391926857574, guid: 969052bae99f49e4481f773b03570685, type: 3}
---- !u!114 &1513474078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513474074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlanePrefab: {fileID: 982980984004764468, guid: 91ac5d563a27be440963c827ec556c4c, type: 3}
-  m_DetectionMode: -1
 --- !u!1 &1883795842
 GameObject:
   m_ObjectHideFlags: 0

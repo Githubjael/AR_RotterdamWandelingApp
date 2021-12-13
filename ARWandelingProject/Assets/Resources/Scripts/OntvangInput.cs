@@ -39,6 +39,5 @@ public class OntvangInput : MonoBehaviour
             string lon = Input.location.lastData.longitude.ToString();
             LATLON.text = $"lat:{lat}, lon:{lon}";
         }
-        Input.location.Stop();
     }
 }

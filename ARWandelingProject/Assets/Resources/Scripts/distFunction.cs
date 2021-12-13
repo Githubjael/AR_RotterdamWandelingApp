@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class distFunction : MonoBehaviour
 {
-    [SerializeField] float tLon = (float)4.522115284114317;
-    [SerializeField] float lon = (float)4.522812375416302;
-    [SerializeField] float tLat = (float)51.85420688272829;
-    [SerializeField] float lat = (float)51.85428582024129;
+    [SerializeField] float tLon = (float)0;
+    [SerializeField] float lon = (float)0;
+    [SerializeField] float tLat = (float)0;
+    [SerializeField] float lat = (float)0;
 
     [SerializeField] Text receivertext;
 
@@ -41,6 +41,8 @@ public class distFunction : MonoBehaviour
         }
         else
         {
+            tLon = Input.location.lastData.longitude;
+            tLat = Input.location.lastData.latitude;
             float xx = dist(0, tLon, 0, lon), zz = dist(tLat, 0, lat, 0);
             Vector3 position = new Vector3(xx, 0, zz);
             position.Normalize();
@@ -50,7 +52,6 @@ public class distFunction : MonoBehaviour
             transform.position = position;
             receivertext.text = transform.position.ToString();
         }
-
     }
     //geo measurement voor algemeene gebruik
     public float dist(float lat1, float lon1, float lat2, float lon2)
