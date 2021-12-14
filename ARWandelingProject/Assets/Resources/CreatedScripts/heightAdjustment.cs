@@ -8,10 +8,6 @@ public class heightAdjustment : MonoBehaviour
 {
     public Text heightInput;
     // Start is called before the first frame update
-    void Start()
-    {
-        function();
-    }
 
     public void function()
     {
