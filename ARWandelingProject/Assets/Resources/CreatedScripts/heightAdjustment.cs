@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class heightAdjustment : MonoBehaviour
 {
     public Text heightInput;
-    // Start is called before the first frame update
 
     public void function()
     {
