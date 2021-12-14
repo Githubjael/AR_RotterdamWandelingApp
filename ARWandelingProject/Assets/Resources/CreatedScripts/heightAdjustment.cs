@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class heightAdjustment : MonoBehaviour
 {
-    public Text heightinput;
+    public Text heightInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,8 @@ public class heightAdjustment : MonoBehaviour
 
     public void function()
     {
-
+        int i = Convert.ToInt32(heightInput);
+        var position = gameObject.transform.position;
+        position.y = i;
     }
 }
