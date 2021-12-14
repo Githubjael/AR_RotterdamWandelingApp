@@ -10,7 +10,7 @@ public class heightAdjustment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        function();
     }
 
     public void function()

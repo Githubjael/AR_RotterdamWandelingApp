@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7562042923f81ec4783bafab35360c99, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7562042923f81ec4783bafab35360c99, type: 3}
       propertyPath: m_LocalRotation.w
@@ -408,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23270a641b5771c4d8a5d744e8a6f4e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23270a641b5771c4d8a5d744e8a6f4e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -577,11 +577,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1091996013}
   - component: {fileID: 1091996008}
-  - component: {fileID: 1091996012}
   - component: {fileID: 1091996011}
   - component: {fileID: 1091996010}
   - component: {fileID: 1091996009}
-  - component: {fileID: 1091996014}
   - component: {fileID: 1091996015}
   m_Layer: 0
   m_Name: AR Camera
@@ -599,7 +597,7 @@ Camera:
   m_GameObject: {fileID: 1091996007}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -696,18 +694,6 @@ MonoBehaviour:
   m_AutoFocus: 1
   m_LightEstimation: 1
   m_FacingDirection: 1
---- !u!114 &1091996012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091996007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3c44306fb1e439a9f18b2212b8ab70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1091996013
 Transform:
   m_ObjectHideFlags: 0
@@ -722,20 +708,6 @@ Transform:
   m_Father: {fileID: 1549264951}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1091996014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091996007}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eb68d1269caa2a4c90dec989f2f042e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minValue: 0
-  maxValue: 3
 --- !u!114 &1091996015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,7 +742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 466c7d7368b12cc4085481ef7bd2f905, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 466c7d7368b12cc4085481ef7bd2f905, type: 3}
       propertyPath: m_LocalRotation.w
@@ -986,7 +958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47c159c7de508704b8b1646223da9eb8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47c159c7de508704b8b1646223da9eb8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1043,7 +1015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d443d75dd80b9d144b82a5c4578b0dfa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d443d75dd80b9d144b82a5c4578b0dfa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1164,7 +1136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b64f7337a02d0234e8219cd80dc10172, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b64f7337a02d0234e8219cd80dc10172, type: 3}
       propertyPath: m_LocalRotation.w
