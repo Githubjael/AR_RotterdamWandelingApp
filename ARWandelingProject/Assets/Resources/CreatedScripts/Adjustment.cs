@@ -23,15 +23,11 @@ public class Adjustment : MonoBehaviour
     {
         i++;
         Camera.transform.position += Vector3.up;
-/*        var a = Camera.transform.position;
-        Camera.transform.position = new Vector3(a.x, i, a.z);*/
     }
     public void heightAdjustmentDOWN()
     {
         i--;
         Camera.transform.position += Vector3.down;
-/*        var a = Camera.transform.position;
-        Camera.transform.position = new Vector3(a.x, i, a.z);*/
     }
     public void OnvalueChange(float value)
     {
