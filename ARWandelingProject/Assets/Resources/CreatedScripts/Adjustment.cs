@@ -9,8 +9,7 @@ public class Adjustment : MonoBehaviour
 {
     [SerializeField]private ARSessionOrigin sessionOrigin;
     public GameObject Content;
-    public int i = 0;
-    public GameObject inputfield;
+    [SerializeField]private int i = 0;
     public Camera Camera;
 
     public void Start()
