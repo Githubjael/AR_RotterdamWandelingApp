@@ -11,6 +11,7 @@ public class Adjustment : MonoBehaviour
     public GameObject Content;
     [SerializeField]private int i = 0;
     public Camera Camera;
+    public Slider slider;
 
     public void Start()
     {
@@ -35,5 +36,8 @@ public class Adjustment : MonoBehaviour
         sessionOrigin.MakeContentAppearAt(Content.transform, Quaternion.identity);
 
         Content.transform.localScale = new Vector3(value, value, value);
+        float scale = slider.value;
+        sessionOrigin.transform.localScale = Vector3.one * scale;
+
     }
 }
