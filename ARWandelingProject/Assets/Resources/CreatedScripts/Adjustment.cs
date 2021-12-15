@@ -33,5 +33,7 @@ public class Adjustment : MonoBehaviour
         Debug.Log("New Value:" + value);
         //Transform t = gameObject.transform;
         sessionOrigin.MakeContentAppearAt(Content.transform, Quaternion.identity);
+
+        Content.transform.localScale = new Vector3(value, value, value);
     }
 }
