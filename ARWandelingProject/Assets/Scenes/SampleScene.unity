@@ -163,9 +163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sessionOrigin: {fileID: 0}
-  Content: {fileID: 0}
+  Content: {fileID: 560699607}
   i: 0
   Camera: {fileID: 1091996008}
+  slider: {fileID: 1191126473}
 --- !u!4 &272902867
 Transform:
   m_ObjectHideFlags: 0
@@ -1080,10 +1081,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1352108373}
   m_HandleRect: {fileID: 933429961}
   m_Direction: 0
-  m_MinValue: -10
-  m_MaxValue: 20
+  m_MinValue: 0
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1511,6 +1512,7 @@ MonoBehaviour:
   Content: {fileID: 1017372652}
   i: 0
   Camera: {fileID: 1091996008}
+  slider: {fileID: 0}
 --- !u!4 &1577749884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7562042923f81ec4783bafab35360c99, type: 3}
