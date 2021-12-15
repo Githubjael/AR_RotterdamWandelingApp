@@ -35,6 +35,5 @@ public class Adjustment : MonoBehaviour
         sessionOrigin.MakeContentAppearAt(Content.transform, Quaternion.identity);
 
         Content.transform.localScale = new Vector3(value, value, value);
-        sessionOrigin.transform.localScale = new Vector3(value, value, value);
     }
 }
