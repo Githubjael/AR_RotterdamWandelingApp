@@ -1,9 +1,64 @@
 fileFormatVersion: 2
-guid: 713973a0706de1847a9b31d5b62673b8
+guid: 54330ac4c27ee4847b69f8db6031b729
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn10SG
+    second: {fileID: 2100000, guid: bff62b86216f4e049a8441490e2a0d22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn11SG
+    second: {fileID: 2100000, guid: 70a21461af196c04aaa4bb5c3b040d2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1SG
+    second: {fileID: 2100000, guid: 70dcc3060ecbb844ea0a8532809c1f09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn2SG
+    second: {fileID: 2100000, guid: 8e1a1156e2b0bbc43b006e556384c521, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn4SG
+    second: {fileID: 2100000, guid: 83741cdbab34ff24ba62407dd3e85cea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn5SG
+    second: {fileID: 2100000, guid: d395d52c90f5fef43aecd15b84717738, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn6SG
+    second: {fileID: 2100000, guid: 5e0b525eafa7bcb43aab061e89512083, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn7SG
+    second: {fileID: 2100000, guid: ecbb16a078f047b4682119375fa19954, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn8SG
+    second: {fileID: 2100000, guid: 605bd226d53d25742b6c2231b3bfafe9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn9SG
+    second: {fileID: 2100000, guid: 0f5bc430c81f1b9478896aeada221c92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: initialShadingGroup
+    second: {fileID: 2100000, guid: deceea5bcbb20814dbdada32902b495b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

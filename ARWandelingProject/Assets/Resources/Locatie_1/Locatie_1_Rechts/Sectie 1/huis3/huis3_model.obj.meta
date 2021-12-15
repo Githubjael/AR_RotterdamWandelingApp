@@ -1,9 +1,44 @@
 fileFormatVersion: 2
-guid: 1ec2a05d3c405ba4995e6f0e4bf65ce5
+guid: b8b3a41c199d3fa45ac67801fa41335e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_Big_D1_Yellow
+    second: {fileID: 2100000, guid: 20a7e24fd34476b408471997ee2bdc3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_Big_D1_standardSurface2SG
+    second: {fileID: 2100000, guid: f83088dc2cae2d84096899d55d69b9fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_Big_D1_standardSurface4SG
+    second: {fileID: 2100000, guid: 25ed875ca7a8d34409d25d3d9603a304, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_Big_D1_standardSurface5SG
+    second: {fileID: 2100000, guid: ffc8dea2219c8a949bab3b6742681312, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_Big_D1_standardSurface6SG
+    second: {fileID: 2100000, guid: db2edb3d89afaa74ab4872c961005090, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_Big_D1_standardSurface7SG
+    second: {fileID: 2100000, guid: e7c2709c525fd514ba3808151a84cccf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_Big_D1_standardSurface8SG
+    second: {fileID: 2100000, guid: b800325cac5cd1543ade9688bf3500ae, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
