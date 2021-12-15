@@ -9,6 +9,7 @@ public class Adjustment : MonoBehaviour
 {
     [SerializeField]private ARSessionOrigin sessionOrigin;
     public GameObject Content;
+    public GameObject cube;
     [SerializeField]private int i = 0;
     public Camera Camera;
     public Slider slider;
@@ -22,12 +23,12 @@ public class Adjustment : MonoBehaviour
     public void heightAdjustmentUP()
     {
         i++;
-        Camera.transform.position += Vector3.up;
+        sessionOrigin.transform.position += Vector3.up;
     }
     public void heightAdjustmentDOWN()
     {
         i--;
-        Camera.transform.position += Vector3.down;
+        sessionOrigin.transform.position += Vector3.down;
     }
     public void OnvalueChange(float value)
     {
