@@ -9,7 +9,6 @@ public class Adjustment : MonoBehaviour
 {
     [SerializeField]private ARSessionOrigin sessionOrigin;
     public GameObject Content;
-    public GameObject cube;
     [SerializeField]private int i = 0;
     public Camera Camera;
     public Slider slider;
