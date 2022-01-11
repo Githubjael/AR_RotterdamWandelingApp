@@ -8,19 +8,32 @@ public class EquirectangularProjection : MonoBehaviour
     public float longitude;
     public float latitude;
 
-    public float central_meridian;
+    public float central_meridian = 6;
+    public float parallel_meridian;
 
-
-    //public void 
-    public float x_vector()
+    public List<GameObject> Content = new List<GameObject>();
+    public void Function()
     {
-        var x = Radius * (longitude / central_meridian) * Mathf.Cos(central_parallel);
+/*        for(int i = 0; i < Content.Length; i++)
+        {
+            x_vector();
+            y_vector();
+        }*/
+    }
+
+    public float Xix,(float x)
+    {
+        x = Radius * (longitude / central_meridian) * Mathf.Cos(parallel_meridian);
         return x;
     }
 
-    public float y_vector()
+    public float Yaxis(float y)
     {
-        var y = Radius * (latitude / central_parallel);
+        y = Radius * ( latitude * parallel_meridian);
         return y;
+    }
+    public struct Convert
+    {
+        
     }
 }
