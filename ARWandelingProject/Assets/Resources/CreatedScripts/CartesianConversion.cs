@@ -13,7 +13,8 @@ public class CartesianConversion : MonoBehaviour
     {
         for(int i = 0; i < listOfCoords.Length; i++)
         {
-            print(Converter(coords.latitude, coords.longitude));
+            print(listOfCoords[i].Locatie);
+            print(Converter(listOfCoords[i].latitude, listOfCoords[i].longitude));
         }
     }
 
