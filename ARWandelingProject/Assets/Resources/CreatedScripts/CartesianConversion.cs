@@ -23,8 +23,10 @@ public class CartesianConversion : MonoBehaviour
         return new Vector3(x, y, z);
     }
 
+    [System.Serializable]
     public struct Coords
     {
+        public string Locatie;
         public float latitude;
         public float longitude;
     }

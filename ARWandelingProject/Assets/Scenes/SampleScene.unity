@@ -533,6 +533,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   R: 6371000
+  listOfCoords:
+  - Locatie: 1
+    latitude: 51.92346
+    longitude: 4.48116
 --- !u!4 &538924118
 Transform:
   m_ObjectHideFlags: 0
