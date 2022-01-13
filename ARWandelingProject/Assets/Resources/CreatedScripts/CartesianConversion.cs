@@ -8,10 +8,13 @@ public class CartesianConversion : MonoBehaviour
     /*public float latitude;
     public float longitude;*/
     Coords coords = new Coords();
-    public List<Coords> listOfCoords = new List<Coords>();
+    public Coords[] listOfCoords;
     public void Start()
     {
-        print(Converter(coords.latitude, coords.longitude));
+        for(int i = 0; i < listOfCoords.Length; i++)
+        {
+            print(Converter(coords.latitude, coords.longitude));
+        }
     }
 
     public Vector3 Converter(float latitude, float longitude)
@@ -26,7 +29,7 @@ public class CartesianConversion : MonoBehaviour
     [System.Serializable]
     public struct Coords
     {
-        public string Locatie;
+        public int Locatie;
         public float latitude;
         public float longitude;
     }
