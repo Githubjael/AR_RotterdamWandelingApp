@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CartesianConversion : MonoBehaviour
 {
-    public int R = 6371 * 1000;
+    public int R = 6371;
     /*public float latitude;
     public float longitude;*/
     Coords coords = new Coords();
