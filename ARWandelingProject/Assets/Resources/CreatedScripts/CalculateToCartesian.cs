@@ -24,7 +24,7 @@ public class CalculateToCartesian : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     Vector3 GetPoint(float rho, float theta, float phi)
