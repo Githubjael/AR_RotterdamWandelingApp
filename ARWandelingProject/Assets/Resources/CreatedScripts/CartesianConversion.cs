@@ -7,14 +7,16 @@ public class CartesianConversion : MonoBehaviour
     public int R = 6371;
     /*public float latitude;
     public float longitude;*/
-    Coords coords = new Coords();
+    /*Coords coords = new Coords();*/
     public Coords[] listOfCoords;
+    public GameObject content;
     public void Start()
     {
         for(int i = 0; i < listOfCoords.Length; i++)
         {
             print(listOfCoords[i].Locatie);
             print(Converter(listOfCoords[i].latitude, listOfCoords[i].longitude));
+            content.transform.position = Converter(listOfCoords[i].latitude, listOfCoords[i].longitude);
         }
     }
 

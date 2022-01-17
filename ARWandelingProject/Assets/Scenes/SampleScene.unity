@@ -532,11 +532,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ffa1029d196aa40a152f7a7d9c964a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  R: 6371000
+  R: 6371
   listOfCoords:
   - Locatie: 1
     latitude: 51.92346
     longitude: 4.48116
+  content: {fileID: 560699607}
 --- !u!4 &538924118
 Transform:
   m_ObjectHideFlags: 0
@@ -1566,7 +1567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549264949}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 8, y: 0, z: -2}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1091996013}
