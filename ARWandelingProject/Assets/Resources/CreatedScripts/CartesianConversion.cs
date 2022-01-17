@@ -26,7 +26,7 @@ public class CartesianConversion : MonoBehaviour
         float y = R * Mathf.Cos(latitude) * Mathf.Sin(longitude);
         float z = R * Mathf.Sin(latitude);
 
-        return new Vector3(x, y, z);
+        return new Vector3(x, y, z) / 10;
     }
 
     [System.Serializable]
