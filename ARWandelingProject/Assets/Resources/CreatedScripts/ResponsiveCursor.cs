@@ -2,53 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+[ExecuteInEditMode]
 public class ResponsiveCursor : MonoBehaviour
 {
     private RectTransform cursor;
 
-    [SerializeField]
-    private float startSize;
-    
-    [SerializeField]
-    private float endSize;
-
-    public Transform playerObject;
-    public Camera arCamera;
-
     Ray ray;
     RaycastHit hit;
-    LayerMask interactable;
 
-    private bool isOnInteractable;
-    // Start is called before the first frame update
-    void Start()
-    {
-        cursor = GetComponent<RectTransform>();
-            }
+    public Transform player;
 
-    private void Update()
-    {
-        ray.origin = playerObject.transform.position;
-        ray.direction = playerObject.TransformDirection(Vector3.forward);
-        Responsive();
-    }
+    Vector3 minScale;
+    public Vector3 maxScale;
+    public bool interactable;
+    public float speed = 2f;
+    public float duration = 5f;
 
-    void Responsive()
+    public IEnumerator Responsive(Vector3 a, Vector3 b, float time)
     {
-        Debug.DrawLine(ray.origin, ray.direction, Color.red);
-        if (Physics.Raycast(ray.origin, ray.direction * 5f, out hit))
+        float i = 0.0f;
+        float rate = (1.0f / time) * speed;
+        while(i < 1.0f)
         {
-            Debug.Log(hit.collider.name);
-            isOnInteractable = true;
-            if (interactable == LayerMask.GetMask("Interactable"))
-            {
-                cursor.localScale = new Vector2(endSize, endSize);
-            }
-        }
-        else if(isOnInteractable == false)
-        {
-            cursor.localScale = new Vector2(startSize, startSize);
+            i += Time.deltaTime * rate;
+            transform.localScale = Vector3.Lerp(a, b, i);
+            yield return null;
         }
     }
 }
