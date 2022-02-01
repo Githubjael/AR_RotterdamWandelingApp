@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 395279019}
   - component: {fileID: 395279018}
   - component: {fileID: 395279017}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -887,16 +887,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1778374324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c3bfe4019ef9aa489f03a852fef9bc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c86cd92db0ee674bb153e3c4743d23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1549264951}
+  startSize: 0.25
+  endSize: 0.75
+  playerObject: {fileID: 1549264951}
   arCamera: {fileID: 1091996008}
-  transformCursor: {fileID: 0}
-  startScale: 0.25
-  endScale: 0.75
-  smoothValue: 2
-  size: 0.349
 --- !u!1 &1866417657
 GameObject:
   m_ObjectHideFlags: 0
