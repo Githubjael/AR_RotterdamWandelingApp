@@ -2,28 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 [ExecuteInEditMode]
 public class ResponsiveReticle : MonoBehaviour
 {
     private RectTransform reticle;
     public Transform player;
+    //public Camera arCamera;
 
     public float maxSize;
     public float minSize;
     private float currentSize;
     public float speed;
 
-    Ray ray;
     RaycastHit hit;
+
+    TextMeshProUGUI interactionPopUpText;
+    private string sentence;
 
     private void Start()
     {
-        ray.origin = player.position;
-        ray.direction = player.TransformDirection(Vector3.forward);
         reticle = GetComponent<RectTransform>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (IsInteractable)
         {
