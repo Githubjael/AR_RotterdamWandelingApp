@@ -17,9 +17,6 @@ public class ResponsiveReticle : MonoBehaviour
 
     RaycastHit hit;
 
-    TextMeshProUGUI interactionPopUpText;
-    private string sentence;
-
     private void Start()
     {
         reticle = GetComponent<RectTransform>();

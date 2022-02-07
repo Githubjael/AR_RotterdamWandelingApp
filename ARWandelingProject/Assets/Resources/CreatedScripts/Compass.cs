@@ -8,13 +8,13 @@ public class Compass : MonoBehaviour
 {
     TextMeshProUGUI compassReadings;
 
-    private void Start()
+    private void Update()
     {
-        CompassReading();
+        compassReadings.text = $"{CompassReading()}";
     }
     IEnumerator CompassReading()
     {
-        if (Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
         {
             Permission.RequestUserPermission(Permission.FineLocation);
         }
@@ -26,8 +26,6 @@ public class Compass : MonoBehaviour
         Input.location.Start();
         var heading = Input.compass.trueHeading;
 
-        compassReadings.text = $"{heading}";
-
-        yield return null;
+        yield return heading;
     }
 }
