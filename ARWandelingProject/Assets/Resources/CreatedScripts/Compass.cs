@@ -6,13 +6,13 @@ using TMPro;
 
 public class Compass : MonoBehaviour
 {
-    TextMeshProUGUI compassReadings;
+    public TextMeshProUGUI compassReadings;
 
-    private void Update()
+    private void Start()
     {
-        compassReadings.text = $"{CompassReading()}";
+        StartCoroutine(ReadCompass());
     }
-    IEnumerator CompassReading()
+    IEnumerator ReadCompass()
     {
         if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
         {
@@ -24,8 +24,10 @@ public class Compass : MonoBehaviour
         }
 
         Input.location.Start();
-        var heading = Input.compass.trueHeading;
+        float heading = Input.compass.trueHeading;
 
-        yield return heading;
+        compassReadings.text = $"{heading}";
+
+        yield return null;
     }
 }
