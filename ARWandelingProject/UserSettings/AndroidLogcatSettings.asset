@@ -1,95 +1,47 @@
 {
     "m_SelectedDeviceId": "RF8MC12HAVR",
     "m_SelectedPackage": {
-        "deviceId": "RF8MC12HAVR",
-        "name": "com.Stadsarchief.ARWandelingProject",
-        "processId": 19801,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "RF8MC12HAVR",
-            "name": "tv.twitch.android.app",
-            "processId": 1545,
-            "exited": false
+            "name": "com.Stadsarchief.ARWandelingProject",
+            "processId": 10476,
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 26056,
-            "exited": false
+            "processId": 15619,
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 28213,
-            "exited": false
+            "processId": 16726,
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 30491,
-            "exited": false
+            "processId": 17502,
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 10791,
-            "exited": false
+            "processId": 24518,
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 12188,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 12954,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 15759,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 12494,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 11457,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 9247,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 12059,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 13446,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 19801,
+            "name": "com.shaiban.audioplayer.mplayer",
+            "processId": 22037,
             "exited": false
         }
     ],

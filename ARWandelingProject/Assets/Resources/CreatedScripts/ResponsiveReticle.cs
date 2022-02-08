@@ -8,7 +8,6 @@ public class ResponsiveReticle : MonoBehaviour
 {
     private RectTransform reticle;
     public Transform player;
-    //public Camera arCamera;
 
     public float maxSize;
     public float minSize;
