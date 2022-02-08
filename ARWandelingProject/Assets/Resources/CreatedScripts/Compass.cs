@@ -9,6 +9,7 @@ public class Compass : MonoBehaviour
     public TextMeshProUGUI compassReadings;
     public ARSessionOrigin arSessionOrigin;
     Coroutine readTheCompass;
+    string[] Windstreken = { "n", "nno", "no", "ono" , "o", "ozo", "zo", "zzo", "z", "zzw", "zw", "wzw", "w", "wnw", "nw", "nnw"};
 
     private void Start()
     {
@@ -65,7 +66,7 @@ public class Compass : MonoBehaviour
         }
         else
         {
-            InvokeRepeating("UpdateCompass", 1f, 1f);
+            InvokeRepeating("UpdateCompass", 5f, 1f);
         }
         yield return null;
     }
