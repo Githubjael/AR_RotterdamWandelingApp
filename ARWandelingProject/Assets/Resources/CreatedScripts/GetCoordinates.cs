@@ -47,6 +47,7 @@ public class GetCoordinates : MonoBehaviour
         }
         else
         {
+            //to keep repeating
             InvokeRepeating("UpdateGPS", 5f, 1f);
         }
         yield return null;
