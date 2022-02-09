@@ -1,6 +1,6 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.Android;
 
 public class GetCoordinates : MonoBehaviour
@@ -16,40 +16,45 @@ public class GetCoordinates : MonoBehaviour
     
     IEnumerator GeoCoordinates()
     {
-        //ask for permission if non is given
+        //check if location service is enabled
+        if (!Input.location.isEnabledByUser)
+        {
+            coords.text = "Location is not enabled";
+            yield break;
+        }
+        //ask for permission to use their location
         if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
         {
             Permission.RequestUserPermission(Permission.FineLocation);
         }
-        yield return null;
-        if (!Input.location.isEnabledByUser)
-        {
-            yield break;
-        }
-        //start location service
+
         Input.location.Start();
-        yield return null;
         int maxWait = 5;
 
-        while(Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+        //initialize locationService
+        if(Input.location.status == LocationServiceStatus.Initializing && maxWait < 0)
         {
             yield return new WaitForSeconds(1);
+            maxWait--;
         }
-        yield return null;
-        if (maxWait < 0)
+
+        if(maxWait < 0)
         {
+            coords.text = "Something went wrong with the wait";
             yield break;
         }
-        yield return null;
+
+        // in case it fails
         if (Input.location.status == LocationServiceStatus.Failed)
         {
+            coords.text = "Location Service failed";
             yield break;
         }
         else
         {
-            //to keep repeating
-            InvokeRepeating("UpdateGPS", 5f, 1f);
+            UpdateGPS();
         }
+
         yield return null;
     }
     private void UpdateGPS()
