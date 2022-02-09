@@ -3337,7 +3337,7 @@ GameObject:
   - component: {fileID: 1736387192}
   - component: {fileID: 1736387194}
   m_Layer: 5
-  m_Name: Pausemenu
+  m_Name: Optionsmenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3708,7 +3708,7 @@ GameObject:
   - component: {fileID: 1915128597}
   - component: {fileID: 1915128596}
   m_Layer: 5
-  m_Name: PauseButton
+  m_Name: OptionsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3732,7 +3732,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -270, y: -50}
-  m_SizeDelta: {x: 340, y: 100}
+  m_SizeDelta: {x: 350, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915128596
 MonoBehaviour:
@@ -4018,7 +4018,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pause
+  m_text: Options
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4374,7 +4374,7 @@ GameObject:
   - component: {fileID: 8816064437928303313}
   - component: {fileID: 7551307440287278458}
   m_Layer: 0
-  m_Name: PauseFunctions
+  m_Name: OptionsFunctions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
