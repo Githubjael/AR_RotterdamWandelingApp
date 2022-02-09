@@ -52,7 +52,7 @@ public class GetCoordinates : MonoBehaviour
         }
         else
         {
-            UpdateGPS();
+            InvokeRepeating("UpdateGPS", 0.5f, 1f);
         }
 
         yield return null;
