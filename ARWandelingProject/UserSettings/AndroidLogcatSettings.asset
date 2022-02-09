@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RF8MC12HAVR",
         "name": "com.Stadsarchief.ARWandelingProject",
-        "processId": 9359,
+        "processId": 13443,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -96,6 +96,18 @@
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
             "processId": 9359,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.Stadsarchief.ARWandelingProject",
+            "processId": 11958,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.Stadsarchief.ARWandelingProject",
+            "processId": 13443,
             "exited": false
         }
     ],
