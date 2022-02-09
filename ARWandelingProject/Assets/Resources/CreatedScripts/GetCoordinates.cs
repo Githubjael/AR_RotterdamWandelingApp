@@ -5,12 +5,11 @@ using UnityEngine.Android;
 
 public class GetCoordinates : MonoBehaviour
 {
-    public TextMeshProUGUI coords;
+    public TextMeshProUGUI Coords;
     Coroutine getTheCoords;
 
     private void Start()
     {
-        coords = GetComponent<TextMeshProUGUI>();
         getTheCoords = StartCoroutine(GeoCoordinates());
     }
     
@@ -19,7 +18,7 @@ public class GetCoordinates : MonoBehaviour
         //check if location service is enabled
         if (!Input.location.isEnabledByUser)
         {
-            coords.text = "Location is not enabled";
+            Coords.text = "Location is not enabled";
             yield break;
         }
         //ask for permission to use their location
@@ -40,14 +39,14 @@ public class GetCoordinates : MonoBehaviour
 
         if(maxWait < 0)
         {
-            coords.text = "Something went wrong with the wait";
+            Coords.text = "Something went wrong with the wait";
             yield break;
         }
 
         // in case it fails
         if (Input.location.status == LocationServiceStatus.Failed)
         {
-            coords.text = "Location Service failed";
+            Coords.text = "Location Service failed";
             yield break;
         }
         else
@@ -64,7 +63,7 @@ public class GetCoordinates : MonoBehaviour
         float latitude = Input.location.lastData.latitude;
         float longitude = Input.location.lastData.longitude;
         //  dislpay values
-        coords.text = $"altitude:{altitude}, latitude:{latitude}, longitude:{longitude}";
+        Coords.text = $"altitude:{altitude}, latitude:{latitude}, longitude:{longitude}";
     }
     
 }
