@@ -41,4 +41,9 @@ public class PauseMenu : MonoBehaviour
         SettingsMenuUI.SetActive(false);
         PauseMenuUI.SetActive(true);
     }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
 }
