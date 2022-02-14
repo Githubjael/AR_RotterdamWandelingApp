@@ -2,9 +2,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
+    public AudioMixer audioMixer;
     public string MenuScene = "2Maps";
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
@@ -41,7 +43,10 @@ public class PauseMenu : MonoBehaviour
         SettingsMenuUI.SetActive(false);
         PauseMenuUI.SetActive(true);
     }
-
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("Volume", volume);
+    }
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
