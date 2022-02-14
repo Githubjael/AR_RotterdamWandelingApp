@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public string MenuScene = "2Maps";
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
+    public GameObject SettingsMenuUI;
 
     // Update is called once per frame
     public void Resume()
@@ -29,5 +30,15 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void LoadSettings()
+    {
+        SettingsMenuUI.SetActive(true);
+        PauseMenuUI.SetActive(false);
+    }
+    public void DeloadSettings()
+    {
+        SettingsMenuUI.SetActive(false);
+        PauseMenuUI.SetActive(true);
     }
 }
