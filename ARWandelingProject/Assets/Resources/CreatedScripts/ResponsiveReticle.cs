@@ -23,7 +23,7 @@ public class ResponsiveReticle : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsInteractable)
+        if (isInteractable)
         {
             currentSize = Mathf.Lerp(currentSize, maxSize, Time.deltaTime * speed);
         }
@@ -34,7 +34,7 @@ public class ResponsiveReticle : MonoBehaviour
         reticle.sizeDelta = new Vector2(currentSize, currentSize);
     }
 
-    public bool IsInteractable
+    public bool isInteractable
     {
         get
         {
