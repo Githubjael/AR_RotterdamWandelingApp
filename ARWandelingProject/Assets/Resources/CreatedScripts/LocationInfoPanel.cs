@@ -28,11 +28,10 @@ public class LocationInfoPanel : MonoBehaviour
         if (responsiveReticle.isInteractable)
         {
             Debug.Log("Ey!");
-            ListOfTexts.SetActive(true);
-        }
-        else
-        {
-            ListOfTexts.SetActive(false);
+            if (Input.touchCount > 0)
+            {
+                ListOfTexts.SetActive(true);
+            }
         }
     }
 
@@ -44,6 +43,6 @@ public class LocationInfoPanel : MonoBehaviour
             Debug.Log("Child:" + child.name);
             listOfPanels.Add(child);
         }
-        listOfPanels[1].gameObject.SetActive(true);
+        listOfPanels[0].gameObject.SetActive(true);
     }
 }

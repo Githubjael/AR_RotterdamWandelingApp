@@ -9,6 +9,8 @@ public class ResponsiveReticle : MonoBehaviour
     private RectTransform reticle;
     public Transform player;
 
+    public TextMeshProUGUI interactionConfirmationText;
+
     public float maxSize;
     public float minSize;
     private float currentSize;
@@ -26,11 +28,14 @@ public class ResponsiveReticle : MonoBehaviour
         if (isInteractable)
         {
             currentSize = Mathf.Lerp(currentSize, maxSize, Time.deltaTime * speed);
+            interactionConfirmationText.gameObject.SetActive(true);
         }
         else
         {
             currentSize = Mathf.Lerp(currentSize, minSize, Time.deltaTime * speed);
+            interactionConfirmationText.gameObject.SetActive(false);
         }
+        
         reticle.sizeDelta = new Vector2(currentSize, currentSize);
     }
 

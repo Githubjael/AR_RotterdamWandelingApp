@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RF8MC12HAVR",
         "name": "com.Stadsarchief.ARWandelingProject",
-        "processId": 24937,
+        "processId": 17989,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -120,6 +120,12 @@
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
             "processId": 24937,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.Stadsarchief.ARWandelingProject",
+            "processId": 17989,
             "exited": false
         }
     ],
