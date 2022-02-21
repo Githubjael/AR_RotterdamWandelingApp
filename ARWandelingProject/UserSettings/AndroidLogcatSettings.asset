@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RF8MC12HAVR",
         "name": "com.Stadsarchief.ARWandelingProject",
-        "processId": 22609,
+        "processId": 23675,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,181 +11,43 @@
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 10476,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 15619,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 16726,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 17502,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 24518,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.shaiban.audioplayer.mplayer",
-            "processId": 22037,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 13753,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 16073,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 16981,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 26277,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 32209,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 1956,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 5640,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 7141,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 9359,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 11958,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 13443,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 23381,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 24937,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 17989,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 21064,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 22827,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 7703,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 9435,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
-            "processId": 10086,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8MC12HAVR",
-            "name": "com.Stadsarchief.ARWandelingProject",
             "processId": 10988,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
             "processId": 6451,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
             "processId": 18740,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
             "processId": 19664,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
             "processId": 22609,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.google.android.youtube",
+            "processId": 20036,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.Stadsarchief.ARWandelingProject",
+            "processId": 23675,
             "exited": false
         }
     ],
