@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     public ARSessionOrigin referenceToSessionOrigin;
     public Transform t;
     public GameObject objectsToScale;
+    public LocationInfoPanel locationInfoPanel;
 
     //zet de options panel op scherm
     public void Resume()
@@ -39,6 +40,13 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void exitLocationInfo1()
+    {
+        for (int i = 0; i < locationInfoPanel.listOfPanels.Count; i++)
+        {
+            locationInfoPanel.listOfPanels[i].gameObject.SetActive(false);
+        }
     }
     //zet de settings op de scherm
     public void LoadSettings()

@@ -14,10 +14,9 @@ public class LocationInfoPanel : MonoBehaviour
     public GameObject ListOfTexts;
 
     public List<RectTransform> listOfPanels;
-
+    [ExecuteInEditMode]
     public void Start()
     {
-        ListChildren();
         optionsButtonFontSize = GetComponentInChildren<TextMeshProUGUI>().fontSize;
     }
 
@@ -31,9 +30,10 @@ public class LocationInfoPanel : MonoBehaviour
         if (responsiveReticle.isInteractable)
         {
             Debug.Log("Ey!");
-            if (Input.touchCount > 0)
+            if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 ListOfTexts.SetActive(true);
+                ListChildren();
                 optionsButtonFontSize = 50f;
             }
             else
@@ -51,12 +51,12 @@ public class LocationInfoPanel : MonoBehaviour
             Debug.Log("Child:" + child.name);
             listOfPanels.Add(child);
         }
-        listOfPanels[0].gameObject.SetActive(true);
+
         for (int i = 0; i < listOfPanels.Count; i++)
         {
-            if(listOfPanels[i] != null)
+            if (listOfPanels[i] != null)
             {
-
+                listOfPanels[0].gameObject.SetActive(true);
             }
         }
     }
