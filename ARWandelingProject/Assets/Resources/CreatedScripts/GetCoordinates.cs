@@ -7,7 +7,6 @@ public class GetCoordinates : MonoBehaviour
 {
     public TextMeshProUGUI Coords;
     Coroutine getTheCoords;
-
     private void Start()
     {
         getTheCoords = StartCoroutine(GeoCoordinates());

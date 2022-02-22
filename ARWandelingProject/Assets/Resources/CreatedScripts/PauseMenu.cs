@@ -12,12 +12,15 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     public GameObject SettingsMenuUI;
+
     public ARSessionOrigin referenceToSessionOrigin;
     public Transform t;
     public GameObject objectsToScale;
+
     public LocationInfoPanel locationInfoPanel;
 
-    //zet de options panel op scherm
+    #region OptionsScreen
+//zet de options panel op scherm
     public void Resume()
     {
         PauseMenuUI.SetActive(false);
@@ -41,14 +44,9 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    public void exitLocationInfo1()
-    {
-        for (int i = 0; i < locationInfoPanel.listOfPanels.Count; i++)
-        {
-            locationInfoPanel.listOfPanels[i].gameObject.SetActive(false);
-        }
-    }
-    //zet de settings op de scherm
+    #endregion
+    #region SettingsScreen
+//zet de settings op de scherm
     public void LoadSettings()
     {
         SettingsMenuUI.SetActive(true);
@@ -70,9 +68,21 @@ public class PauseMenu : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(qualityIndex);
     }
+    //de scale van alle objecten te bepalen
     public void OnValueChange(float value)
     {
         referenceToSessionOrigin.MakeContentAppearAt(objectsToScale.transform, Quaternion.identity);
         objectsToScale.transform.localScale = new Vector3(value, value, value);
     }
+    #endregion
+    #region InfoScreen
+//maakt de info uit
+    public void exitLocationInfo1()
+    {
+        for (int i = 0; i < locationInfoPanel.listOfPanels.Count; i++)
+        {
+            locationInfoPanel.listOfPanels[i].gameObject.SetActive(false);
+        }
+    }
+    #endregion
 }

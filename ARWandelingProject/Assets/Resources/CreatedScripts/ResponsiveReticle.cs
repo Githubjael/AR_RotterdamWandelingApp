@@ -17,7 +17,6 @@ public class ResponsiveReticle : MonoBehaviour
     public float speed;
 
     RaycastHit hit;
-
     private void Start()
     {
         reticle = GetComponent<RectTransform>();

@@ -9,16 +9,13 @@ public class LocationInfoPanel : MonoBehaviour
 {
     public ResponsiveReticle responsiveReticle;
     public Transform LocationInfoTexts;
-    public float optionsButtonFontSize;
+    public Transform LocationObjects;
+    public GameObject optionsButton;
 
     public GameObject ListOfTexts;
 
     public List<RectTransform> listOfPanels;
-    [ExecuteInEditMode]
-    public void Start()
-    {
-        optionsButtonFontSize = GetComponentInChildren<TextMeshProUGUI>().fontSize;
-    }
+    public List<Transform> listOfObjects;
 
     public void Update()
     {
@@ -29,34 +26,72 @@ public class LocationInfoPanel : MonoBehaviour
     {
         if (responsiveReticle.isInteractable)
         {
-            Debug.Log("Ey!");
             if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 ListOfTexts.SetActive(true);
-                ListChildren();
-                optionsButtonFontSize = 50f;
-            }
-            else
-            {
-                optionsButtonFontSize = 100f;
+                ListPanelUIChildren();
+                ListObjects();
             }
         }
     }
-
-    public void ListChildren()
+    public void ListObjects()
     {
-        
+        foreach(Transform objects in LocationObjects)
+        {
+            Debug.Log("Object:" + objects.name);
+            listOfObjects.Add(objects);
+        }
+    }
+    public void ListPanelUIChildren()
+    {
         foreach(RectTransform child in LocationInfoTexts)
         {
             Debug.Log("Child:" + child.name);
             listOfPanels.Add(child);
         }
-
-        for (int i = 0; i < listOfPanels.Count; i++)
-        {
+    }
+    public void InputDetection()
+    {
+        #region J.U.C.
+/*
+        * for (int i = 0; i < listOfPanels.Count; i++)
+            {
             if (listOfPanels[i] != null)
             {
-                listOfPanels[0].gameObject.SetActive(true);
+                if (listOfObjects[i].gameObject.name == "building01")
+                {
+                    listOfPanels[0].gameObject.SetActive(true);
+                }
+                else if (listOfObjects[i].gameObject.name == "building02")
+                {
+
+                }
+                if (ListOfTexts)
+                {
+                    optionsButton.gameObject.SetActive(false);
+                }
+                else
+                {
+                    optionsButton.gameObject.SetActive(true);
+                }
+            }
+        }
+*/
+        #endregion
+        if(Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            for(int i = 0; i <= listOfObjects.Count; i++)
+            {
+                if(listOfObjects[i].gameObject.name == "building01")
+                {
+                    for(int j = 0; j <= listOfPanels.Count; j++)
+                    {
+                        if(listOfPanels[j].gameObject.name == "Building01")
+                        {
+                            listOfPanels[j].gameObject.SetActive(true);
+                        }
+                    }
+                }
             }
         }
     }
