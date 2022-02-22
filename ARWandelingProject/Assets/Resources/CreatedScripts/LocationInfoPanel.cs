@@ -31,6 +31,7 @@ public class LocationInfoPanel : MonoBehaviour
                 ListOfTexts.SetActive(true);
                 ListPanelUIChildren();
                 ListObjects();
+                InputDetection();
             }
         }
     }
@@ -78,18 +79,15 @@ public class LocationInfoPanel : MonoBehaviour
         }
 */
         #endregion
-        if(Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Mouse0))
+        for(int i = 0; i <= listOfObjects.Count; i++)
         {
-            for(int i = 0; i <= listOfObjects.Count; i++)
+            if(listOfObjects[i].gameObject.name == "building02")
             {
-                if(listOfObjects[i].gameObject.name == "building01")
+                for(int j = 0; j <= listOfPanels.Count; j++)
                 {
-                    for(int j = 0; j <= listOfPanels.Count; j++)
+                    if(listOfPanels[j].gameObject.name == "Building02")
                     {
-                        if(listOfPanels[j].gameObject.name == "Building01")
-                        {
-                            listOfPanels[j].gameObject.SetActive(true);
-                        }
+                        listOfPanels[j].gameObject.SetActive(true);
                     }
                 }
             }
