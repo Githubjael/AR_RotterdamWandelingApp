@@ -16,6 +16,9 @@ public class LocationInfoPanel : MonoBehaviour
 
     public List<RectTransform> listOfPanels;
     public List<Transform> listOfObjects;
+    public List<string> listOfbuildingNames;
+    
+    RaycastHit hitInfo;
 
     public void Update()
     {
@@ -26,27 +29,22 @@ public class LocationInfoPanel : MonoBehaviour
     {
         if (responsiveReticle.isInteractable)
         {
-            ListOfTexts.SetActive(true);
+            if (!IslistedBuildings)
+            {
+                ListObjects();
+            }
             if (!IsListedUIPanels)
             {
                 ListPanelUIChildren();
             }
-            if (!IslistedBuildings)
-            {
-                ListObjects();
-
-            }
-            if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                InputDetection();
-            }
+            InputDetection();
         }
     }
     public void ListObjects()
     {
         foreach(Transform objects in LocationObjects)
         {
-            Debug.Log("hey: " + objects.name);
+            listOfbuildingNames.Add(objects.name.ToString());
             listOfObjects.Add(objects);
         }
     }
@@ -54,7 +52,6 @@ public class LocationInfoPanel : MonoBehaviour
     {
         foreach(RectTransform child in LocationInfoTexts)
         {
-            Debug.Log("hey: " + child.name);
             listOfPanels.Add(child);
         }
     }
@@ -86,17 +83,19 @@ public class LocationInfoPanel : MonoBehaviour
                 }
         */
         #endregion
-        foreach(var buildings in listOfObjects)
+        if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Mouse0))
         {
-            foreach (var panels in listOfPanels)
+            if (Physics.Raycast(responsiveReticle.player.position, responsiveReticle.player.transform.forward, out hitInfo, 10f))
             {
-                if(panels.gameObject.name == buildings.gameObject.name)
+                for (int i = 0; i <= listOfPanels.Count; i++)
                 {
-                    panels.gameObject.SetActive(true);
+                    if(hitInfo.collider.name == listOfPanels[i].name)
+                    {
+                        listOfPanels[i].gameObject.SetActive(true);
+                    }
                 }
             }
         }
-
     }
     private bool IsListedUIPanels
     {
