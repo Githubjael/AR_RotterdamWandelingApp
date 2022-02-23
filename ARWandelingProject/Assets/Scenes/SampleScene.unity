@@ -1062,7 +1062,7 @@ GameObject:
   - component: {fileID: 395279018}
   - component: {fileID: 395279017}
   m_Layer: 3
-  m_Name: building01
+  m_Name: Building01
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

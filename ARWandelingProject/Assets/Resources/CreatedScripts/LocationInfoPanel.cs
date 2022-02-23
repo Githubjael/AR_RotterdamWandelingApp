@@ -26,11 +26,18 @@ public class LocationInfoPanel : MonoBehaviour
     {
         if (responsiveReticle.isInteractable)
         {
+            ListOfTexts.SetActive(true);
+            if (!IsListedUIPanels)
+            {
+                ListPanelUIChildren();
+            }
+            if (!IslistedBuildings)
+            {
+                ListObjects();
+
+            }
             if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Mouse0))
             {
-                ListOfTexts.SetActive(true);
-                ListPanelUIChildren();
-                ListObjects();
                 InputDetection();
             }
         }
@@ -39,7 +46,7 @@ public class LocationInfoPanel : MonoBehaviour
     {
         foreach(Transform objects in LocationObjects)
         {
-            Debug.Log("Object:" + objects.name);
+            Debug.Log("hey: " + objects.name);
             listOfObjects.Add(objects);
         }
     }
@@ -47,49 +54,75 @@ public class LocationInfoPanel : MonoBehaviour
     {
         foreach(RectTransform child in LocationInfoTexts)
         {
-            Debug.Log("Child:" + child.name);
+            Debug.Log("hey: " + child.name);
             listOfPanels.Add(child);
         }
     }
     public void InputDetection()
     {
         #region J.U.C.
-/*
-        * for (int i = 0; i < listOfPanels.Count; i++)
-            {
-            if (listOfPanels[i] != null)
-            {
-                if (listOfObjects[i].gameObject.name == "building01")
-                {
-                    listOfPanels[0].gameObject.SetActive(true);
-                }
-                else if (listOfObjects[i].gameObject.name == "building02")
-                {
+        /*
+                * for (int i = 0; i < listOfPanels.Count; i++)
+                    {
+                    if (listOfPanels[i] != null)
+                    {
+                        if (listOfObjects[i].gameObject.name == "building01")
+                        {
+                            listOfPanels[0].gameObject.SetActive(true);
+                        }
+                        else if (listOfObjects[i].gameObject.name == "building02")
+                        {
 
+                        }
+                        if (ListOfTexts)
+                        {
+                            optionsButton.gameObject.SetActive(false);
+                        }
+                        else
+                        {
+                            optionsButton.gameObject.SetActive(true);
+                        }
+                    }
                 }
-                if (ListOfTexts)
+        */
+        #endregion
+        foreach(var buildings in listOfObjects)
+        {
+            foreach (var panels in listOfPanels)
+            {
+                if(panels.gameObject.name == buildings.gameObject.name)
                 {
-                    optionsButton.gameObject.SetActive(false);
-                }
-                else
-                {
-                    optionsButton.gameObject.SetActive(true);
+                    panels.gameObject.SetActive(true);
                 }
             }
         }
-*/
-        #endregion
-        for(int i = 0; i <= listOfObjects.Count; i++)
+
+    }
+    private bool IsListedUIPanels
+    {
+        get
         {
-            if(listOfObjects[i].gameObject.name == "building02")
+            if(listOfPanels.Count > 0)
             {
-                for(int j = 0; j <= listOfPanels.Count; j++)
-                {
-                    if(listOfPanels[j].gameObject.name == "Building02")
-                    {
-                        listOfPanels[j].gameObject.SetActive(true);
-                    }
-                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }        
+    }
+    private bool IslistedBuildings
+    {
+        get
+        {
+            if(listOfObjects.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
