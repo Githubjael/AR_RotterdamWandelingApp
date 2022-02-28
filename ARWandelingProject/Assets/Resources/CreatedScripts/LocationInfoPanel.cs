@@ -82,7 +82,7 @@ public class LocationInfoPanel : MonoBehaviour
                 }
         */
         #endregion
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began|| Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began || Input.GetKeyDown(KeyCode.Mouse0))
         {
             //Debug.Log("Bogus");
             Debug.Log(ListOfTexts.activeSelf);
@@ -90,6 +90,10 @@ public class LocationInfoPanel : MonoBehaviour
             ListOfTexts.gameObject.SetActive(true);
             Debug.Log(ListOfTexts.activeSelf);
             Debug.Log(ListOfTexts.activeInHierarchy);
+            if()
+            {
+
+            }
         }
     }
     private bool IsListedUIPanels
