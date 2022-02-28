@@ -83,18 +83,9 @@ public class LocationInfoPanel : MonoBehaviour
                 }
         */
         #endregion
-        if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began|| Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (Physics.Raycast(responsiveReticle.player.position, responsiveReticle.player.transform.forward, out hitInfo, 10f))
-            {
-                for (int i = 0; i <= listOfPanels.Count; i++)
-                {
-                    if(hitInfo.collider.name == listOfPanels[i].name)
-                    {
-                        listOfPanels[i].gameObject.SetActive(true);
-                    }
-                }
-            }
+            Debug.Log("Bogus");
         }
     }
     private bool IsListedUIPanels
