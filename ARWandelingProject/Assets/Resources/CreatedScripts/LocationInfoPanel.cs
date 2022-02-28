@@ -24,7 +24,6 @@ public class LocationInfoPanel : MonoBehaviour
     {
         OpenInfoPanel();
     }
-
     public void OpenInfoPanel()
     {
         if (responsiveReticle.isInteractable)
@@ -85,7 +84,12 @@ public class LocationInfoPanel : MonoBehaviour
         #endregion
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began|| Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("Bogus");
+            //Debug.Log("Bogus");
+            Debug.Log(ListOfTexts.activeSelf);
+            Debug.Log(ListOfTexts.activeInHierarchy);
+            ListOfTexts.gameObject.SetActive(true);
+            Debug.Log(ListOfTexts.activeSelf);
+            Debug.Log(ListOfTexts.activeInHierarchy);
         }
     }
     private bool IsListedUIPanels
