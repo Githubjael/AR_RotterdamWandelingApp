@@ -18,8 +18,6 @@ public class LocationInfoPanel : MonoBehaviour
     public List<Transform> listOfObjects;
     public List<string> listOfbuildingNames;
     
-    RaycastHit hitInfo;
-
     public void Update()
     {
         OpenInfoPanel();
@@ -28,6 +26,7 @@ public class LocationInfoPanel : MonoBehaviour
     {
         if (responsiveReticle.isInteractable)
         {
+            ListOfTexts.gameObject.SetActive(true);
             if (!IslistedBuildings)
             {
                 ListObjects();
@@ -87,12 +86,19 @@ public class LocationInfoPanel : MonoBehaviour
             //Debug.Log("Bogus");
             Debug.Log(ListOfTexts.activeSelf);
             Debug.Log(ListOfTexts.activeInHierarchy);
-            ListOfTexts.gameObject.SetActive(true);
+            
             Debug.Log(ListOfTexts.activeSelf);
             Debug.Log(ListOfTexts.activeInHierarchy);
             for (int i = 0; i < listOfPanels.Count; i++)
             {
-                listOfPanels[i].gameObject.SetActive(true);
+                if(responsiveReticle.hit.collider.name == "Building01")
+                {
+                    listOfPanels[0].gameObject.SetActive(true);
+                }
+                if (responsiveReticle.hit.collider.name == "Building02")
+                {
+                    listOfPanels[1].gameObject.SetActive(true);
+                }
             }
         }
     }
