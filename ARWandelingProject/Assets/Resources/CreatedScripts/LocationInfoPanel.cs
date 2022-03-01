@@ -90,6 +90,10 @@ public class LocationInfoPanel : MonoBehaviour
             ListOfTexts.gameObject.SetActive(true);
             Debug.Log(ListOfTexts.activeSelf);
             Debug.Log(ListOfTexts.activeInHierarchy);
+            for (int i = 0; i < listOfPanels.Count; i++)
+            {
+                listOfPanels[i].gameObject.SetActive(true);
+            }
         }
     }
     private bool IsListedUIPanels
