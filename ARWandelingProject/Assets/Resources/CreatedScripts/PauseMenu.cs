@@ -79,10 +79,7 @@ public class PauseMenu : MonoBehaviour
 //maakt de info uit
     public void exitLocationInfo1()
     {
-        for (int i = 0; i < locationInfoPanel.listOfPanels.Count; i++)
-        {
-            locationInfoPanel.listOfPanels[i].gameObject.SetActive(false);
-        }
+       GetComponentInParent<RectTransform>().gameObject.SetActive(false);
     }
     #endregion
 }
