@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
     public LocationInfoPanel locationInfoPanel;
 
     #region OptionsScreen
-//zet de options panel op scherm
+    //zet de options panel op scherm
     public void Resume()
     {
         PauseMenuUI.SetActive(false);
@@ -46,7 +46,7 @@ public class PauseMenu : MonoBehaviour
     }
     #endregion
     #region SettingsScreen
-//zet de settings op de scherm
+    //zet de settings op de scherm
     public void LoadSettings()
     {
         SettingsMenuUI.SetActive(true);
@@ -76,10 +76,10 @@ public class PauseMenu : MonoBehaviour
     }
     #endregion
     #region InfoScreen
-//maakt de info uit
+    //maakt de info uit
     public void exitLocationInfo1()
     {
-       GetComponentInParent<RectTransform>().gameObject.SetActive(false);
+       gameObject.GetComponentInParent<RectTransform>().gameObject.SetActive(false);
     }
     #endregion
 }
