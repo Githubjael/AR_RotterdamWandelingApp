@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RF8MC12HAVR",
         "name": "com.Stadsarchief.ARWandelingProject",
-        "processId": 4570,
+        "processId": 29497,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -72,6 +72,36 @@
             "deviceId": "RF8MC12HAVR",
             "name": "com.Stadsarchief.ARWandelingProject",
             "processId": 4570,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.Stadsarchief.ARWandelingProject",
+            "processId": 23035,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.Stadsarchief.ARWandelingProject",
+            "processId": 25696,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.Stadsarchief.ARWandelingProject",
+            "processId": 27318,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.Stadsarchief.ARWandelingProject",
+            "processId": 28439,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC12HAVR",
+            "name": "com.Stadsarchief.ARWandelingProject",
+            "processId": 29497,
             "exited": false
         }
     ],
