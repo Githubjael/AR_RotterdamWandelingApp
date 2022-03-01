@@ -42,7 +42,6 @@ public class ResponsiveReticle : MonoBehaviour
     {
         get
         {
-            Debug.DrawLine(player.position, player.forward * 10f, Color.red);
             if (Physics.Raycast(player.position, player.forward * 10f, out hit))
             {
                 if (hit.collider.tag == "Interactable")
