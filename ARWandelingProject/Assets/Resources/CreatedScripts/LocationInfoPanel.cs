@@ -84,11 +84,6 @@ public class LocationInfoPanel : MonoBehaviour
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began || Input.GetKeyDown(KeyCode.Mouse0))
         {
             //Debug.Log("Bogus");
-            Debug.Log(ListOfTexts.activeSelf);
-            Debug.Log(ListOfTexts.activeInHierarchy);
-            
-            Debug.Log(ListOfTexts.activeSelf);
-            Debug.Log(ListOfTexts.activeInHierarchy);
             for (int i = 0; i < listOfPanels.Count; i++)
             {
                 if(responsiveReticle.hit.collider.name == "Building01")
