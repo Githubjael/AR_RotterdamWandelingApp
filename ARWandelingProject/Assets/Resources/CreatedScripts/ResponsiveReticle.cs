@@ -20,7 +20,6 @@ public class ResponsiveReticle : MonoBehaviour
     {
         reticle = GetComponent<RectTransform>();
     }
-
     private void FixedUpdate()
     {
         if (IsInteractable)
@@ -33,7 +32,6 @@ public class ResponsiveReticle : MonoBehaviour
         }
         reticle.sizeDelta = new Vector2(currentSize, currentSize);
     }
-
     public bool IsInteractable
     {
         get

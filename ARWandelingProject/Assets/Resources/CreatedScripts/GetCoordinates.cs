@@ -12,7 +12,6 @@ public class GetCoordinates : MonoBehaviour
     {
         getTheCoords = StartCoroutine(GeoCoordinates());
     }
-    
     IEnumerator GeoCoordinates()
     {
         //check if location service is enabled
@@ -26,23 +25,19 @@ public class GetCoordinates : MonoBehaviour
         {
             Permission.RequestUserPermission(Permission.FineLocation);
         }
-
         Input.location.Start();
         int maxWait = 5;
-
         //initialize locationService
         if(Input.location.status == LocationServiceStatus.Initializing && maxWait < 0)
         {
             yield return new WaitForSeconds(1);
             maxWait--;
         }
-
         if(maxWait < 0)
         {
             Coords.text = "Something went wrong with the wait";
             yield break;
         }
-
         // in case it fails
         if (Input.location.status == LocationServiceStatus.Failed)
         {
@@ -65,5 +60,4 @@ public class GetCoordinates : MonoBehaviour
         //  dislpay values
         Coords.text = $"altitude:{altitude}, latitude:{latitude}, longitude:{longitude}";
     }
-    
 }
