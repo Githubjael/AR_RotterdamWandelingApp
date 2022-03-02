@@ -6,7 +6,8 @@ using TMPro;
 
 public class ResponsiveReticle : MonoBehaviour
 {
-    private RectTransform reticle;
+    [SerializeField] RectTransform reticle;
+    public RectTransform reticleText;
     public Transform player;
 
     public float maxSize;
@@ -16,18 +17,16 @@ public class ResponsiveReticle : MonoBehaviour
 
     RaycastHit hit;
 
-    private void Start()
-    {
-        reticle = GetComponent<RectTransform>();
-    }
     private void FixedUpdate()
     {
         if (IsInteractable)
         {
+            reticleText.gameObject.SetActive(true);
             currentSize = Mathf.Lerp(currentSize, maxSize, Time.deltaTime * speed);
         }
         else
         {
+            reticleText.gameObject.SetActive(false);
             currentSize = Mathf.Lerp(currentSize, minSize, Time.deltaTime * speed);
         }
         reticle.sizeDelta = new Vector2(currentSize, currentSize);
@@ -36,7 +35,6 @@ public class ResponsiveReticle : MonoBehaviour
     {
         get
         {
-            Debug.DrawLine(player.position, player.forward * 10f, Color.red);
             if (Physics.Raycast(player.position, player.forward * 10f, out hit))
             {
                 if (hit.collider.tag == "Interactable")
