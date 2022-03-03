@@ -38,7 +38,7 @@ public class UIPanelBehaviour : MonoBehaviour
         if(responsiveReticle.hit.collider != null)
         {
             Debug.Log("ListOfTexts/" + responsiveReticle.hit.collider.name);
+            obj = (RectTransform)transform.Find("ListOfTexts/"+ responsiveReticle.hit.collider.name);
         }
-        //obj = (RectTransform)transform.Find("ListOfTexts/"+ responsiveReticle.hit.collider.name);
     }
 }
