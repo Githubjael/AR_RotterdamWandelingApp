@@ -9,11 +9,11 @@ public class UIPanelBehaviour : MonoBehaviour
      * cube in LOC1, opent loc1 panel
      */
     public RectTransform ParentObject;
-    [SerializeField] Transform obj;
+    [SerializeField] RectTransform obj;
 
     private void Start()
     {
-        obj = transform.Find("loc1");
+        //obj = (RectTransform)transform.Find("ListOfTexts/Loc1");
     }
     private void Update()
     {
@@ -23,19 +23,11 @@ public class UIPanelBehaviour : MonoBehaviour
     {
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space))
         {
+            obj = (RectTransform)transform.Find("ListOfTexts/Loc1");
             ParentObject.gameObject.SetActive(true);
             foreach(RectTransform Panel in ParentObject)
             {
-                if (obj)
-                {
-                    Panel.gameObject.SetActive(true);
-                    obj.gameObject.SetActive(true);
-                }
-                else
-                {
-                    Panel.gameObject.SetActive(false);
-                    obj.gameObject.SetActive(false);
-                }
+                obj.gameObject.SetActive(true);
             }
         }
     }
