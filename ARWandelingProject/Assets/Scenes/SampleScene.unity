@@ -4233,6 +4233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c907f654db0eb940a50fc4e23bc4bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  responsiveReticle: {fileID: 1434022783}
   ParentObject: {fileID: 668115722}
   obj: {fileID: 0}
 --- !u!114 &1434022782
