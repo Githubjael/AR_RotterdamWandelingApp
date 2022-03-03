@@ -19,6 +19,11 @@ public class ResponsiveReticle : MonoBehaviour
 
     private void FixedUpdate()
     {
+        ReticleInteraction();
+    }
+    //de functie verandert de size van de reticle als IsInteractable true is.
+    void ReticleInteraction()
+    {
         if (IsInteractable)
         {
             reticleText.gameObject.SetActive(true);
@@ -31,6 +36,7 @@ public class ResponsiveReticle : MonoBehaviour
         }
         reticle.sizeDelta = new Vector2(currentSize, currentSize);
     }
+    // de boolean bestaat om te zorgen dat het object relevant is. Niet alle objecten heeft informatie nodig.
     public bool IsInteractable
     {
         get
