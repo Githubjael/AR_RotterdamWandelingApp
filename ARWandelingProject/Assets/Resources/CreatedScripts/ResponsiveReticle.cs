@@ -15,7 +15,7 @@ public class ResponsiveReticle : MonoBehaviour
     private float currentSize;
     public float speed;
 
-    RaycastHit hit;
+    public RaycastHit hit;
 
     private void FixedUpdate()
     {
