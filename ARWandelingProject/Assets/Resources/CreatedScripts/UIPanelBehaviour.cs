@@ -9,11 +9,11 @@ public class UIPanelBehaviour : MonoBehaviour
      * cube in LOC1, opent loc1 panel
      */
     public RectTransform ParentObject;
-    [SerializeField] GameObject obj;
+    [SerializeField] Transform obj;
 
     private void Start()
     {
-        obj = GameObject.Find("loc1");
+        obj = transform.Find("loc1");
     }
     private void Update()
     {
@@ -29,6 +29,12 @@ public class UIPanelBehaviour : MonoBehaviour
                 if (obj)
                 {
                     Panel.gameObject.SetActive(true);
+                    obj.gameObject.SetActive(true);
+                }
+                else
+                {
+                    Panel.gameObject.SetActive(false);
+                    obj.gameObject.SetActive(false);
                 }
             }
         }
