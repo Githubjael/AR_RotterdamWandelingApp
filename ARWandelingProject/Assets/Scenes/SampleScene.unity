@@ -5614,7 +5614,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textfile: {fileID: 4900000, guid: 18ae942a465d6c948adfc568b4ce3d63, type: 3}
   tests: []
-  UIToFill: []
+  UIToFill:
+  - {fileID: 1645425798}
+  - {fileID: 1294656709}
+  - {fileID: 1593950937}
+  - {fileID: 2024557973}
+  - {fileID: 676862146}
+  textsToFill:
+  - {fileID: 1419536890}
+  - {fileID: 339318355}
+  - {fileID: 619665359}
+  - {fileID: 2043779003}
+  - {fileID: 377900029}
 --- !u!222 &1866417660
 CanvasRenderer:
   m_ObjectHideFlags: 0
