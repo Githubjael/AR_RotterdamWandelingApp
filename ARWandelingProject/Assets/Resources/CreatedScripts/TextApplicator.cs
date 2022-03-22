@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class TextApplicator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] TextAsset textfile;
+    [SerializeField] string[] tests;
+    [SerializeField] GameObject[] UIToFill;
+    private void Awake()
     {
-        
+        ReadFile();
     }
 
-    // Update is called once per frame
-    void Update()
+    void ReadFile()
     {
-        
+        tests = textfile.text.Split(new string[] {",", "\n" }, StringSplitOptions.None);
     }
 }
