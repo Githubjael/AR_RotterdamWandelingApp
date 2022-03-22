@@ -3,15 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using System;
 
 public class PauseMenu : MonoBehaviour
 {
+    ResponsiveReticle responsiveReticle;
     public AudioMixer audioMixer;
     public string MenuScene = "2Maps";
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     public GameObject SettingsMenuUI;
-
+    public GameObject[] UIToExit;
+    
     // Update is called once per frame
     public void Resume()
     {
@@ -50,5 +53,12 @@ public class PauseMenu : MonoBehaviour
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+    }
+    public void Exit()
+    {
+        for(int i = 0; i < UIToExit.Length; i++)
+        {
+            UIToExit[i].SetActive(false);
+        }
     }
 }

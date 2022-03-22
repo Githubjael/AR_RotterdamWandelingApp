@@ -28,7 +28,6 @@ public class UIPanelBehaviour : MonoBehaviour
         //de if statement is om te zorgen dat het niet de hele tijd gaat af gaat. Als je iets beter hebt, doe dat dan.
         if(responsiveReticle.hit.collider != null)
         {
-            Debug.Log("ListOfTexts/" + responsiveReticle.hit.collider.name);
             obj = (RectTransform)transform.Find("ListOfTexts/"+ responsiveReticle.hit.collider.name);
         }
     }
