@@ -30,5 +30,9 @@ public class UIPanelBehaviour : MonoBehaviour
         {
             obj = (RectTransform)transform.Find("ListOfTexts/"+ responsiveReticle.hit.collider.name);
         }
+        else
+        {
+            obj = null;
+        }
     }
 }
