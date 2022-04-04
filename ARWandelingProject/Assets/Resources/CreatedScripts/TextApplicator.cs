@@ -1,5 +1,6 @@
-using System.Collections;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using System;
 using TMPro;
@@ -7,7 +8,7 @@ using TMPro;
 public class TextApplicator : MonoBehaviour
 {
     [SerializeField] TextAsset textfile;
-    [SerializeField] string[] tests;
+    [SerializeField, TextArea] string[] tests;
     [SerializeField] GameObject[] UIToFill;
     [SerializeField] TMP_Text[] textsToFill;
     private void Awake()
