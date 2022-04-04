@@ -19,7 +19,7 @@ public class TextApplicator : MonoBehaviour
 
     void ReadFile()
     {
-        tests = textfile.text.Split(new string[] {",", "\n" }, StringSplitOptions.None);
+        tests = textfile.text.Split(new string[] {"\n"}, StringSplitOptions.None);
     }
 
     void ApplyText()
