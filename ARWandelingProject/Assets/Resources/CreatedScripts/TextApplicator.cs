@@ -2,6 +2,7 @@ using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using System.IO;
 using System;
 using TMPro;
 
@@ -19,7 +20,7 @@ public class TextApplicator : MonoBehaviour
 
     void ReadFile()
     {
-        tests = textfile.text.Split(new string[] {"\n"}, StringSplitOptions.None);
+        tests = textfile.text.Split(new string[] { "\n"}, StringSplitOptions.None);
     }
 
     void ApplyText()
