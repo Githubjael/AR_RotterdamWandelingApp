@@ -7,7 +7,8 @@ using System.IO;
 
 public class OtherTextApplicator : MonoBehaviour
 {
-    [SerializeField] Transform UIPanelForText;
+    [SerializeField] string[] LocationFileNames;
+    [SerializeField] List<Transform> UIPanelForText;
     [SerializeField] GameObject UIToString;
     [SerializeField] List<string> fileLines;
 
@@ -18,17 +19,22 @@ public class OtherTextApplicator : MonoBehaviour
     }
     public void ReadFileText()
     {
-        string readFromFilePath = Application.streamingAssetsPath + "/Loc1/" + "wandelingTest" + ".txt";
-
-        fileLines = File.ReadAllLines(readFromFilePath).ToList();
+        for(int t = 0;  t < UIPanelForText.Count; t++)
+        {
+            string readFromFilePath = Application.streamingAssetsPath + "/Loc1/" + "wandelingTest" + ".txt";
+            fileLines = File.ReadAllLines(readFromFilePath).ToList();
+        }
     }
 
     public void DisplayUI()
     {
         foreach(string line in fileLines)
         {
-            Instantiate(UIToString, UIPanelForText);
-            UIToString.GetComponent<Text>().text = line;
+            for(int i = 0; i < UIPanelForText.Count; i++)
+            {
+                Instantiate(UIToString, UIPanelForText[i]);
+                UIToString.GetComponent<Text>().text = line;
+            }
         }
     }
 }

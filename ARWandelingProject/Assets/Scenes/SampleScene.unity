@@ -5555,7 +5555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e8a2d454daa9f45b0df47e24dbbe49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIPanelForText: {fileID: 555923625}
+  LocationFileNames: []
+  UIPanelForText:
+  - {fileID: 555923625}
   UIToString: {fileID: 6467177322613009755, guid: 7362cbd77881ce24eb6743fd5ddd5157, type: 3}
   fileLines: []
 --- !u!1 &1453277419
