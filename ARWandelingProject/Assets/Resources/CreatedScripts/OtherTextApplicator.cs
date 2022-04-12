@@ -11,6 +11,11 @@ public class OtherTextApplicator : MonoBehaviour
     [SerializeField] GameObject UIToString;
     [SerializeField] List<string> fileLines;
 
+    public void Awake()
+    {
+        ReadFileText();
+        DisplayUI();
+    }
     public void ReadFileText()
     {
         string readFromFilePath = Application.streamingAssetsPath + "/Loc1/" + "wandelingTest" + ".txt";
