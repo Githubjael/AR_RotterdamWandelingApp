@@ -12,6 +12,7 @@ public class TextApplicator : MonoBehaviour
     [SerializeField, TextArea] string[] tests;
     [SerializeField] GameObject[] UIToFill;
     [SerializeField] TMP_Text[] textsToFill;
+
     private void Awake()
     {
         ReadFile();
