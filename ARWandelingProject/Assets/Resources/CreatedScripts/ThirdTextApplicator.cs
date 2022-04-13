@@ -1,6 +1,6 @@
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Collections;
-using System.Text.RegularExpressions;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -9,6 +9,7 @@ public class ThirdTextApplicator : MonoBehaviour
     [SerializeField] Transform UIPanel;
     string fileText;
     [SerializeField] GameObject UITextObject;
+
     private void OnEnable()
     {
         ReadTextfiles();
