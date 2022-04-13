@@ -9,6 +9,8 @@ public class ThirdTextApplicator : MonoBehaviour
     [SerializeField] Transform UIPanel;
     string fileText;
     [SerializeField] GameObject UITextObject;
+    [SerializeField] string[] LocationfileNames;
+    [SerializeField] string[] TextfileNames;
 
     private void OnEnable()
     {
@@ -18,7 +20,10 @@ public class ThirdTextApplicator : MonoBehaviour
 
     void ReadTextfiles()
     {
-        fileText = Resources.Load<TextAsset>("CreatedTextAssets/wandelingTest 1").text;
+        for(int i  = 0; i < LocationfileNames.Length; i++)
+        {
+            fileText = Resources.Load<TextAsset>(LocationfileNames[i]+ "/" + TextfileNames).text;
+        }
     }
 
     void DisplayText()
