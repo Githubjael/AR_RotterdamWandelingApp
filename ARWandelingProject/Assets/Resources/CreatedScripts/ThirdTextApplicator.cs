@@ -29,11 +29,7 @@ public class ThirdTextApplicator : MonoBehaviour
 
     void DisplayText()
     {
-        /*UITextObject.GetComponent<Text>().text = fileText;
-        Instantiate(UITextObject, UIPanel);*/
-        for(int i = 0; i < ListofUIPanels.Length; i++)
-        {
-            
-        }
+        UITextObject.GetComponent<Text>().text = fileText;
+        Instantiate(UITextObject, UIPanel);
     }
 }
