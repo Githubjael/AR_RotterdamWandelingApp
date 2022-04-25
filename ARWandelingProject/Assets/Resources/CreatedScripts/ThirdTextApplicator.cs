@@ -11,7 +11,7 @@ public class ThirdTextApplicator : MonoBehaviour
     [SerializeField] GameObject UITextObject;
     [SerializeField] string[] LocationfileNames;
     [SerializeField] string[] TextfileNames;
-    [SerializeField] List<RectTransform> ListofUIPanels;
+    [SerializeField] RectTransform[] ListofUIPanels;
 
     private void OnEnable()
     {
@@ -31,9 +31,9 @@ public class ThirdTextApplicator : MonoBehaviour
     {
         /*UITextObject.GetComponent<Text>().text = fileText;
         Instantiate(UITextObject, UIPanel);*/
-        for(int i = 0; i < ListofUIPanels.Count; i++)
+        for(int i = 0; i < ListofUIPanels.Length; i++)
         {
-
+            
         }
     }
 }
