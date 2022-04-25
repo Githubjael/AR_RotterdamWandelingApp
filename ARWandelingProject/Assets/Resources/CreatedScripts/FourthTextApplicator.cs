@@ -1,16 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FourthTextApplicator : MonoBehaviour
 {
-    [SerializeField] List<TextAsset> TextFiles;
-    [SerializeField] List<RectTransform> UIPanels;
+    [SerializeField] TextAsset[] TextFiles;
+    [SerializeField] TMP_Text[] UIPanelText;
 
     private void OnEnable()
     {
-        GetTextFiles();
+        ReadAndDisplay();
+    }
+
+    void ReadAndDisplay()
+    {
+        for(int i = 0; i < TextFiles.Length; i++)
+        {
+            string textFromFiles = TextFiles[i].text;
+            UIPanelText[i].text = textFromFiles;
+        }
     }
 
     void GetTextFiles()

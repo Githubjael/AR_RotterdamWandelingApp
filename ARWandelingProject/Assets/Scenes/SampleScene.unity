@@ -5405,6 +5405,7 @@ GameObject:
   - component: {fileID: 1434022782}
   - component: {fileID: 1434022781}
   - component: {fileID: 1434022783}
+  - component: {fileID: 1434022784}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5542,6 +5543,28 @@ MonoBehaviour:
   maxSize: 75
   minSize: 50
   speed: 2
+--- !u!114 &1434022784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434022776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2517e49037be824b9e2d28ed78aeb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextFiles:
+  - {fileID: 4900000, guid: f9086e0959d858d4fac7d097135ea06d, type: 3}
+  - {fileID: 4900000, guid: 92fc4fd57331647448b6a00f1802164c, type: 3}
+  - {fileID: 4900000, guid: a3716e6c15a1db34b8355a610f0daf4a, type: 3}
+  UIPanelText:
+  - {fileID: 1419536890}
+  - {fileID: 339318355}
+  - {fileID: 619665359}
+  - {fileID: 2043779003}
+  - {fileID: 377900029}
 --- !u!1 &1453277419
 GameObject:
   m_ObjectHideFlags: 0
