@@ -11,7 +11,13 @@ public class PauseMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public string MenuScene = "2Maps";
     public static bool GameIsPaused = false;
+    [Header("Put PauseMenu Here")]
+    [Tooltip("Canvas->ForThePauseMenuScript->PauseMenu" +
+        "Ga naar Canvas, ga naar de 'ForThePauseMenuScript' en dan pak je de 'Pausemenu' gameobject en plak hem hier!")]
     public GameObject PauseMenuUI;
+    [Header("Put SettingsMenu Here")]
+    [Tooltip("Canvas->ForThePauseMenuScript->settingsMenu" +
+        "Ga naar Canvas, ga naar de 'ForThePauseMenuScript' en dan pak je de 'Settingsmenu' gameobject en plak hem hier!")]
     public GameObject SettingsMenuUI;
     public Transform listOfObjects;
     public List<Transform> UIToExit;
