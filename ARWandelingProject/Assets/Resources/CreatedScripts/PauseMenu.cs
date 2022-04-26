@@ -23,8 +23,8 @@ public class PauseMenu : MonoBehaviour
     [Tooltip("Canvas->ListofTexts" +
         "Ga naar Canvas en dan pak je de 'ListOfTexts' gameobject en plak hem hier!")]
     public Transform listOfObjects;
-    [Header("Deze werkt Automatisch")]
-    [Tooltip("Doe niets met deze.")]
+    [Header("Deze werkt Automatisch" + "(zet niets hierin)")]
+    [Tooltip("Doe niets met deze!")]
     public List<Transform> UIToExit;
 
     private void OnEnable()

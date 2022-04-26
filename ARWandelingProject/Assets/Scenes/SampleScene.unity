@@ -4827,7 +4827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7304610017960536875, guid: 75849b9ed403478439cc9492f34f375d, type: 3}
       propertyPath: m_Name
-      value: OptionsFunctions
+      value: PauseMenuScript
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75849b9ed403478439cc9492f34f375d, type: 3}
