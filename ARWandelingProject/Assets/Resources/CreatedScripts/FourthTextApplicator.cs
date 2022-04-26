@@ -1,8 +1,9 @@
-using System.Collections;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
+using UnityEngine;
+using TMPro;
 
 public class FourthTextApplicator : MonoBehaviour
 {
@@ -20,19 +21,6 @@ public class FourthTextApplicator : MonoBehaviour
         {
             string textFromFiles = TextFiles[i].text;
             UIPanelText[i].text = textFromFiles;
-        }
-    }
-
-    void GetTextFiles()
-    {
-        string path = Application.dataPath + "/Resources/CreatedTextAssets/";
-        string[] files = System.IO.Directory.GetFiles(path);
-        foreach (string file in files)
-        {
-            if(!file.EndsWith(".meta"))
-            //TextFiles.Add(file);
-            Debug.Log(file);
-            
         }
     }
 }
