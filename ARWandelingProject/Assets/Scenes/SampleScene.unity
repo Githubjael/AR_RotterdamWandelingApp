@@ -5486,7 +5486,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2517e49037be824b9e2d28ed78aeb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextFiles: []
+  TextFiles:
+  - {fileID: 4900000, guid: f9086e0959d858d4fac7d097135ea06d, type: 3}
+  - {fileID: 4900000, guid: 92fc4fd57331647448b6a00f1802164c, type: 3}
+  - {fileID: 4900000, guid: a3716e6c15a1db34b8355a610f0daf4a, type: 3}
   UIPanelHeaderText:
   - {fileID: 474507643}
   - {fileID: 828708729}
@@ -5494,7 +5497,7 @@ MonoBehaviour:
   - {fileID: 935172783}
   - {fileID: 1157388008}
   - {fileID: 1739673578}
-  UIPanelText:
+  UIPanelSubText:
   - {fileID: 1419536890}
   - {fileID: 339318355}
   - {fileID: 619665359}

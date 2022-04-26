@@ -11,7 +11,7 @@ public class FourthTextApplicator : MonoBehaviour
 {
     [SerializeField] TextAsset[] TextFiles;
     [SerializeField] TMP_Text[] UIPanelHeaderText;
-    [SerializeField] TMP_Text[] UIPanelText;
+    [SerializeField] TMP_Text[] UIPanelSubText;
 
     private void OnEnable()
     {
@@ -21,14 +21,14 @@ public class FourthTextApplicator : MonoBehaviour
     void ReadAndDisplay()
     {
         for(int i = 0; i < TextFiles.Length; i++)
-        {   
-            string textFromFiles = TextFiles[i].text;
-            UIPanelText[i].text = textFromFiles;
-            string[] headerTextFromFiles = File.ReadAllLines("Assets/Resources/CreatedTextAssets/.txt", Encoding.UTF8);
-            foreach(string headerText in headerTextFromFiles)
+        {
+            /*string[] headerTextFromFiles = File.ReadAllLines("Assets/Resources/CreatedTextAssets/.txt", Encoding.UTF8);
+            foreach (string headerText in headerTextFromFiles)
             {
                 UIPanelHeaderText[i].text = headerText;
-            }
+            }*/
+            string textFromFiles = TextFiles[i].text;
+            UIPanelSubText[i].text = textFromFiles;
         }
     }
 }
