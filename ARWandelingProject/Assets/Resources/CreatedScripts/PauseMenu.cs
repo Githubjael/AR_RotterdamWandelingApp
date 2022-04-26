@@ -13,9 +13,16 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     public GameObject SettingsMenuUI;
-    public GameObject[] UIToExit;
-    
-    // Update is called once per frame
+    public Transform listOfObjects;
+    public List<Transform> UIToExit;
+
+    private void OnEnable()
+    {
+        foreach (Transform child in listOfObjects)
+        {
+            UIToExit.Add(child);
+        }
+    }
     public void Resume()
     {
         PauseMenuUI.SetActive(false);
@@ -56,9 +63,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void Exit()
     {
-        for(int i = 0; i < UIToExit.Length; i++)
+        for(int i = 0; i < UIToExit.Count; i++)
         {
-            UIToExit[i].SetActive(false);
+            UIToExit[i].gameObject.SetActive(false);
         }
     }
 }
