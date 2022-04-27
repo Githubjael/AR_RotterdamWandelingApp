@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
 {
-    [SerializeField] GameObject ListOfTexts;
     [SerializeField] Canvas canvas;
+    [SerializeField] GameObject ListOfTexts;
     [SerializeField] List<RectTransform> Locs;
     void Start()
     {
