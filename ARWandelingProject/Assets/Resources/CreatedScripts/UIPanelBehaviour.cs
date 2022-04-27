@@ -30,7 +30,7 @@ public class UIPanelBehaviour : MonoBehaviour
         {
             obj = (RectTransform)transform.Find("ListOfTexts/"+ responsiveReticle.hit.collider.name);
         }
-        // dit is nodig om te voorkomen wanneer de reticle niet meer op de relevante object is.
+        // dit is nodig om te voorkomen wanneer de reticle niet meer op de relevante object is, dat ie de panel niet meer opent.
         else
         {
             obj = null;
