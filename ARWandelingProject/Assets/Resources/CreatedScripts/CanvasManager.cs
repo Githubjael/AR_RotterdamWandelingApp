@@ -8,10 +8,12 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] Canvas canvas;
     [SerializeField] GameObject ListOfTexts;
     [SerializeField] List<RectTransform> Locs;
+    [SerializeField] List<Transform> TheDeets;
     void Start()
     {
         GetLoT();
         ListAllChildren();
+        ListChildrenInTheChildren();
     }
     
     public void GetLoT()
@@ -24,6 +26,17 @@ public class CanvasManager : MonoBehaviour
         foreach(RectTransform children in ListOfTexts.transform)
         {
             Locs.Add(children.GetComponent<RectTransform>());
+        }
+    }
+
+    public void ListChildrenInTheChildren()
+    {
+        for(int i = 0; i < Locs.Count; i++)
+        {
+            foreach(RectTransform texts in Locs[i])
+            {
+                TheDeets.Add(texts.gameObject.transform);
+            }
         }
     }
 }
